@@ -1,0 +1,7 @@
+D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\UGELNorte.Resoluciones\UGELNorte.Resoluciones.BusinessLogic\bin\Debug\UGELNorte.Resoluciones.BusinessLogic.dll
+D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\UGELNorte.Resoluciones\UGELNorte.Resoluciones.BusinessLogic\bin\Debug\UGELNorte.Resoluciones.BusinessLogic.pdb
+D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\UGELNorte.Resoluciones\UGELNorte.Resoluciones.BusinessLogic\bin\Debug\UGELNorte.Resoluciones.DataAccess.dll
+D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\UGELNorte.Resoluciones\UGELNorte.Resoluciones.BusinessLogic\bin\Debug\UGELNorte.Resoluciones.DataAccess.pdb
+D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\UGELNorte.Resoluciones\UGELNorte.Resoluciones.BusinessLogic\obj\Debug\UGELNorte.Resoluciones.BusinessLogic.csprojResolveAssemblyReference.cache
+D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\UGELNorte.Resoluciones\UGELNorte.Resoluciones.BusinessLogic\obj\Debug\UGELNorte.Resoluciones.BusinessLogic.dll
+D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\UGELNorte.Resoluciones\UGELNorte.Resoluciones.BusinessLogic\obj\Debug\UGELNorte.Resoluciones.BusinessLogic.pdb

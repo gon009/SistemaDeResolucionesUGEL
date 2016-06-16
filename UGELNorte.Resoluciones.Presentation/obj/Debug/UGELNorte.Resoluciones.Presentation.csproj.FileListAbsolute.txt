@@ -1,0 +1,10 @@
+D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\UGELNorte.Resoluciones\UGELNorte.Resoluciones.Presentation\bin\Debug\UGELNorte.Resoluciones.Presentation.exe
+D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\UGELNorte.Resoluciones\UGELNorte.Resoluciones.Presentation\bin\Debug\UGELNorte.Resoluciones.Presentation.pdb
+D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\UGELNorte.Resoluciones\UGELNorte.Resoluciones.Presentation\bin\Debug\UGELNorte.Resoluciones.BusinessLogic.dll
+D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\UGELNorte.Resoluciones\UGELNorte.Resoluciones.Presentation\bin\Debug\UGELNorte.Resoluciones.BusinessLogic.pdb
+D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\UGELNorte.Resoluciones\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.csprojResolveAssemblyReference.cache
+D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\UGELNorte.Resoluciones\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.Properties.Resources.resources
+D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\UGELNorte.Resoluciones\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.csproj.GenerateResource.Cache
+D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\UGELNorte.Resoluciones\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.exe
+D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\UGELNorte.Resoluciones\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.pdb
+D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\UGELNorte.Resoluciones\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.FormResoluciones.resources
