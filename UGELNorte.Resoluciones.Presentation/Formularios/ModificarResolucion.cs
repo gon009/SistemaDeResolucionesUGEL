@@ -7,18 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace UGELNorte.Resoluciones.Presentation
+namespace UGELNorte.Resoluciones.Presentation.Formularios
 {
-    public partial class FormResoluciones : Form
+    public partial class ModificarResolucion : Form
     {
-        public FormResoluciones()
+        public ModificarResolucion()
         {
             InitializeComponent();
-        }
-
-        private void FormResoluciones_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
