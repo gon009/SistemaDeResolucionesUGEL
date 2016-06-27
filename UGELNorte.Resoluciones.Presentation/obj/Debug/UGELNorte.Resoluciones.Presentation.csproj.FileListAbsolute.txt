@@ -19,3 +19,14 @@ D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\SistemaDeResolucionesUGEL\UGEL
 D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.FormResoluciones.resources
 D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.csproj.GenerateResource.Cache
 D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.Formularios.ModificarResolucion.resources
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.exe
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.pdb
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\bin\Debug\UGELNorte.Resoluciones.Presentation.exe
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\bin\Debug\UGELNorte.Resoluciones.Presentation.pdb
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\bin\Debug\UGELNorte.Resoluciones.BusinessLogic.dll
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\bin\Debug\UGELNorte.Resoluciones.BusinessLogic.pdb
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.csprojResolveAssemblyReference.cache
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.Formularios.ModificarResolucion.resources
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.Properties.Resources.resources
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.FormResoluciones.resources
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.csproj.GenerateResource.Cache

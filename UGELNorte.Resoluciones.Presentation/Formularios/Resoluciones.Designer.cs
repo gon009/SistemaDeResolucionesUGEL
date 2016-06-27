@@ -72,10 +72,10 @@
             this.tabPageBuscarModificarResol = new System.Windows.Forms.TabPage();
             this.dataGridViewResoluciones = new System.Windows.Forms.DataGridView();
             this.d = new System.Windows.Forms.GroupBox();
+            this.btnBuscarResolucion = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblBuscarResolucion = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnBuscarResolucion = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelResoluciones.SuspendLayout();
             this.tabCtrlResoluciones.SuspendLayout();
@@ -98,7 +98,7 @@
             this.panelResoluciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelResoluciones.Location = new System.Drawing.Point(12, 134);
             this.panelResoluciones.Name = "panelResoluciones";
-            this.panelResoluciones.Size = new System.Drawing.Size(924, 518);
+            this.panelResoluciones.Size = new System.Drawing.Size(924, 491);
             this.panelResoluciones.TabIndex = 0;
             // 
             // tabCtrlResoluciones
@@ -108,7 +108,7 @@
             this.tabCtrlResoluciones.Location = new System.Drawing.Point(3, 6);
             this.tabCtrlResoluciones.Name = "tabCtrlResoluciones";
             this.tabCtrlResoluciones.SelectedIndex = 0;
-            this.tabCtrlResoluciones.Size = new System.Drawing.Size(918, 509);
+            this.tabCtrlResoluciones.Size = new System.Drawing.Size(918, 483);
             this.tabCtrlResoluciones.TabIndex = 0;
             // 
             // tabPageRegResoluciones
@@ -120,7 +120,7 @@
             this.tabPageRegResoluciones.Location = new System.Drawing.Point(4, 27);
             this.tabPageRegResoluciones.Name = "tabPageRegResoluciones";
             this.tabPageRegResoluciones.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageRegResoluciones.Size = new System.Drawing.Size(910, 478);
+            this.tabPageRegResoluciones.Size = new System.Drawing.Size(910, 452);
             this.tabPageRegResoluciones.TabIndex = 0;
             this.tabPageRegResoluciones.Text = "Registro de Resoluciones";
             this.tabPageRegResoluciones.UseVisualStyleBackColor = true;
@@ -520,6 +520,15 @@
             this.d.TabStop = false;
             this.d.Text = "Buscar Resolucion";
             // 
+            // btnBuscarResolucion
+            // 
+            this.btnBuscarResolucion.Location = new System.Drawing.Point(245, 38);
+            this.btnBuscarResolucion.Name = "btnBuscarResolucion";
+            this.btnBuscarResolucion.Size = new System.Drawing.Size(148, 23);
+            this.btnBuscarResolucion.TabIndex = 2;
+            this.btnBuscarResolucion.Text = "Buscar Resolucion";
+            this.btnBuscarResolucion.UseVisualStyleBackColor = true;
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(83, 37);
@@ -546,15 +555,6 @@
             this.lblTitulo.TabIndex = 2;
             this.lblTitulo.Text = "Sistema de Resoluciones - UGEL NORTE";
             // 
-            // btnBuscarResolucion
-            // 
-            this.btnBuscarResolucion.Location = new System.Drawing.Point(245, 38);
-            this.btnBuscarResolucion.Name = "btnBuscarResolucion";
-            this.btnBuscarResolucion.Size = new System.Drawing.Size(148, 23);
-            this.btnBuscarResolucion.TabIndex = 2;
-            this.btnBuscarResolucion.Text = "Buscar Resolucion";
-            this.btnBuscarResolucion.UseVisualStyleBackColor = true;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::UGELNorte.Resoluciones.Presentation.Properties.Resources.LogoUGEL;
@@ -568,7 +568,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(948, 664);
+            this.ClientSize = new System.Drawing.Size(940, 608);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelResoluciones);
