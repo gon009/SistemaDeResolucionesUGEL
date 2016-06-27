@@ -30,3 +30,4 @@ D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.
 D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.Properties.Resources.resources
 D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.FormResoluciones.resources
 D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.csproj.GenerateResource.Cache
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\bin\Debug\UGELNorte.Resoluciones.Presentation.exe.config

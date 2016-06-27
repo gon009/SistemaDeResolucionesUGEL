@@ -5,7 +5,7 @@ using System.Text;
 
 namespace UGELNorte.Resoluciones.BusinessLogic.Models
 {
-    class DocenteModel
+    public class DocenteModel
     {
         public int DNI { get; set; }
 

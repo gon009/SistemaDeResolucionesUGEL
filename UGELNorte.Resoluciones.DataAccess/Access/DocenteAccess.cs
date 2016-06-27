@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace UGELNorte.Resoluciones.DataAccess
+namespace UGELNorte.Resoluciones.DataAccess.Access
 {
-    public class Class1
+    public class DocenteAccess
     {
     }
 }

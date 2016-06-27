@@ -3,3 +3,8 @@ D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\UGELNorte.Resoluciones\UGELNor
 D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\UGELNorte.Resoluciones\UGELNorte.Resoluciones.DataAccess\obj\Debug\UGELNorte.Resoluciones.DataAccess.csprojResolveAssemblyReference.cache
 D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\UGELNorte.Resoluciones\UGELNorte.Resoluciones.DataAccess\obj\Debug\UGELNorte.Resoluciones.DataAccess.dll
 D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\UGELNorte.Resoluciones\UGELNorte.Resoluciones.DataAccess\obj\Debug\UGELNorte.Resoluciones.DataAccess.pdb
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.DataAccess\obj\Debug\UGELNorte.Resoluciones.DataAccess.csprojResolveAssemblyReference.cache
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.DataAccess\obj\Debug\UGELNorte.Resoluciones.DataAccess.dll
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.DataAccess\obj\Debug\UGELNorte.Resoluciones.DataAccess.pdb
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.DataAccess\bin\Debug\UGELNorte.Resoluciones.DataAccess.dll
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.DataAccess\bin\Debug\UGELNorte.Resoluciones.DataAccess.pdb

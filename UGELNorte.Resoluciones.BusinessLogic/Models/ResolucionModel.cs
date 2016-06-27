@@ -6,12 +6,12 @@ using UGELNorte.Resoluciones.BusinessLogic.Enums;
 
 namespace UGELNorte.Resoluciones.BusinessLogic.Models
 {
-    class ResolucionModel
+    public class ResolucionModel
     {
 
-        public char[] NroProyecto { get; set; }
+        public string NroProyecto { get; set; }
 
-        public char[] NroResolucion { get; set; }
+        public string NroResolucion { get; set; }
 
         public TipoResolucion TipoResolucion { get; set; }
 

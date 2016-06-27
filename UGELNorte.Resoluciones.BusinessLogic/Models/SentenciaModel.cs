@@ -5,7 +5,7 @@ using System.Text;
 
 namespace UGELNorte.Resoluciones.BusinessLogic.Models
 {
-    class SentenciaModel
+    public class SentenciaModel
     {
         public DateTime FechaSentencia { get; set; }
 
