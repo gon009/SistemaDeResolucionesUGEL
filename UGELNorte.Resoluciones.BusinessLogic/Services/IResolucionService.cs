@@ -4,7 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using UGELNorte.Resoluciones.DataAccess.Access;
-using UGELNorte.Resoluciones.BusinessLogic.Models;
+using UGELNorte.Resoluciones.Core.Models;
 namespace UGELNorte.Resoluciones.BusinessLogic.Services
 {
     public interface IResolucionService
@@ -19,7 +19,7 @@ namespace UGELNorte.Resoluciones.BusinessLogic.Services
 
         bool UpdateResolucion(ResolucionModel resolucion);
 
-        bool DeleteResolucion(ResolucionModel resolucion);
+        bool DeleteResolucion(string resolucion);
 
 
     }

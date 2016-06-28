@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{095B77FF-C6BF-4DA7-8D16-1AED2C53FBDD}</ProjectGuid>
+    <ProjectGuid>{53596D93-C3C1-4F17-809E-7330FBD8E01C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UGELNorte.Resoluciones.BusinessLogic</RootNamespace>
-    <AssemblyName>UGELNorte.Resoluciones.BusinessLogic</AssemblyName>
+    <RootNamespace>UGELNorte.Resoluciones.Core</RootNamespace>
+    <AssemblyName>UGELNorte.Resoluciones.Core</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -38,25 +38,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Enums\SituacionResolucion.cs" />
+    <Compile Include="Enums\TipoResolucion.cs" />
+    <Compile Include="Enums\TipoUGEL.cs" />
+    <Compile Include="Models\DocenteModel.cs" />
+    <Compile Include="Models\ResolucionModel.cs" />
+    <Compile Include="Models\SentenciaModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\DocenteService.cs" />
-    <Compile Include="Services\IDocenteService.cs" />
-    <Compile Include="Services\IResolucionService.cs" />
-    <Compile Include="Services\ISentenciaService.cs" />
-    <Compile Include="Services\ResolucionService.cs" />
-    <Compile Include="Services\SentenciaService.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\UGELNorte.Resoluciones.Core\UGELNorte.Resoluciones.Core.csproj">
-      <Project>{53596d93-c3c1-4f17-809e-7330fbd8e01c}</Project>
-      <Name>UGELNorte.Resoluciones.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UGELNorte.Resoluciones.DataAccess\UGELNorte.Resoluciones.DataAccess.csproj">
-      <Project>{8255f3b3-54a5-44fd-84c5-22da91495054}</Project>
-      <Name>UGELNorte.Resoluciones.DataAccess</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

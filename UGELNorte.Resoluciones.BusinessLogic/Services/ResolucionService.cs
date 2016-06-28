@@ -4,7 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using UGELNorte.Resoluciones.DataAccess.Access;
-using UGELNorte.Resoluciones.BusinessLogic.Models;
+using UGELNorte.Resoluciones.DataAccess;
+using UGELNorte.Resoluciones.Core.Models;
 namespace UGELNorte.Resoluciones.BusinessLogic.Services
 {
     public class ResolucionService : IResolucionService

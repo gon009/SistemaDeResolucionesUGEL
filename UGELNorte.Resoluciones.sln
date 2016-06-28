@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UGELNorte.Resoluciones.Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UGELNorte.Resoluciones.BusinessLogic", "UGELNorte.Resoluciones.BusinessLogic\UGELNorte.Resoluciones.BusinessLogic.csproj", "{095B77FF-C6BF-4DA7-8D16-1AED2C53FBDD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UGELNorte.Resoluciones.Core", "UGELNorte.Resoluciones.Core\UGELNorte.Resoluciones.Core.csproj", "{53596D93-C3C1-4F17-809E-7330FBD8E01C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{095B77FF-C6BF-4DA7-8D16-1AED2C53FBDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{095B77FF-C6BF-4DA7-8D16-1AED2C53FBDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{095B77FF-C6BF-4DA7-8D16-1AED2C53FBDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53596D93-C3C1-4F17-809E-7330FBD8E01C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53596D93-C3C1-4F17-809E-7330FBD8E01C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53596D93-C3C1-4F17-809E-7330FBD8E01C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53596D93-C3C1-4F17-809E-7330FBD8E01C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

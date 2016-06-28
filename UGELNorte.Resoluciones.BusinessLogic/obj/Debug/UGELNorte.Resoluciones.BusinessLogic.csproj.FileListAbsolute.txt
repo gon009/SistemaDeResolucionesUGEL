@@ -19,3 +19,5 @@ D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.
 D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.BusinessLogic\obj\Debug\UGELNorte.Resoluciones.BusinessLogic.csprojResolveAssemblyReference.cache
 D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.BusinessLogic\obj\Debug\UGELNorte.Resoluciones.BusinessLogic.dll
 D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.BusinessLogic\obj\Debug\UGELNorte.Resoluciones.BusinessLogic.pdb
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.BusinessLogic\bin\Debug\UGELNorte.Resoluciones.Core.dll
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.BusinessLogic\bin\Debug\UGELNorte.Resoluciones.Core.pdb

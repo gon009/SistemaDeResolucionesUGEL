@@ -89,6 +89,10 @@
       <Project>{095b77ff-c6bf-4da7-8d16-1aed2c53fbdd}</Project>
       <Name>UGELNorte.Resoluciones.BusinessLogic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UGELNorte.Resoluciones.Core\UGELNorte.Resoluciones.Core.csproj">
+      <Project>{53596d93-c3c1-4f17-809e-7330fbd8e01c}</Project>
+      <Name>UGELNorte.Resoluciones.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

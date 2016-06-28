@@ -1,0 +1,5 @@
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Core\obj\Debug\UGELNorte.Resoluciones.Core.csprojResolveAssemblyReference.cache
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Core\bin\Debug\UGELNorte.Resoluciones.Core.dll
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Core\bin\Debug\UGELNorte.Resoluciones.Core.pdb
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Core\obj\Debug\UGELNorte.Resoluciones.Core.dll
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Core\obj\Debug\UGELNorte.Resoluciones.Core.pdb

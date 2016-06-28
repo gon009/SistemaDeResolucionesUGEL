@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using UGELNorte.Resoluciones.BusinessLogic.Enums;
+using UGELNorte.Resoluciones.Core.Enums;
 
-namespace UGELNorte.Resoluciones.BusinessLogic.Models
+namespace UGELNorte.Resoluciones.Core.Models
 {
     public class ResolucionModel
     {
