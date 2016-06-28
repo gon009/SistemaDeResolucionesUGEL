@@ -47,10 +47,9 @@
     <Compile Include="Access\SentenciaAccess.cs" />
     <Compile Include="DBConnections\ConnectionAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQL\Scripts.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SQL\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\UGELNorte.Resoluciones.Core\UGELNorte.Resoluciones.Core.csproj">
       <Project>{53596d93-c3c1-4f17-809e-7330fbd8e01c}</Project>

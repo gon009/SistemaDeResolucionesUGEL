@@ -19,9 +19,13 @@ namespace UGELNorte.Resoluciones.Core.Models
 
         public string InstitucionEducativa { get; set; }
 
-        public string ConceptoResolucion {get; set; }
-        
+        public string ConceptoResolucion { get; set; }
+
         public SituacionResolucion SituacionResolucion { get; set; }
+
+        public string DNI { get; set; } 
+
+        public string ExpedienteJudicial { get; set; }
 
 
 

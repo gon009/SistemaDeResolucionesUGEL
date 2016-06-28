@@ -13,7 +13,7 @@ namespace UGELNorte.Resoluciones.DataAccess.Access
 
         DataTable GetAllResoluciones();
 
-        DataTable SearchResolucion(string NroProyecto, string NroResolucion);
+        DataTable SearchResolucion(object NroProyecto, object NroResolucion , string operand);
 
         bool AddResolucion(ResolucionModel resolucion);
 

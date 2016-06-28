@@ -13,7 +13,7 @@ namespace UGELNorte.Resoluciones.BusinessLogic.Services
 
         DataTable GetAllResoluciones();
 
-        DataTable SearchResolucion(string NroProyecto, string NroResolucion);
+        DataTable SearchResolucion(object NroProyecto, object NroResolucion , string operand);
 
         bool RegisterResolucion(ResolucionModel resolucion);
 
