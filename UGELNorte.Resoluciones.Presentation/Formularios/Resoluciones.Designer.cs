@@ -66,7 +66,6 @@
             this.txtNroResolucion = new System.Windows.Forms.MaskedTextBox();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.cmbUGEL = new System.Windows.Forms.ComboBox();
-            this.cmbConcepto = new System.Windows.Forms.ComboBox();
             this.cmbSituacion = new System.Windows.Forms.ComboBox();
             this.txtIIEE = new System.Windows.Forms.TextBox();
             this.tabPageBuscarModificarResol = new System.Windows.Forms.TabPage();
@@ -77,6 +76,8 @@
             this.lblBuscarResolucion = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnImportarPDF = new System.Windows.Forms.Button();
+            this.txtConcepto = new System.Windows.Forms.TextBox();
             this.panelResoluciones.SuspendLayout();
             this.tabCtrlResoluciones.SuspendLayout();
             this.tabPageRegResoluciones.SuspendLayout();
@@ -113,6 +114,7 @@
             // 
             // tabPageRegResoluciones
             // 
+            this.tabPageRegResoluciones.Controls.Add(this.btnImportarPDF);
             this.tabPageRegResoluciones.Controls.Add(this.btnRegistrarResolucion);
             this.tabPageRegResoluciones.Controls.Add(this.groupBoxInfoDocente);
             this.tabPageRegResoluciones.Controls.Add(this.groupBoxInfoSentencia);
@@ -127,12 +129,13 @@
             // 
             // btnRegistrarResolucion
             // 
-            this.btnRegistrarResolucion.Location = new System.Drawing.Point(139, 380);
+            this.btnRegistrarResolucion.Location = new System.Drawing.Point(42, 374);
             this.btnRegistrarResolucion.Name = "btnRegistrarResolucion";
             this.btnRegistrarResolucion.Size = new System.Drawing.Size(180, 49);
             this.btnRegistrarResolucion.TabIndex = 4;
             this.btnRegistrarResolucion.Text = "Registrar Resolucion";
             this.btnRegistrarResolucion.UseVisualStyleBackColor = true;
+            this.btnRegistrarResolucion.Click += new System.EventHandler(this.btnRegistrarResolucion_Click);
             // 
             // groupBoxInfoDocente
             // 
@@ -356,9 +359,9 @@
             this.tableLayoutPanel1.Controls.Add(this.txtNroResolucion, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.cmbTipo, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.cmbUGEL, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.cmbConcepto, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.cmbSituacion, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.txtIIEE, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.txtConcepto, 1, 5);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 22);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
@@ -465,14 +468,6 @@
             this.cmbUGEL.Size = new System.Drawing.Size(121, 26);
             this.cmbUGEL.TabIndex = 10;
             // 
-            // cmbConcepto
-            // 
-            this.cmbConcepto.FormattingEnabled = true;
-            this.cmbConcepto.Location = new System.Drawing.Point(97, 218);
-            this.cmbConcepto.Name = "cmbConcepto";
-            this.cmbConcepto.Size = new System.Drawing.Size(121, 26);
-            this.cmbConcepto.TabIndex = 12;
-            // 
             // cmbSituacion
             // 
             this.cmbSituacion.FormattingEnabled = true;
@@ -495,7 +490,7 @@
             this.tabPageBuscarModificarResol.Location = new System.Drawing.Point(4, 27);
             this.tabPageBuscarModificarResol.Name = "tabPageBuscarModificarResol";
             this.tabPageBuscarModificarResol.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageBuscarModificarResol.Size = new System.Drawing.Size(910, 478);
+            this.tabPageBuscarModificarResol.Size = new System.Drawing.Size(910, 452);
             this.tabPageBuscarModificarResol.TabIndex = 1;
             this.tabPageBuscarModificarResol.Text = "Buscar / Modificar Resoluciones";
             this.tabPageBuscarModificarResol.UseVisualStyleBackColor = true;
@@ -564,11 +559,27 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
+            // btnImportarPDF
+            // 
+            this.btnImportarPDF.Location = new System.Drawing.Point(237, 374);
+            this.btnImportarPDF.Name = "btnImportarPDF";
+            this.btnImportarPDF.Size = new System.Drawing.Size(180, 49);
+            this.btnImportarPDF.TabIndex = 5;
+            this.btnImportarPDF.Text = "Importar PDF";
+            this.btnImportarPDF.UseVisualStyleBackColor = true;
+            // 
+            // txtConcepto
+            // 
+            this.txtConcepto.Location = new System.Drawing.Point(97, 218);
+            this.txtConcepto.Name = "txtConcepto";
+            this.txtConcepto.Size = new System.Drawing.Size(272, 24);
+            this.txtConcepto.TabIndex = 12;
+            // 
             // FormResoluciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 608);
+            this.ClientSize = new System.Drawing.Size(940, 621);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelResoluciones);
@@ -640,7 +651,6 @@
         private System.Windows.Forms.MaskedTextBox txtNroResolucion;
         private System.Windows.Forms.ComboBox cmbTipo;
         private System.Windows.Forms.ComboBox cmbUGEL;
-        private System.Windows.Forms.ComboBox cmbConcepto;
         private System.Windows.Forms.ComboBox cmbSituacion;
         private System.Windows.Forms.TextBox txtIIEE;
         private System.Windows.Forms.GroupBox d;
@@ -648,6 +658,8 @@
         private System.Windows.Forms.DataGridView dataGridViewResoluciones;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnBuscarResolucion;
+        private System.Windows.Forms.Button btnImportarPDF;
+        private System.Windows.Forms.TextBox txtConcepto;
     }
 }
 

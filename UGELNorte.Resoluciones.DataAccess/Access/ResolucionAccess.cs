@@ -105,8 +105,15 @@ namespace UGELNorte.Resoluciones.DataAccess
                 oleDbCommand.Parameters.AddWithValue("@Situacion", (int)resolucion.SituacionResolucion);
                 oleDbCommand.Parameters.AddWithValue("@Concepto", resolucion.ConceptoResolucion);
                 oleDbCommand.Parameters.AddWithValue("@ExpedienteJudicial", resolucion.ExpedienteJudicial);
-             
 
+                string res = resolucion.NroResolucion;
+                string pro = resolucion.NroProyecto;
+                int tipor = (int)resolucion.TipoResolucion;
+                int tipuug = (int)resolucion.TipoUGEL;
+                string iiee = resolucion.InstitucionEducativa;
+                string dni = resolucion.DNI;
+                int sit = (int)resolucion.SituacionResolucion;
+                string exp = resolucion.ExpedienteJudicial;
                 // Open the connection, execute the query and close the connection
                 oleDbCommand.Connection.Open();
                 var rowsAffected = oleDbCommand.ExecuteNonQuery();

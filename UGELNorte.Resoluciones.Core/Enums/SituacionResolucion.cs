@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace UGELNorte.Resoluciones.Core.Enums
+
+namespace UGELNorte.Resoluciones.Core
 {
+
     using System.ComponentModel;
+
     public enum SituacionResolucion
     {
         [Description("Activo")]
@@ -14,4 +17,7 @@ namespace UGELNorte.Resoluciones.Core.Enums
         [Description("Cesante")]
         Cesante,
     }
+
+   
+
 }

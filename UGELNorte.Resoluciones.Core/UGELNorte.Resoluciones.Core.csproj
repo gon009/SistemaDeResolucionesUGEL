@@ -38,6 +38,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\EnumToString.cs" />
     <Compile Include="Enums\SituacionResolucion.cs" />
     <Compile Include="Enums\TipoResolucion.cs" />
     <Compile Include="Enums\TipoUGEL.cs" />

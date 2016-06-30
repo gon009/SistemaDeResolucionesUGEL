@@ -18,7 +18,7 @@ namespace UGELNorte.Resoluciones.DataAccess.BDConexiones
             {
                 return ConfigurationManager
                     .ConnectionStrings["UGELNorteResolucionesDBConnection"]
-                    .ToString();
+                    .ConnectionString;
             }
         }
     }

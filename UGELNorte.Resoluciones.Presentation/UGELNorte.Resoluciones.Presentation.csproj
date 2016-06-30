@@ -57,6 +57,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Formularios\ModificarResolucion.resx">
       <DependentUpon>ModificarResolucion.cs</DependentUpon>
     </EmbeddedResource>
@@ -72,6 +77,10 @@
     </Compile>
     <EmbeddedResource Include="Formularios\Resoluciones.resx">
       <DependentUpon>Resoluciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">

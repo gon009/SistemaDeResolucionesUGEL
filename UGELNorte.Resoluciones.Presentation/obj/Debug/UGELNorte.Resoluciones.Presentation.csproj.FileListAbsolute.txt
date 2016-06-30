@@ -35,3 +35,4 @@ D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.
 D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\bin\Debug\UGELNorte.Resoluciones.Core.pdb
 D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\bin\Debug\UGELNorte.Resoluciones.DataAccess.dll
 D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\bin\Debug\UGELNorte.Resoluciones.DataAccess.pdb
+D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.Resources.resources
