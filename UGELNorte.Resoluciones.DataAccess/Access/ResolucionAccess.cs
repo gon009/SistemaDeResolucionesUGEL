@@ -8,6 +8,8 @@ using UGELNorte.Resoluciones.DataAccess.Access;
 using UGELNorte.Resoluciones.Core.Models;
 using UGELNorte.Resoluciones.DataAccess.SQL;
 using System.Data.OleDb;
+using System.Data.SqlClient;
+
 
 namespace UGELNorte.Resoluciones.DataAccess
 {
@@ -88,39 +90,34 @@ namespace UGELNorte.Resoluciones.DataAccess
 
         public bool AddResolucion(ResolucionModel resolucion)
         {
-            using (OleDbCommand oleDbCommand = new OleDbCommand())
+            using (SqlConnection openConnection = new SqlConnection(this.ConnectionString))
             {
-                // Set the command object properties
-                oleDbCommand.Connection = new OleDbConnection(this.ConnectionString);
-                oleDbCommand.CommandType = CommandType.Text;
-                oleDbCommand.CommandText = Scripts.SqlInsertResolucion;
+               
+                using (SqlCommand sqlcommand = new SqlCommand())
+                {
+                    sqlcommand.CommandType = CommandType.Text;
+                    sqlcommand.CommandText = Scripts.SqlInsertResolucion;
+                    sqlcommand.Connection = openConnection;
 
-                // Add the input parameters to the parameter collection
-                oleDbCommand.Parameters.AddWithValue("@NroResolucion", resolucion.NroResolucion);
-                oleDbCommand.Parameters.AddWithValue("@NroProyecto", resolucion.NroProyecto);
-                oleDbCommand.Parameters.AddWithValue("@TipoResolucion", (int)resolucion.TipoResolucion);
-                oleDbCommand.Parameters.AddWithValue("@UGEL", (int)resolucion.TipoUGEL);
-                oleDbCommand.Parameters.AddWithValue("@InstitucionEducativa", resolucion.InstitucionEducativa);
-                oleDbCommand.Parameters.AddWithValue("@DNI", resolucion.DNI);
-                oleDbCommand.Parameters.AddWithValue("@Situacion", (int)resolucion.SituacionResolucion);
-                oleDbCommand.Parameters.AddWithValue("@Concepto", resolucion.ConceptoResolucion);
-                oleDbCommand.Parameters.AddWithValue("@ExpedienteJudicial", resolucion.ExpedienteJudicial);
+                    sqlcommand.Parameters.AddWithValue("@NroResolucion", resolucion.NroResolucion);
+                    sqlcommand.Parameters.AddWithValue("@NroProyecto", resolucion.NroProyecto);
+                    sqlcommand.Parameters.AddWithValue("@TipoResolucion", (int)resolucion.TipoResolucion);
+                    sqlcommand.Parameters.AddWithValue("@UGEL", (int)resolucion.TipoUGEL);
+                    sqlcommand.Parameters.AddWithValue("@InstitucionEducativa", resolucion.InstitucionEducativa);
+                    sqlcommand.Parameters.AddWithValue("@DNI", resolucion.DNI);
+                    sqlcommand.Parameters.AddWithValue("@Situacion", (int)resolucion.SituacionResolucion);
+                    sqlcommand.Parameters.AddWithValue("@Concepto", resolucion.ConceptoResolucion);
+                    sqlcommand.Parameters.AddWithValue("@ExpedienteJudicial", resolucion.ExpedienteJudicial);
 
-                string res = resolucion.NroResolucion;
-                string pro = resolucion.NroProyecto;
-                int tipor = (int)resolucion.TipoResolucion;
-                int tipuug = (int)resolucion.TipoUGEL;
-                string iiee = resolucion.InstitucionEducativa;
-                string dni = resolucion.DNI;
-                int sit = (int)resolucion.SituacionResolucion;
-                string exp = resolucion.ExpedienteJudicial;
-                // Open the connection, execute the query and close the connection
-                oleDbCommand.Connection.Open();
-                var rowsAffected = oleDbCommand.ExecuteNonQuery();
-                oleDbCommand.Connection.Close();
+                    sqlcommand.Connection.Open();
+                    var rowsAffected = sqlcommand.ExecuteNonQuery();
+                    sqlcommand.Connection.Close();
 
-                return rowsAffected > 0;
+                    return rowsAffected > 0;
+                }
             }
+
+      
         }
 
 

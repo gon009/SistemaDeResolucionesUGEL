@@ -16,9 +16,17 @@ namespace UGELNorte.Resoluciones.DataAccess.BDConexiones
         {
             get
             {
-                return ConfigurationManager
-                    .ConnectionStrings["UGELNorteResolucionesDBConnection"]
-                    .ConnectionString;
+
+                 return ConfigurationManager
+                      .ConnectionStrings["DBResolucionesConnectionString"]
+                      .ConnectionString;
+                      
+                //return ConfigurationManager.AppSettings["connectionStringDB"];
+
+                //return ("Provider=SQLNCLI11; Data Source=localhost;Initial Catalog=DBResoluciones;Integrated Security=SSPI");
+
+
+
             }
         }
     }

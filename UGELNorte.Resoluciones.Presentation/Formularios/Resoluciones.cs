@@ -36,7 +36,7 @@ namespace UGELNorte.Resoluciones.Presentation
 
         private void btnRegistrarResolucion_Click(object sender, EventArgs e)
         {
-        
+       
             try
             {
               
