@@ -8,8 +8,10 @@ using System.Text;
 using System.Windows.Forms;
 using UGELNorte.Resoluciones.Core.Models;
 using UGELNorte.Resoluciones.Core.Enums;
+using UGELNorte.Resoluciones.Core.Utilities;
 using UGELNorte.Resoluciones.BusinessLogic.Services;
 using UGELNorte.Resoluciones.Core;
+using UGELNorte.Resoluciones.Presentation;
 
 namespace UGELNorte.Resoluciones.Presentation
 {
@@ -21,7 +23,10 @@ namespace UGELNorte.Resoluciones.Presentation
             this.InitializeComponent();
             this.InitializeDropDownList();
             this.resolucionService = new ResolucionService();
-            this.ResetRegistration();
+
+            ControlUtilities.ResetAllControls(groupBoxInfoResoluciones);
+            ControlUtilities.ResetAllControls(groupBoxInfoSentencia);
+            ControlUtilities.ResetAllControls(groupBoxInfoDocente);
 
         }
     
@@ -32,6 +37,7 @@ namespace UGELNorte.Resoluciones.Presentation
 
         //ValidateRegistration validateRegistration = new ValidateRegistration();
         private IResolucionService resolucionService;
+        ControlUtilities controlUtilities = new ControlUtilities();
         public string errorMessage;
 
         private void btnRegistrarResolucion_Click(object sender, EventArgs e)
@@ -50,8 +56,8 @@ namespace UGELNorte.Resoluciones.Presentation
                         NroResolucion = txtNroResolucion.Text.Trim(),
                         TipoResolucion = (TipoResolucion)cmbTipo.SelectedValue,
                         TipoUGEL = (TipoUGEL)cmbUGEL.SelectedValue,
-                        InstitucionEducativa = txtIIEE.Text.Trim(),
-                        ConceptoResolucion = txtConcepto.Text.Trim(),
+                        InstitucionEducativa = cmbIIEE.SelectedIndex + 1,
+                        ConceptoResolucion = cmbConcepto.SelectedIndex + 1,
                         SituacionResolucion = (SituacionResolucion)cmbSituacion.SelectedValue,
                         DNI = txtDNI.Text.Trim(),
                         ExpedienteJudicial = txtExpedienteJudicial.Text.Trim()
@@ -71,7 +77,9 @@ namespace UGELNorte.Resoluciones.Presentation
                             MessageBoxIcon.Information);
 
                         // Reset the screen
-                        this.ResetRegistration();
+                        ControlUtilities.ResetAllControls(groupBoxInfoResoluciones);
+                        ControlUtilities.ResetAllControls(groupBoxInfoSentencia);
+                        ControlUtilities.ResetAllControls(groupBoxInfoDocente);
                     }
                     else
                     {
@@ -100,20 +108,6 @@ namespace UGELNorte.Resoluciones.Presentation
 
         }
 
-        public void ResetRegistration()
-        {
-            txtNroProyecto.Text = string.Empty;
-            txtNroResolucion.Text = string.Empty;
-            cmbTipo.SelectedIndex = -1;
-            cmbUGEL.SelectedIndex = -1;
-            txtIIEE.Text = string.Empty;
-            txtConcepto.Text = string.Empty;
-            cmbSituacion.SelectedIndex = -1;
-            txtDNI.Text = string.Empty;
-            txtExpedienteJudicial.Text = string.Empty;
-      
-        }
-
         public bool ValidateRegistrationResolucion()
         {
             this.errorMessage = string.Empty;
@@ -138,12 +132,12 @@ namespace UGELNorte.Resoluciones.Presentation
                 this.AddErrorMessage(Resources.Registration_TipoUGEL_Requerido);
             }
 
-            if (txtIIEE.Text.Trim() == string.Empty)
+            if (cmbIIEE.Text.Trim() == string.Empty)
             {
                 this.AddErrorMessage(Resources.Registration_IIEE_Requerido);
             }
 
-            if (txtConcepto.Text.Trim() == string.Empty)
+            if (cmbConcepto.Text.Trim() == string.Empty)
             {
                 this.AddErrorMessage(Resources.Registration_Concepto_Requerido);
             }
@@ -191,8 +185,11 @@ namespace UGELNorte.Resoluciones.Presentation
         {
             cmbSituacion.DataSource = Enum.GetValues(typeof(SituacionResolucion));
             cmbTipo.DataSource = Enum.GetValues(typeof(TipoResolucion));
-            cmbUGEL.DataSource = Enum.GetValues(typeof(TipoUGEL));
+            cmbUGEL.DataSource = Enum.GetValues(typeof(TipoUGEL));        
+        }
 
+        private void btnImportarPDF_Click(object sender, EventArgs e)
+        {
             
         }
     }

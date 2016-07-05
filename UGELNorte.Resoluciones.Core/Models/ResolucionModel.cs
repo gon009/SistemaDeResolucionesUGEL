@@ -17,9 +17,9 @@ namespace UGELNorte.Resoluciones.Core.Models
 
         public TipoUGEL TipoUGEL { get; set; }
 
-        public string InstitucionEducativa { get; set; }
+        public int InstitucionEducativa { get; set; }
 
-        public string ConceptoResolucion { get; set; }
+        public int ConceptoResolucion { get; set; }
 
         public SituacionResolucion SituacionResolucion { get; set; }
 
