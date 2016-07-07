@@ -36,19 +36,19 @@
             this.lblApellidoPaterno = new System.Windows.Forms.Label();
             this.lblApellidoMaterno = new System.Windows.Forms.Label();
             this.lblNombres = new System.Windows.Forms.Label();
-            this.txtDNI = new System.Windows.Forms.TextBox();
-            this.txtApellidoPaterno = new System.Windows.Forms.TextBox();
-            this.txtApellidoMaterno = new System.Windows.Forms.TextBox();
-            this.txtNombres = new System.Windows.Forms.TextBox();
+            this.txtModDNI = new System.Windows.Forms.TextBox();
+            this.txtModApellidoPaterno = new System.Windows.Forms.TextBox();
+            this.txtModApellidoMaterno = new System.Windows.Forms.TextBox();
+            this.txtModNombres = new System.Windows.Forms.TextBox();
             this.groupBoxInfoSentencia = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblFechaSentencia = new System.Windows.Forms.Label();
             this.lblSentencia = new System.Windows.Forms.Label();
             this.lblExpedienteJudicial = new System.Windows.Forms.Label();
             this.lblMonto = new System.Windows.Forms.Label();
-            this.txtSentencia = new System.Windows.Forms.TextBox();
-            this.txtExpedienteJudicial = new System.Windows.Forms.TextBox();
-            this.txtMonto = new System.Windows.Forms.TextBox();
+            this.txtModSentencia = new System.Windows.Forms.TextBox();
+            this.txtModExpedienteJudicial = new System.Windows.Forms.TextBox();
+            this.txtModMonto = new System.Windows.Forms.TextBox();
             this.dtFechaSentencia = new System.Windows.Forms.DateTimePicker();
             this.btnModificarResolucion = new System.Windows.Forms.Button();
             this.groupBoxInfoResoluciones = new System.Windows.Forms.GroupBox();
@@ -60,14 +60,14 @@
             this.lblIIEE = new System.Windows.Forms.Label();
             this.lblConcepto = new System.Windows.Forms.Label();
             this.lblSituacion = new System.Windows.Forms.Label();
-            this.txtNroProyecto = new System.Windows.Forms.TextBox();
-            this.txtNroResolucion = new System.Windows.Forms.MaskedTextBox();
-            this.cmbTipo = new System.Windows.Forms.ComboBox();
-            this.cmbUGEL = new System.Windows.Forms.ComboBox();
-            this.cmbConcepto = new System.Windows.Forms.ComboBox();
-            this.cmbSituacion = new System.Windows.Forms.ComboBox();
-            this.txtIIEE = new System.Windows.Forms.TextBox();
+            this.txtModNroProyecto = new System.Windows.Forms.TextBox();
+            this.txtModNroResolucion = new System.Windows.Forms.MaskedTextBox();
+            this.cmbModTipo = new System.Windows.Forms.ComboBox();
+            this.cmbModUGEL = new System.Windows.Forms.ComboBox();
+            this.cmbModConcepto = new System.Windows.Forms.ComboBox();
+            this.cmbModSituacion = new System.Windows.Forms.ComboBox();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.cmbModIIEE = new System.Windows.Forms.ComboBox();
             this.panelModificarResoluciones.SuspendLayout();
             this.groupBoxInfoDocente.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -108,10 +108,10 @@
             this.tableLayoutPanel3.Controls.Add(this.lblApellidoPaterno, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.lblApellidoMaterno, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.lblNombres, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.txtDNI, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.txtApellidoPaterno, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.txtApellidoMaterno, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.txtNombres, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.txtModDNI, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.txtModApellidoPaterno, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.txtModApellidoMaterno, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.txtModNombres, 1, 3);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(19, 23);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 4;
@@ -158,33 +158,33 @@
             this.lblNombres.TabIndex = 3;
             this.lblNombres.Text = "Nombres:";
             // 
-            // txtDNI
+            // txtModDNI
             // 
-            this.txtDNI.Location = new System.Drawing.Point(112, 3);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(140, 24);
-            this.txtDNI.TabIndex = 18;
+            this.txtModDNI.Location = new System.Drawing.Point(112, 3);
+            this.txtModDNI.Name = "txtModDNI";
+            this.txtModDNI.Size = new System.Drawing.Size(140, 24);
+            this.txtModDNI.TabIndex = 18;
             // 
-            // txtApellidoPaterno
+            // txtModApellidoPaterno
             // 
-            this.txtApellidoPaterno.Location = new System.Drawing.Point(112, 44);
-            this.txtApellidoPaterno.Name = "txtApellidoPaterno";
-            this.txtApellidoPaterno.Size = new System.Drawing.Size(201, 24);
-            this.txtApellidoPaterno.TabIndex = 19;
+            this.txtModApellidoPaterno.Location = new System.Drawing.Point(112, 44);
+            this.txtModApellidoPaterno.Name = "txtModApellidoPaterno";
+            this.txtModApellidoPaterno.Size = new System.Drawing.Size(201, 24);
+            this.txtModApellidoPaterno.TabIndex = 19;
             // 
-            // txtApellidoMaterno
+            // txtModApellidoMaterno
             // 
-            this.txtApellidoMaterno.Location = new System.Drawing.Point(112, 85);
-            this.txtApellidoMaterno.Name = "txtApellidoMaterno";
-            this.txtApellidoMaterno.Size = new System.Drawing.Size(201, 24);
-            this.txtApellidoMaterno.TabIndex = 20;
+            this.txtModApellidoMaterno.Location = new System.Drawing.Point(112, 85);
+            this.txtModApellidoMaterno.Name = "txtModApellidoMaterno";
+            this.txtModApellidoMaterno.Size = new System.Drawing.Size(201, 24);
+            this.txtModApellidoMaterno.TabIndex = 20;
             // 
-            // txtNombres
+            // txtModNombres
             // 
-            this.txtNombres.Location = new System.Drawing.Point(112, 126);
-            this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(286, 24);
-            this.txtNombres.TabIndex = 21;
+            this.txtModNombres.Location = new System.Drawing.Point(112, 126);
+            this.txtModNombres.Name = "txtModNombres";
+            this.txtModNombres.Size = new System.Drawing.Size(286, 24);
+            this.txtModNombres.TabIndex = 21;
             // 
             // groupBoxInfoSentencia
             // 
@@ -205,9 +205,9 @@
             this.tableLayoutPanel2.Controls.Add(this.lblSentencia, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.lblExpedienteJudicial, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.lblMonto, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.txtSentencia, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.txtExpedienteJudicial, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.txtMonto, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.txtModSentencia, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.txtModExpedienteJudicial, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.txtModMonto, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.dtFechaSentencia, 1, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(19, 23);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -255,26 +255,26 @@
             this.lblMonto.TabIndex = 3;
             this.lblMonto.Text = "Monto:";
             // 
-            // txtSentencia
+            // txtModSentencia
             // 
-            this.txtSentencia.Location = new System.Drawing.Point(112, 44);
-            this.txtSentencia.Name = "txtSentencia";
-            this.txtSentencia.Size = new System.Drawing.Size(200, 24);
-            this.txtSentencia.TabIndex = 15;
+            this.txtModSentencia.Location = new System.Drawing.Point(112, 44);
+            this.txtModSentencia.Name = "txtModSentencia";
+            this.txtModSentencia.Size = new System.Drawing.Size(200, 24);
+            this.txtModSentencia.TabIndex = 15;
             // 
-            // txtExpedienteJudicial
+            // txtModExpedienteJudicial
             // 
-            this.txtExpedienteJudicial.Location = new System.Drawing.Point(112, 85);
-            this.txtExpedienteJudicial.Name = "txtExpedienteJudicial";
-            this.txtExpedienteJudicial.Size = new System.Drawing.Size(286, 24);
-            this.txtExpedienteJudicial.TabIndex = 16;
+            this.txtModExpedienteJudicial.Location = new System.Drawing.Point(112, 85);
+            this.txtModExpedienteJudicial.Name = "txtModExpedienteJudicial";
+            this.txtModExpedienteJudicial.Size = new System.Drawing.Size(286, 24);
+            this.txtModExpedienteJudicial.TabIndex = 16;
             // 
-            // txtMonto
+            // txtModMonto
             // 
-            this.txtMonto.Location = new System.Drawing.Point(112, 126);
-            this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(106, 24);
-            this.txtMonto.TabIndex = 17;
+            this.txtModMonto.Location = new System.Drawing.Point(112, 126);
+            this.txtModMonto.Name = "txtModMonto";
+            this.txtModMonto.Size = new System.Drawing.Size(106, 24);
+            this.txtModMonto.TabIndex = 17;
             // 
             // dtFechaSentencia
             // 
@@ -316,13 +316,13 @@
             this.tableLayoutPanel1.Controls.Add(this.lblIIEE, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.lblConcepto, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.lblSituacion, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.txtNroProyecto, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtNroResolucion, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cmbTipo, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.cmbUGEL, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.cmbConcepto, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.cmbSituacion, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.txtIIEE, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.txtModNroProyecto, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtModNroResolucion, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cmbModTipo, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cmbModUGEL, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.cmbModConcepto, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.cmbModSituacion, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.cmbModIIEE, 1, 4);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 22);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
@@ -399,58 +399,51 @@
             this.lblSituacion.TabIndex = 6;
             this.lblSituacion.Text = "Situacion:";
             // 
-            // txtNroProyecto
+            // txtModNroProyecto
             // 
-            this.txtNroProyecto.Location = new System.Drawing.Point(97, 3);
-            this.txtNroProyecto.Name = "txtNroProyecto";
-            this.txtNroProyecto.Size = new System.Drawing.Size(100, 24);
-            this.txtNroProyecto.TabIndex = 7;
+            this.txtModNroProyecto.Location = new System.Drawing.Point(97, 3);
+            this.txtModNroProyecto.Name = "txtModNroProyecto";
+            this.txtModNroProyecto.Size = new System.Drawing.Size(100, 24);
+            this.txtModNroProyecto.TabIndex = 7;
             // 
-            // txtNroResolucion
+            // txtModNroResolucion
             // 
-            this.txtNroResolucion.Location = new System.Drawing.Point(97, 46);
-            this.txtNroResolucion.Name = "txtNroResolucion";
-            this.txtNroResolucion.Size = new System.Drawing.Size(100, 24);
-            this.txtNroResolucion.TabIndex = 8;
+            this.txtModNroResolucion.Location = new System.Drawing.Point(97, 46);
+            this.txtModNroResolucion.Name = "txtModNroResolucion";
+            this.txtModNroResolucion.Size = new System.Drawing.Size(100, 24);
+            this.txtModNroResolucion.TabIndex = 8;
             // 
-            // cmbTipo
+            // cmbModTipo
             // 
-            this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(97, 89);
-            this.cmbTipo.Name = "cmbTipo";
-            this.cmbTipo.Size = new System.Drawing.Size(121, 26);
-            this.cmbTipo.TabIndex = 9;
+            this.cmbModTipo.FormattingEnabled = true;
+            this.cmbModTipo.Location = new System.Drawing.Point(97, 89);
+            this.cmbModTipo.Name = "cmbModTipo";
+            this.cmbModTipo.Size = new System.Drawing.Size(121, 26);
+            this.cmbModTipo.TabIndex = 9;
             // 
-            // cmbUGEL
+            // cmbModUGEL
             // 
-            this.cmbUGEL.FormattingEnabled = true;
-            this.cmbUGEL.Location = new System.Drawing.Point(97, 132);
-            this.cmbUGEL.Name = "cmbUGEL";
-            this.cmbUGEL.Size = new System.Drawing.Size(121, 26);
-            this.cmbUGEL.TabIndex = 10;
+            this.cmbModUGEL.FormattingEnabled = true;
+            this.cmbModUGEL.Location = new System.Drawing.Point(97, 132);
+            this.cmbModUGEL.Name = "cmbModUGEL";
+            this.cmbModUGEL.Size = new System.Drawing.Size(121, 26);
+            this.cmbModUGEL.TabIndex = 10;
             // 
-            // cmbConcepto
+            // cmbModConcepto
             // 
-            this.cmbConcepto.FormattingEnabled = true;
-            this.cmbConcepto.Location = new System.Drawing.Point(97, 218);
-            this.cmbConcepto.Name = "cmbConcepto";
-            this.cmbConcepto.Size = new System.Drawing.Size(121, 26);
-            this.cmbConcepto.TabIndex = 12;
+            this.cmbModConcepto.FormattingEnabled = true;
+            this.cmbModConcepto.Location = new System.Drawing.Point(97, 218);
+            this.cmbModConcepto.Name = "cmbModConcepto";
+            this.cmbModConcepto.Size = new System.Drawing.Size(121, 26);
+            this.cmbModConcepto.TabIndex = 12;
             // 
-            // cmbSituacion
+            // cmbModSituacion
             // 
-            this.cmbSituacion.FormattingEnabled = true;
-            this.cmbSituacion.Location = new System.Drawing.Point(97, 261);
-            this.cmbSituacion.Name = "cmbSituacion";
-            this.cmbSituacion.Size = new System.Drawing.Size(121, 26);
-            this.cmbSituacion.TabIndex = 13;
-            // 
-            // txtIIEE
-            // 
-            this.txtIIEE.Location = new System.Drawing.Point(97, 175);
-            this.txtIIEE.Name = "txtIIEE";
-            this.txtIIEE.Size = new System.Drawing.Size(272, 24);
-            this.txtIIEE.TabIndex = 11;
+            this.cmbModSituacion.FormattingEnabled = true;
+            this.cmbModSituacion.Location = new System.Drawing.Point(97, 261);
+            this.cmbModSituacion.Name = "cmbModSituacion";
+            this.cmbModSituacion.Size = new System.Drawing.Size(121, 26);
+            this.cmbModSituacion.TabIndex = 13;
             // 
             // lblTitulo
             // 
@@ -461,6 +454,14 @@
             this.lblTitulo.Size = new System.Drawing.Size(795, 31);
             this.lblTitulo.TabIndex = 3;
             this.lblTitulo.Text = "Modificar Resolucion - Sistema de Resoluciones - UGEL NORTE";
+            // 
+            // cmbModIIEE
+            // 
+            this.cmbModIIEE.FormattingEnabled = true;
+            this.cmbModIIEE.Location = new System.Drawing.Point(97, 175);
+            this.cmbModIIEE.Name = "cmbModIIEE";
+            this.cmbModIIEE.Size = new System.Drawing.Size(121, 26);
+            this.cmbModIIEE.TabIndex = 11;
             // 
             // ModificarResolucion
             // 
@@ -500,13 +501,12 @@
         private System.Windows.Forms.Label lblIIEE;
         private System.Windows.Forms.Label lblConcepto;
         private System.Windows.Forms.Label lblSituacion;
-        private System.Windows.Forms.TextBox txtNroProyecto;
-        private System.Windows.Forms.MaskedTextBox txtNroResolucion;
-        private System.Windows.Forms.ComboBox cmbTipo;
-        private System.Windows.Forms.ComboBox cmbUGEL;
-        private System.Windows.Forms.ComboBox cmbConcepto;
-        private System.Windows.Forms.ComboBox cmbSituacion;
-        private System.Windows.Forms.TextBox txtIIEE;
+        private System.Windows.Forms.TextBox txtModNroProyecto;
+        private System.Windows.Forms.MaskedTextBox txtModNroResolucion;
+        private System.Windows.Forms.ComboBox cmbModTipo;
+        private System.Windows.Forms.ComboBox cmbModUGEL;
+        private System.Windows.Forms.ComboBox cmbModConcepto;
+        private System.Windows.Forms.ComboBox cmbModSituacion;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.GroupBox groupBoxInfoSentencia;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -514,9 +514,9 @@
         private System.Windows.Forms.Label lblSentencia;
         private System.Windows.Forms.Label lblExpedienteJudicial;
         private System.Windows.Forms.Label lblMonto;
-        private System.Windows.Forms.TextBox txtSentencia;
-        private System.Windows.Forms.TextBox txtExpedienteJudicial;
-        private System.Windows.Forms.TextBox txtMonto;
+        private System.Windows.Forms.TextBox txtModSentencia;
+        private System.Windows.Forms.TextBox txtModExpedienteJudicial;
+        private System.Windows.Forms.TextBox txtModMonto;
         private System.Windows.Forms.DateTimePicker dtFechaSentencia;
         private System.Windows.Forms.GroupBox groupBoxInfoDocente;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
@@ -524,9 +524,10 @@
         private System.Windows.Forms.Label lblApellidoPaterno;
         private System.Windows.Forms.Label lblApellidoMaterno;
         private System.Windows.Forms.Label lblNombres;
-        private System.Windows.Forms.TextBox txtDNI;
-        private System.Windows.Forms.TextBox txtApellidoPaterno;
-        private System.Windows.Forms.TextBox txtApellidoMaterno;
-        private System.Windows.Forms.TextBox txtNombres;
+        private System.Windows.Forms.TextBox txtModDNI;
+        private System.Windows.Forms.TextBox txtModApellidoPaterno;
+        private System.Windows.Forms.TextBox txtModApellidoMaterno;
+        private System.Windows.Forms.TextBox txtModNombres;
+        private System.Windows.Forms.ComboBox cmbModIIEE;
     }
 }

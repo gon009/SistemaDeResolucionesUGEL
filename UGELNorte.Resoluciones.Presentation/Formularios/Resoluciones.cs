@@ -11,7 +11,7 @@ using UGELNorte.Resoluciones.Core.Enums;
 using UGELNorte.Resoluciones.Core.Utilities;
 using UGELNorte.Resoluciones.BusinessLogic.Services;
 using UGELNorte.Resoluciones.Core;
-using UGELNorte.Resoluciones.Presentation;
+using UGELNorte.Resoluciones.Presentation.Formularios;
 
 namespace UGELNorte.Resoluciones.Presentation
 {
@@ -243,17 +243,7 @@ namespace UGELNorte.Resoluciones.Presentation
 
         private void dataGridViewResoluciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int currentRow = dataGridViewResoluciones.SelectedCells[0].RowIndex;
-            //MessageBox.Show("cell content click");
-            try
-            {
-                string NroResolucion = dataGridViewResoluciones[0, currentRow].Value.ToString();
-                nroResolucionDelete = NroResolucion;
-            }
-            catch (Exception ex)
-            {
-
-            }
+          
         }
 
         private void dataGridViewResoluciones_SelectionChanged(object sender, EventArgs e)
@@ -283,6 +273,58 @@ namespace UGELNorte.Resoluciones.Presentation
                 this.ShowErrorMessage(ex);
             }
             */
+        }
+
+        private void dataGridViewResoluciones_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int currentRow = dataGridViewResoluciones.SelectedCells[0].RowIndex;
+            //MessageBox.Show("cell content click");
+            try
+            {
+                string NroResolucion = dataGridViewResoluciones[0, currentRow].Value.ToString();
+                nroResolucionDelete = NroResolucion;
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void dataGridViewResoluciones_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            ModificarResolucion formModificarResolucines = new ModificarResolucion();
+            formModificarResolucines.Show();
+
+            DataGridView dgv = (DataGridView)sender;
+
+            try
+            {
+                if (dgv.SelectedRows.Count > 0)
+                {
+                    string nroResolucion = dgv.SelectedRows[0].Cells[0].Value.ToString();
+                    nroResolucionDelete = nroResolucion;
+
+                    DataRow dataRow = this.resolucionService.GetResolucionByNro(nroResolucionDelete);
+
+                    //formModificarResolucines.tx
+
+
+                    /*
+
+                    txt2Name.Text = dataRow["Name"].ToString();
+                    dt2DateOfBirth.Value = Convert.ToDateTime(dataRow["DateOfBirth"]);
+                    cmb2Occupation.SelectedItem = (Occupation)dataRow["Occupation"];
+                    cmb2MaritalStatus.SelectedItem = (MaritalStatus)dataRow["MaritalStatus"];
+                    cmb2HealthStatus.SelectedItem = (HealthStatus)dataRow["HealthStatus"];
+                    txt2Salary.Text = dataRow["Salary"].ToString() == "0.0000" ? string.Empty : dataRow["Salary"].ToString();
+                    txt2NoOfChildren.Text = dataRow["NumberOfChildren"].ToString(); */
+                }
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
+            }            
+
         }
     }
 }

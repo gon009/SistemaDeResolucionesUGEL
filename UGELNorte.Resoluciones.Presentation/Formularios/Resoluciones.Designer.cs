@@ -573,6 +573,8 @@
             this.dataGridViewResoluciones.Size = new System.Drawing.Size(875, 313);
             this.dataGridViewResoluciones.TabIndex = 1;
             this.dataGridViewResoluciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewResoluciones_CellContentClick);
+            this.dataGridViewResoluciones.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewResoluciones_CellMouseClick);
+            this.dataGridViewResoluciones.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewResoluciones_CellMouseDoubleClick);
             this.dataGridViewResoluciones.SelectionChanged += new System.EventHandler(this.dataGridViewResoluciones_SelectionChanged);
             // 
             // d

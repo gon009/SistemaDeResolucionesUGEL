@@ -20,11 +20,11 @@ namespace UGELNorte.Resoluciones.DataAccess
             DataTable dataTable = new DataTable();
             DataRow dataRow;
 
-            using (OleDbDataAdapter dataAdapter = new OleDbDataAdapter())
+            using (SqlDataAdapter dataAdapter = new SqlDataAdapter())
             {
                 // Create the command and set its properties
-                dataAdapter.SelectCommand = new OleDbCommand();
-                dataAdapter.SelectCommand.Connection = new OleDbConnection(this.ConnectionString);
+                dataAdapter.SelectCommand = new SqlCommand();
+                dataAdapter.SelectCommand.Connection = new SqlConnection(this.ConnectionString);
                 dataAdapter.SelectCommand.CommandType = CommandType.Text;
                 dataAdapter.SelectCommand.CommandText = Scripts.sqlGetResolucionByNro;
 
