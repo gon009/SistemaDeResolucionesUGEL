@@ -39,6 +39,7 @@ namespace UGELNorte.Resoluciones.Presentation
         private IResolucionService resolucionService;
         ControlUtilities controlUtilities = new ControlUtilities();
         public string errorMessage;
+        private string nroResolucionDelete;
 
         private void btnRegistrarResolucion_Click(object sender, EventArgs e)
         {
@@ -191,6 +192,97 @@ namespace UGELNorte.Resoluciones.Presentation
         private void btnImportarPDF_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnBuscarResolucion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable data = this.resolucionService.SearchResolucion(txtBuscarNroProyecto.Text.Trim(), txtBuscarNroResolucion.Text.Trim());
+                this.LoadDataGridView(data);
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
+            }
+
+        }
+
+        private void LoadDataGridView(DataTable data)
+        {
+            // Data grid view column setting            
+            dataGridViewResoluciones.DataSource = data;
+            dataGridViewResoluciones.DataMember = data.TableName;
+            dataGridViewResoluciones.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        }
+
+        private void btnEliminarResolucion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var flag = this.resolucionService.DeleteResolucion(this.nroResolucionDelete);
+
+                if (flag)
+                {
+                    //DataTable data = this.resolucionService.GetAllResoluciones();
+                    //this.LoadDataGridView(data);
+
+                    MessageBox.Show(
+                        Resources.Delete_Satisfactorio_Mensaje,
+                        Resources.Delete_Satisfactorio_Mensaje_Titulo,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
+            }
+        }
+
+        private void dataGridViewResoluciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int currentRow = dataGridViewResoluciones.SelectedCells[0].RowIndex;
+            //MessageBox.Show("cell content click");
+            try
+            {
+                string NroResolucion = dataGridViewResoluciones[0, currentRow].Value.ToString();
+                nroResolucionDelete = NroResolucion;
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void dataGridViewResoluciones_SelectionChanged(object sender, EventArgs e)
+        {
+           /* DataGridView dgv = (DataGridView)sender;
+
+            try
+            {
+                if (dgv.SelectedRows.Count > 0)
+                {
+                    string NroResolucion = dgv.SelectedRows[0].Cells[0].Value.ToString();
+                    nroResolucion = NroResolucion;
+
+                    DataRow dataRow = this.resolucionService.GetResolucionByNro(nroResolucion);
+
+                    txt2Name.Text = dataRow["Name"].ToString();
+                    dt2DateOfBirth.Value = Convert.ToDateTime(dataRow["DateOfBirth"]);
+                    cmb2Occupation.SelectedItem = (Occupation)dataRow["Occupation"];
+                    cmb2MaritalStatus.SelectedItem = (MaritalStatus)dataRow["MaritalStatus"];
+                    cmb2HealthStatus.SelectedItem = (HealthStatus)dataRow["HealthStatus"];
+                    txt2Salary.Text = dataRow["Salary"].ToString() == "0.0000" ? string.Empty : dataRow["Salary"].ToString();
+                    txt2NoOfChildren.Text = dataRow["NumberOfChildren"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
+            }
+            */
         }
     }
 }

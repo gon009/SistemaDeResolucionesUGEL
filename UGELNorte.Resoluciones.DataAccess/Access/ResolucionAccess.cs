@@ -43,8 +43,9 @@ namespace UGELNorte.Resoluciones.DataAccess
 
         public DataTable GetAllResoluciones()
         {
+            
             DataTable dataTable = new DataTable();
-
+            /*
             using (OleDbDataAdapter oleDbDataAdapter = new OleDbDataAdapter())
             {
                 // Create the command and set its properties
@@ -58,30 +59,33 @@ namespace UGELNorte.Resoluciones.DataAccess
                 // Fill the datatable from adapter
                 oleDbDataAdapter.Fill(dataTable);
             }
-
+            */
             return dataTable;
+            
         }
 
-        public DataTable SearchResolucion(object NroProyecto, object NroResolucion, string operand)
+
+        public DataTable SearchResolucion(object NroProyecto, object NroResolucion)
         {
             DataTable dataTable = new DataTable();
 
-            using (OleDbDataAdapter oleDbDataAdapter = new OleDbDataAdapter())
+            using (SqlDataAdapter sqlDbDataAdapter = new SqlDataAdapter())
             {
+
                 // Create the command and set its properties
-                oleDbDataAdapter.SelectCommand = new OleDbCommand();
-                oleDbDataAdapter.SelectCommand.Connection = new OleDbConnection(this.ConnectionString);
-                oleDbDataAdapter.SelectCommand.CommandType = CommandType.Text;
+                sqlDbDataAdapter.SelectCommand = new SqlCommand();
+                sqlDbDataAdapter.SelectCommand.Connection = new SqlConnection(this.ConnectionString);
+                sqlDbDataAdapter.SelectCommand.CommandType = CommandType.Text;
 
                 // Assign the SQL to the command object
-                oleDbDataAdapter.SelectCommand.CommandText = string.Format(Scripts.SqlSearchResolucion, operand);
+                sqlDbDataAdapter.SelectCommand.CommandText = string.Format(Scripts.SqlSearchResolucion);
 
                 // Add the input parameters to the parameter collection
-                oleDbDataAdapter.SelectCommand.Parameters.AddWithValue("@NroResolucion", NroResolucion == null ? DBNull.Value : NroResolucion);
-                oleDbDataAdapter.SelectCommand.Parameters.AddWithValue("@NroProyecto", NroProyecto == null ? DBNull.Value : NroProyecto);
+                sqlDbDataAdapter.SelectCommand.Parameters.AddWithValue("@NroResolucion", NroResolucion == null ? DBNull.Value : NroResolucion);
+                sqlDbDataAdapter.SelectCommand.Parameters.AddWithValue("@NroProyecto", NroProyecto == null ? DBNull.Value : NroProyecto);
 
                 // Fill the table from adapter
-                oleDbDataAdapter.Fill(dataTable);
+                sqlDbDataAdapter.Fill(dataTable);
             }
 
             return dataTable;
@@ -153,20 +157,20 @@ namespace UGELNorte.Resoluciones.DataAccess
 
         public bool DeleteResolucion(string resolucion)
         {
-            using (OleDbCommand dbCommand = new OleDbCommand())
+            using (SqlCommand sqlCommand = new SqlCommand())
             {
                 // Set the command object properties
-                dbCommand.Connection = new OleDbConnection(this.ConnectionString);
-                dbCommand.CommandType = CommandType.Text;
-                dbCommand.CommandText = Scripts.sqlDeleteResolucion;
+                sqlCommand.Connection = new SqlConnection(this.ConnectionString);
+                sqlCommand.CommandType = CommandType.Text;
+                sqlCommand.CommandText = Scripts.sqlDeleteResolucion;
 
                 // Add the input parameter to the parameter collection
-                dbCommand.Parameters.AddWithValue("@NroResolucion", resolucion);
+                sqlCommand.Parameters.AddWithValue("@NroResolucion", resolucion);
 
                 // Open the connection, execute the query and close the connection
-                dbCommand.Connection.Open();
-                var rowsAffected = dbCommand.ExecuteNonQuery();
-                dbCommand.Connection.Close();
+                sqlCommand.Connection.Open();
+                var rowsAffected = sqlCommand.ExecuteNonQuery();
+                sqlCommand.Connection.Close();
 
                 return rowsAffected > 0;
             }

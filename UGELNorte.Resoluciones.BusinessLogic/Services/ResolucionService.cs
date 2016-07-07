@@ -27,9 +27,9 @@ namespace UGELNorte.Resoluciones.BusinessLogic.Services
             return this.resolucionAccess.GetAllResoluciones();
         }
 
-        public DataTable SearchResolucion(object NroResolucion, object NroProyecto, string operand)
+        public DataTable SearchResolucion(object NroResolucion, object NroProyecto)
         {
-            return this.resolucionAccess.SearchResolucion(NroProyecto, NroResolucion, operand);
+            return this.resolucionAccess.SearchResolucion(NroProyecto, NroResolucion);
         }
 
         public bool RegisterResolucion(ResolucionModel resolucion)

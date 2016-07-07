@@ -28,10 +28,10 @@ namespace UGELNorte.Resoluciones.DataAccess.SQL
 
          // Consulta para buscar una Resolucion
         public static readonly string SqlSearchResolucion = "Select" +
-            " IN_NroResolucion, IN_NroProyecto, IN_TipoResolucion, IN_UGEL, IN_InstitucionEducativa, " +
-            " IN_DNI, IN_Situacion, IN_Concepto, IN_ExpedienteJudicial" +
-            " From TBL_Resolucion Where (@NroResolucion Is NULL OR @NroResolucion = NroResolucion) {0}" +
-            " (@NroProyecto Is NULL OR @NroProyecto = NroProyecto)";
+            " IN_NroResolucion AS Resolucion, IN_NroProyecto AS Proyecto, IN_Tipo_Resolucion AS Tipo_Resolucion, IN_UGEL as UGEL, IN_InstitucionEducativa AS IIEE, " +
+            " IN_DNI AS DNI, IN_Situacion AS Situacion, IN_Concepto, IN_ExpedienteJudicial AS Exp_Judicial" +
+            " From TBL_Resolucion Where (@NroResolucion Is NULL OR @NroResolucion = IN_NroResolucion) OR" +
+            " (@NroProyecto Is NULL OR @NroProyecto = IN_NroProyecto)";
         
          // Consulta para actualizar o modificar una Resolucion
         public static readonly string sqlUpdateResolucion = "Update Resolucion " +
@@ -40,7 +40,7 @@ namespace UGELNorte.Resoluciones.DataAccess.SQL
             " Where ([IN_NroResolucion] = @NroResolucion)";
 
          // Consulta para eliminar una Resolucion
-        public static readonly string sqlDeleteResolucion = "Delete From Resolucion Where (IN_NroResolucion = @NroResolucion)";
+        public static readonly string sqlDeleteResolucion = "Delete From TBL_Resolucion Where (IN_NroResolucion = @NroResolucion)";
     }
 }
 

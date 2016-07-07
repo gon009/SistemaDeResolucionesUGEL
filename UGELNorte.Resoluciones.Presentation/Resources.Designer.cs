@@ -61,6 +61,24 @@ namespace UGELNorte.Resoluciones.Presentation {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Eliminacion de Resolucion satisfactoria.
+        /// </summary>
+        internal static string Delete_Satisfactorio_Mensaje {
+            get {
+                return ResourceManager.GetString("Delete_Satisfactorio_Mensaje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Eliminacion de Resolucion.
+        /// </summary>
+        internal static string Delete_Satisfactorio_Mensaje_Titulo {
+            get {
+                return ResourceManager.GetString("Delete_Satisfactorio_Mensaje_Titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Porfavor revisar lo siguiente.
         /// </summary>
         internal static string Error_Mensaje_Cabecera {
