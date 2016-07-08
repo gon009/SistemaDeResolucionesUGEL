@@ -6,7 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using UGELNorte.Resoluciones.Presentation.Formularios;
+using UGELNorte.Resoluciones.Core.Models;
 namespace UGELNorte.Resoluciones.Presentation.Formularios
 {
     public partial class ModificarResolucion : Form
@@ -14,6 +15,12 @@ namespace UGELNorte.Resoluciones.Presentation.Formularios
         public ModificarResolucion()
         {
             InitializeComponent();
+        }
+
+ 
+        private void ModificarResolucion_Load(object sender, EventArgs e)
+        {
+          
         }
     }
 }

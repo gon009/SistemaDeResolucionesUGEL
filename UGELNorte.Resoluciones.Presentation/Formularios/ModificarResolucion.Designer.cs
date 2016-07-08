@@ -66,8 +66,8 @@
             this.cmbModUGEL = new System.Windows.Forms.ComboBox();
             this.cmbModConcepto = new System.Windows.Forms.ComboBox();
             this.cmbModSituacion = new System.Windows.Forms.ComboBox();
-            this.lblTitulo = new System.Windows.Forms.Label();
             this.cmbModIIEE = new System.Windows.Forms.ComboBox();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.panelModificarResoluciones.SuspendLayout();
             this.groupBoxInfoDocente.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -418,7 +418,7 @@
             this.cmbModTipo.FormattingEnabled = true;
             this.cmbModTipo.Location = new System.Drawing.Point(97, 89);
             this.cmbModTipo.Name = "cmbModTipo";
-            this.cmbModTipo.Size = new System.Drawing.Size(121, 26);
+            this.cmbModTipo.Size = new System.Drawing.Size(221, 26);
             this.cmbModTipo.TabIndex = 9;
             // 
             // cmbModUGEL
@@ -426,7 +426,7 @@
             this.cmbModUGEL.FormattingEnabled = true;
             this.cmbModUGEL.Location = new System.Drawing.Point(97, 132);
             this.cmbModUGEL.Name = "cmbModUGEL";
-            this.cmbModUGEL.Size = new System.Drawing.Size(121, 26);
+            this.cmbModUGEL.Size = new System.Drawing.Size(209, 26);
             this.cmbModUGEL.TabIndex = 10;
             // 
             // cmbModConcepto
@@ -445,6 +445,14 @@
             this.cmbModSituacion.Size = new System.Drawing.Size(121, 26);
             this.cmbModSituacion.TabIndex = 13;
             // 
+            // cmbModIIEE
+            // 
+            this.cmbModIIEE.FormattingEnabled = true;
+            this.cmbModIIEE.Location = new System.Drawing.Point(97, 175);
+            this.cmbModIIEE.Name = "cmbModIIEE";
+            this.cmbModIIEE.Size = new System.Drawing.Size(121, 26);
+            this.cmbModIIEE.TabIndex = 11;
+            // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
@@ -454,14 +462,6 @@
             this.lblTitulo.Size = new System.Drawing.Size(795, 31);
             this.lblTitulo.TabIndex = 3;
             this.lblTitulo.Text = "Modificar Resolucion - Sistema de Resoluciones - UGEL NORTE";
-            // 
-            // cmbModIIEE
-            // 
-            this.cmbModIIEE.FormattingEnabled = true;
-            this.cmbModIIEE.Location = new System.Drawing.Point(97, 175);
-            this.cmbModIIEE.Name = "cmbModIIEE";
-            this.cmbModIIEE.Size = new System.Drawing.Size(121, 26);
-            this.cmbModIIEE.TabIndex = 11;
             // 
             // ModificarResolucion
             // 
@@ -473,6 +473,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModificarResolucion";
             this.Text = "ModificarResolucion";
+            this.Load += new System.EventHandler(this.ModificarResolucion_Load);
             this.panelModificarResoluciones.ResumeLayout(false);
             this.groupBoxInfoDocente.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -501,12 +502,6 @@
         private System.Windows.Forms.Label lblIIEE;
         private System.Windows.Forms.Label lblConcepto;
         private System.Windows.Forms.Label lblSituacion;
-        private System.Windows.Forms.TextBox txtModNroProyecto;
-        private System.Windows.Forms.MaskedTextBox txtModNroResolucion;
-        private System.Windows.Forms.ComboBox cmbModTipo;
-        private System.Windows.Forms.ComboBox cmbModUGEL;
-        private System.Windows.Forms.ComboBox cmbModConcepto;
-        private System.Windows.Forms.ComboBox cmbModSituacion;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.GroupBox groupBoxInfoSentencia;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -514,20 +509,26 @@
         private System.Windows.Forms.Label lblSentencia;
         private System.Windows.Forms.Label lblExpedienteJudicial;
         private System.Windows.Forms.Label lblMonto;
-        private System.Windows.Forms.TextBox txtModSentencia;
-        private System.Windows.Forms.TextBox txtModExpedienteJudicial;
-        private System.Windows.Forms.TextBox txtModMonto;
-        private System.Windows.Forms.DateTimePicker dtFechaSentencia;
         private System.Windows.Forms.GroupBox groupBoxInfoDocente;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label lblDNI;
         private System.Windows.Forms.Label lblApellidoPaterno;
         private System.Windows.Forms.Label lblApellidoMaterno;
         private System.Windows.Forms.Label lblNombres;
-        private System.Windows.Forms.TextBox txtModDNI;
-        private System.Windows.Forms.TextBox txtModApellidoPaterno;
-        private System.Windows.Forms.TextBox txtModApellidoMaterno;
-        private System.Windows.Forms.TextBox txtModNombres;
-        private System.Windows.Forms.ComboBox cmbModIIEE;
+        public System.Windows.Forms.TextBox txtModNroProyecto;
+        public System.Windows.Forms.MaskedTextBox txtModNroResolucion;
+        public System.Windows.Forms.ComboBox cmbModTipo;
+        public System.Windows.Forms.ComboBox cmbModUGEL;
+        public System.Windows.Forms.ComboBox cmbModConcepto;
+        public System.Windows.Forms.ComboBox cmbModSituacion;
+        public System.Windows.Forms.TextBox txtModSentencia;
+        public System.Windows.Forms.TextBox txtModExpedienteJudicial;
+        public System.Windows.Forms.TextBox txtModMonto;
+        public System.Windows.Forms.DateTimePicker dtFechaSentencia;
+        public System.Windows.Forms.TextBox txtModDNI;
+        public System.Windows.Forms.TextBox txtModApellidoPaterno;
+        public System.Windows.Forms.TextBox txtModApellidoMaterno;
+        public System.Windows.Forms.TextBox txtModNombres;
+        public System.Windows.Forms.ComboBox cmbModIIEE;
     }
 }

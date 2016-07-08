@@ -23,7 +23,7 @@ namespace UGELNorte.Resoluciones.Presentation
             this.InitializeComponent();
             this.InitializeDropDownList();
             this.resolucionService = new ResolucionService();
-
+            this.formModificarResolucion = new ModificarResolucion();
             ControlUtilities.ResetAllControls(groupBoxInfoResoluciones);
             ControlUtilities.ResetAllControls(groupBoxInfoSentencia);
             ControlUtilities.ResetAllControls(groupBoxInfoDocente);
@@ -40,7 +40,9 @@ namespace UGELNorte.Resoluciones.Presentation
         ControlUtilities controlUtilities = new ControlUtilities();
         public string errorMessage;
         private string nroResolucionDelete;
+        ModificarResolucion formModificarResolucion;
 
+     
         private void btnRegistrarResolucion_Click(object sender, EventArgs e)
         {
        
@@ -248,31 +250,9 @@ namespace UGELNorte.Resoluciones.Presentation
 
         private void dataGridViewResoluciones_SelectionChanged(object sender, EventArgs e)
         {
-           /* DataGridView dgv = (DataGridView)sender;
 
-            try
-            {
-                if (dgv.SelectedRows.Count > 0)
-                {
-                    string NroResolucion = dgv.SelectedRows[0].Cells[0].Value.ToString();
-                    nroResolucion = NroResolucion;
 
-                    DataRow dataRow = this.resolucionService.GetResolucionByNro(nroResolucion);
-
-                    txt2Name.Text = dataRow["Name"].ToString();
-                    dt2DateOfBirth.Value = Convert.ToDateTime(dataRow["DateOfBirth"]);
-                    cmb2Occupation.SelectedItem = (Occupation)dataRow["Occupation"];
-                    cmb2MaritalStatus.SelectedItem = (MaritalStatus)dataRow["MaritalStatus"];
-                    cmb2HealthStatus.SelectedItem = (HealthStatus)dataRow["HealthStatus"];
-                    txt2Salary.Text = dataRow["Salary"].ToString() == "0.0000" ? string.Empty : dataRow["Salary"].ToString();
-                    txt2NoOfChildren.Text = dataRow["NumberOfChildren"].ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                this.ShowErrorMessage(ex);
-            }
-            */
+          
         }
 
         private void dataGridViewResoluciones_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -292,9 +272,7 @@ namespace UGELNorte.Resoluciones.Presentation
 
         private void dataGridViewResoluciones_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            ModificarResolucion formModificarResolucines = new ModificarResolucion();
-            formModificarResolucines.Show();
-
+            formModificarResolucion.Close();
             DataGridView dgv = (DataGridView)sender;
 
             try
@@ -305,8 +283,8 @@ namespace UGELNorte.Resoluciones.Presentation
                     nroResolucionDelete = nroResolucion;
 
                     DataRow dataRow = this.resolucionService.GetResolucionByNro(nroResolucionDelete);
-
-                    //formModificarResolucines.tx
+                    formModificarResolucion.txtModNroResolucion.Text = dataRow["IN_NroResolucion"].ToString().Trim();
+                    formModificarResolucion.txtModNroProyecto.Text = dataRow["IN_NroProyecto"].ToString().Trim();
 
 
                     /*
@@ -323,8 +301,13 @@ namespace UGELNorte.Resoluciones.Presentation
             catch (Exception ex)
             {
                 this.ShowErrorMessage(ex);
-            }            
-
+            }
+            if (!formModificarResolucion.Visible)
+            {
+                // Add the message
+                formModificarResolucion.Show();
+            }
+         
         }
     }
 }
