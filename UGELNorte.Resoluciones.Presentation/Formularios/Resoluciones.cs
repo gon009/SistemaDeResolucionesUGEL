@@ -29,11 +29,17 @@ namespace UGELNorte.Resoluciones.Presentation
             ControlUtilities.ResetAllControls(groupBoxInfoDocente);
 
         }
-    
+
+      
+
         private void FormResoluciones_Load(object sender, EventArgs e)
         {
 
         }
+
+       
+
+
 
         //ValidateRegistration validateRegistration = new ValidateRegistration();
         private IResolucionService resolucionService;
@@ -64,6 +70,23 @@ namespace UGELNorte.Resoluciones.Presentation
                         SituacionResolucion = (SituacionResolucion)cmbSituacion.SelectedValue,
                         DNI = txtDNI.Text.Trim(),
                         ExpedienteJudicial = txtExpedienteJudicial.Text.Trim()
+                    };
+
+                    DocenteModel docenteModel = new DocenteModel()
+                    {
+                        DNI = Convert.ToInt16(txtDNI.Text.ToString().Trim()),
+                        apellidoMaterno = txtApellidoMaterno.Text.Trim(),
+                        apellidoPaterno = txtApellidoPaterno.Text.Trim(),
+                        Nombres = txtNombres.Text.Trim(),
+                    };
+
+                    SentenciaModel sentenciaModel = new SentenciaModel()
+                    {
+                        FechaSentencia = dtFechaSentencia.Value,
+                        Sentencia = txtSentencia.Text.Trim(),
+                        ExpedienteJudicial = txtExpedienteJudicial.Text.Trim(),
+                        Monto = float.Parse(txtMonto.Text.Trim())
+                   
                     };
 
                     // Call the service method and assign the return status to variable
@@ -220,14 +243,15 @@ namespace UGELNorte.Resoluciones.Presentation
 
         private void btnEliminarResolucion_Click(object sender, EventArgs e)
         {
+      
             try
             {
                 var flag = this.resolucionService.DeleteResolucion(this.nroResolucionDelete);
 
                 if (flag)
                 {
-                    //DataTable data = this.resolucionService.GetAllResoluciones();
-                    //this.LoadDataGridView(data);
+                    DataTable data = this.resolucionService.SearchResolucion(txtBuscarNroProyecto.Text.Trim(), txtBuscarNroResolucion.Text.Trim());
+                    this.LoadDataGridView(data);
 
                     MessageBox.Show(
                         Resources.Delete_Satisfactorio_Mensaje,
@@ -259,39 +283,39 @@ namespace UGELNorte.Resoluciones.Presentation
         {
             int currentRow = dataGridViewResoluciones.SelectedCells[0].RowIndex;
             //MessageBox.Show("cell content click");
-            try
-            {
-                string NroResolucion = dataGridViewResoluciones[0, currentRow].Value.ToString();
-                nroResolucionDelete = NroResolucion;
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
-
-        private void dataGridViewResoluciones_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            formModificarResolucion.Close();
             DataGridView dgv = (DataGridView)sender;
 
             try
             {
                 if (dgv.SelectedRows.Count > 0)
                 {
-                    string nroResolucion = dgv.SelectedRows[0].Cells[0].Value.ToString();
+                    string nroResolucion = dgv.SelectedRows[0].Cells[1].Value.ToString();
+                   
                     nroResolucionDelete = nroResolucion;
-
                     DataRow dataRow = this.resolucionService.GetResolucionByNro(nroResolucionDelete);
                     formModificarResolucion.txtModNroResolucion.Text = dataRow["IN_NroResolucion"].ToString().Trim();
                     formModificarResolucion.txtModNroProyecto.Text = dataRow["IN_NroProyecto"].ToString().Trim();
+                    formModificarResolucion.cmbModTipo.SelectedItem = (TipoResolucion)dataRow["IN_Tipo_Resolucion"];
+                    formModificarResolucion.cmbModUGEL.SelectedItem = (TipoUGEL)dataRow["IN_UGEL"];
+                    formModificarResolucion.cmbModIIEE.Text = dataRow["DA_InstitucionEducativa"].ToString().Trim(); ;
+                    formModificarResolucion.cmbModConcepto.Text = dataRow["DA_Concepto"].ToString().Trim(); ;
+                    formModificarResolucion.cmbModSituacion.SelectedItem = (SituacionResolucion)dataRow["IN_Situacion"];
 
+                    formModificarResolucion.dtFechaSentencia.Value = Convert.ToDateTime(dataRow["DA_FechaSentencia"]);
+                    formModificarResolucion.txtModSentencia.Text = dataRow["DA_Sentencia"].ToString().Trim();
+                    formModificarResolucion.txtModExpedienteJudicial.Text = dataRow["IN_ExpedienteJudicial"].ToString().Trim();
+                    formModificarResolucion.txtModMonto.Text = dataRow["DA_Monto"].ToString() == "0.0000" ? string.Empty : dataRow["DA_Monto"].ToString();
+
+                    formModificarResolucion.txtModDNI.Text = dataRow["IN_DNI"].ToString().Trim();
+                    formModificarResolucion.txtModApellidoPaterno.Text = dataRow["DA_ApellidoPaterno"].ToString().Trim();
+                    formModificarResolucion.txtModApellidoMaterno.Text = dataRow["DA_ApellidoMaterno"].ToString().Trim();
+                    formModificarResolucion.txtModNombres.Text = dataRow["DA_Nombres"].ToString().Trim();
 
                     /*
 
-                    txt2Name.Text = dataRow["Name"].ToString();
                     dt2DateOfBirth.Value = Convert.ToDateTime(dataRow["DateOfBirth"]);
                     cmb2Occupation.SelectedItem = (Occupation)dataRow["Occupation"];
+                    txt2Name.Text = dataRow["Name"].ToString();
                     cmb2MaritalStatus.SelectedItem = (MaritalStatus)dataRow["MaritalStatus"];
                     cmb2HealthStatus.SelectedItem = (HealthStatus)dataRow["HealthStatus"];
                     txt2Salary.Text = dataRow["Salary"].ToString() == "0.0000" ? string.Empty : dataRow["Salary"].ToString();
@@ -302,12 +326,20 @@ namespace UGELNorte.Resoluciones.Presentation
             {
                 this.ShowErrorMessage(ex);
             }
-            if (!formModificarResolucion.Visible)
-            {
-                // Add the message
-                formModificarResolucion.Show();
-            }
-         
+           
+
+        }
+
+        private void dataGridViewResoluciones_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+     
+            formModificarResolucion.ShowDialog();
+        }
+
+        private void FormResoluciones_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
+    
 }

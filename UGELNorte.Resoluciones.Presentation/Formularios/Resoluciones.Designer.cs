@@ -68,6 +68,7 @@
             this.cmbIIEE = new System.Windows.Forms.ComboBox();
             this.cmbConcepto = new System.Windows.Forms.ComboBox();
             this.tabPageBuscarModificarResol = new System.Windows.Forms.TabPage();
+            this.dataGridViewResoluciones = new System.Windows.Forms.DataGridView();
             this.d = new System.Windows.Forms.GroupBox();
             this.btnEliminarResolucion = new System.Windows.Forms.Button();
             this.lblBuscarNroResolucion = new System.Windows.Forms.Label();
@@ -77,7 +78,6 @@
             this.lblBuscarNroProyecto = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dataGridViewResoluciones = new System.Windows.Forms.DataGridView();
             this.panelResoluciones.SuspendLayout();
             this.tabCtrlResoluciones.SuspendLayout();
             this.tabPageRegResoluciones.SuspendLayout();
@@ -85,9 +85,9 @@
             this.groupBoxInfoSentencia.SuspendLayout();
             this.groupBoxInfoResoluciones.SuspendLayout();
             this.tabPageBuscarModificarResol.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResoluciones)).BeginInit();
             this.d.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResoluciones)).BeginInit();
             this.SuspendLayout();
             // 
             // panelResoluciones
@@ -565,6 +565,22 @@
             this.tabPageBuscarModificarResol.Text = "Gestion de Resoluciones";
             this.tabPageBuscarModificarResol.UseVisualStyleBackColor = true;
             // 
+            // dataGridViewResoluciones
+            // 
+            this.dataGridViewResoluciones.AllowUserToAddRows = false;
+            this.dataGridViewResoluciones.AllowUserToDeleteRows = false;
+            this.dataGridViewResoluciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewResoluciones.Location = new System.Drawing.Point(16, 119);
+            this.dataGridViewResoluciones.Name = "dataGridViewResoluciones";
+            this.dataGridViewResoluciones.ReadOnly = true;
+            this.dataGridViewResoluciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewResoluciones.Size = new System.Drawing.Size(875, 313);
+            this.dataGridViewResoluciones.TabIndex = 1;
+            this.dataGridViewResoluciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewResoluciones_CellContentClick);
+            this.dataGridViewResoluciones.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewResoluciones_CellMouseClick);
+            this.dataGridViewResoluciones.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewResoluciones_CellMouseDoubleClick);
+            this.dataGridViewResoluciones.SelectionChanged += new System.EventHandler(this.dataGridViewResoluciones_SelectionChanged);
+            // 
             // d
             // 
             this.d.Controls.Add(this.btnEliminarResolucion);
@@ -651,22 +667,6 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // dataGridViewResoluciones
-            // 
-            this.dataGridViewResoluciones.AllowUserToAddRows = false;
-            this.dataGridViewResoluciones.AllowUserToDeleteRows = false;
-            this.dataGridViewResoluciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewResoluciones.Location = new System.Drawing.Point(16, 119);
-            this.dataGridViewResoluciones.Name = "dataGridViewResoluciones";
-            this.dataGridViewResoluciones.ReadOnly = true;
-            this.dataGridViewResoluciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewResoluciones.Size = new System.Drawing.Size(875, 313);
-            this.dataGridViewResoluciones.TabIndex = 1;
-            this.dataGridViewResoluciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewResoluciones_CellContentClick);
-            this.dataGridViewResoluciones.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewResoluciones_CellMouseClick);
-            this.dataGridViewResoluciones.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewResoluciones_CellMouseDoubleClick);
-            this.dataGridViewResoluciones.SelectionChanged += new System.EventHandler(this.dataGridViewResoluciones_SelectionChanged);
-            // 
             // FormResoluciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -675,9 +675,11 @@
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelResoluciones);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormResoluciones";
             this.Text = "Sistema de Resoluciones v1.0 - UGEL NORTE";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormResoluciones_FormClosing);
             this.Load += new System.EventHandler(this.FormResoluciones_Load);
             this.panelResoluciones.ResumeLayout(false);
             this.tabCtrlResoluciones.ResumeLayout(false);
@@ -689,10 +691,10 @@
             this.groupBoxInfoResoluciones.ResumeLayout(false);
             this.groupBoxInfoResoluciones.PerformLayout();
             this.tabPageBuscarModificarResol.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResoluciones)).EndInit();
             this.d.ResumeLayout(false);
             this.d.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResoluciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

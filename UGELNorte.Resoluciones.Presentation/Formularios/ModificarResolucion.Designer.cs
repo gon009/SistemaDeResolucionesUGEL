@@ -293,6 +293,7 @@
             this.btnModificarResolucion.TabIndex = 8;
             this.btnModificarResolucion.Text = "Modificar Resolucion";
             this.btnModificarResolucion.UseVisualStyleBackColor = true;
+            this.btnModificarResolucion.Click += new System.EventHandler(this.btnModificarResolucion_Click);
             // 
             // groupBoxInfoResoluciones
             // 
@@ -434,7 +435,7 @@
             this.cmbModConcepto.FormattingEnabled = true;
             this.cmbModConcepto.Location = new System.Drawing.Point(97, 218);
             this.cmbModConcepto.Name = "cmbModConcepto";
-            this.cmbModConcepto.Size = new System.Drawing.Size(121, 26);
+            this.cmbModConcepto.Size = new System.Drawing.Size(272, 26);
             this.cmbModConcepto.TabIndex = 12;
             // 
             // cmbModSituacion
@@ -450,7 +451,7 @@
             this.cmbModIIEE.FormattingEnabled = true;
             this.cmbModIIEE.Location = new System.Drawing.Point(97, 175);
             this.cmbModIIEE.Name = "cmbModIIEE";
-            this.cmbModIIEE.Size = new System.Drawing.Size(121, 26);
+            this.cmbModIIEE.Size = new System.Drawing.Size(272, 26);
             this.cmbModIIEE.TabIndex = 11;
             // 
             // lblTitulo
@@ -470,9 +471,11 @@
             this.ClientSize = new System.Drawing.Size(890, 526);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.panelModificarResoluciones);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModificarResolucion";
             this.Text = "ModificarResolucion";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModificarResolucion_FormClosing);
             this.Load += new System.EventHandler(this.ModificarResolucion_Load);
             this.panelModificarResoluciones.ResumeLayout(false);
             this.groupBoxInfoDocente.ResumeLayout(false);
