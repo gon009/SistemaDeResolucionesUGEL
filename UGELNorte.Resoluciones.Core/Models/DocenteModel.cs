@@ -7,7 +7,7 @@ namespace UGELNorte.Resoluciones.Core.Models
 {
     public class DocenteModel
     {
-        public int DNI { get; set; }
+        public Int64 DNI { get; set; }
 
         public string apellidoPaterno { get; set; }
 

@@ -23,6 +23,8 @@ namespace UGELNorte.Resoluciones.Presentation
             this.InitializeComponent();
             this.InitializeDropDownList();
             this.resolucionService = new ResolucionService();
+            this.docenteService = new DocenteService();
+            this.sentenciaService = new SentenciaService();
             this.formModificarResolucion = new ModificarResolucion();
             ControlUtilities.ResetAllControls(groupBoxInfoResoluciones);
             ControlUtilities.ResetAllControls(groupBoxInfoSentencia);
@@ -43,6 +45,8 @@ namespace UGELNorte.Resoluciones.Presentation
 
         //ValidateRegistration validateRegistration = new ValidateRegistration();
         private IResolucionService resolucionService;
+        private IDocenteService docenteService;
+        private ISentenciaService sentenciaService;
         ControlUtilities controlUtilities = new ControlUtilities();
         public string errorMessage;
         private string nroResolucionDelete;
@@ -74,7 +78,7 @@ namespace UGELNorte.Resoluciones.Presentation
 
                     DocenteModel docenteModel = new DocenteModel()
                     {
-                        DNI = Convert.ToInt16(txtDNI.Text.ToString().Trim()),
+                        DNI = Convert.ToInt64(txtDNI.Text.ToString().Trim()),
                         apellidoMaterno = txtApellidoMaterno.Text.Trim(),
                         apellidoPaterno = txtApellidoPaterno.Text.Trim(),
                         Nombres = txtNombres.Text.Trim(),
@@ -90,10 +94,11 @@ namespace UGELNorte.Resoluciones.Presentation
                     };
 
                     // Call the service method and assign the return status to variable
-                    var success = this.resolucionService.RegisterResolucion(resolucionModel);
-
+                    var successResolucion = this.resolucionService.RegisterResolucion(resolucionModel);
+                    var successDocente = this.docenteService.RegisterDocente(docenteModel);
+                    var successSentencia = this.sentenciaService.RegisterSentencia(sentenciaModel);
                     // if status of success variable is true then display a information else display the error message
-                    if (success)
+                    if ((successResolucion)&&(successDocente)&&(successSentencia))
                     {
                         // display the message box
                         MessageBox.Show(
@@ -339,6 +344,37 @@ namespace UGELNorte.Resoluciones.Presentation
         private void FormResoluciones_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void dataGridViewResoluciones_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            try
+            {
+                    
+                if (e.ColumnIndex == 2)
+                {
+                    string value = Enum.GetName(typeof(TipoUGEL), e.Value).ToString();
+                    e.Value = value.Replace("_", " ");
+
+                }
+
+                if (e.ColumnIndex == 3)
+                {
+                    string value = Enum.GetName(typeof(TipoResolucion), e.Value).ToString();
+                    e.Value = value.Replace("_", " ");
+                }
+
+                if (e.ColumnIndex == 6)
+                {
+                    string value = Enum.GetName(typeof(SituacionResolucion), e.Value).ToString();
+                    e.Value = value.Replace("_", " ");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
+            }
         }
     }
     

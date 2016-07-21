@@ -57,7 +57,12 @@ namespace UGELNorte.Resoluciones.DataAccess.SQL
             " TBL_Docente (IN_DNI, DA_Nombres, DA_ApellidoPaterno, DA_ApellidoMaterno)" +
             " Values(@DNI, @Nombres, @ApellidoPaterno, @ApellidoMaterno)";
 
-         // Consulta para buscar una Resolucion
+        // Consulta SQL para registrar una sentencia
+        public static readonly string SqlInsertSentencia = "Insert Into" +
+            " TBL_Sentencia (IN_ExpedienteJudicial, DA_Sentencia, DA_FechaSentencia, DA_Monto)" +
+            " Values(@ExpedienteJudicial, @Sentencia, @FechaSentencia, @Monto)";
+
+        // Consulta para buscar una Resolucion
         public static readonly string SqlSearchResolucion = "Select" +
             " Resolucion.IN_NroProyecto, Resolucion.IN_NroResolucion, Resolucion.IN_Tipo_Resolucion, Resolucion.IN_UGEL," +
             " IIEE.DA_InstitucionEducativa, Concepto.DA_Concepto, Resolucion.IN_Situacion," +

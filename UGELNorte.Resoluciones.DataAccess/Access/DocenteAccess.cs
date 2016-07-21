@@ -24,7 +24,7 @@ namespace UGELNorte.Resoluciones.DataAccess.Access
                     sqlcommand.CommandText = Scripts.SqlInsertDocente;
                     sqlcommand.Connection = openConnection;
 
-                    sqlcommand.Parameters.AddWithValue("@DNI",(int)docente.DNI);
+                    sqlcommand.Parameters.AddWithValue("@DNI",(Int64)docente.DNI);
                     sqlcommand.Parameters.AddWithValue("@Nombres", docente.Nombres);
                     sqlcommand.Parameters.AddWithValue("@ApellidoPaterno", docente.apellidoPaterno);
                     sqlcommand.Parameters.AddWithValue("@ApellidoMaterno", docente.apellidoMaterno);
