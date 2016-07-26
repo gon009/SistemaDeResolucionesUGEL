@@ -30,18 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarResolucion));
             this.panelModificarResoluciones = new System.Windows.Forms.Panel();
-            this.groupBoxInfoDocente = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblDNI = new System.Windows.Forms.Label();
-            this.lblApellidoPaterno = new System.Windows.Forms.Label();
-            this.lblApellidoMaterno = new System.Windows.Forms.Label();
-            this.lblNombres = new System.Windows.Forms.Label();
-            this.txtModDNI = new System.Windows.Forms.TextBox();
-            this.txtModApellidoPaterno = new System.Windows.Forms.TextBox();
-            this.txtModApellidoMaterno = new System.Windows.Forms.TextBox();
-            this.txtModNombres = new System.Windows.Forms.TextBox();
             this.groupBoxInfoSentencia = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblDNIDocente = new System.Windows.Forms.Label();
+            this.txtModDNI = new System.Windows.Forms.TextBox();
             this.lblFechaSentencia = new System.Windows.Forms.Label();
             this.lblSentencia = new System.Windows.Forms.Label();
             this.lblExpedienteJudicial = new System.Windows.Forms.Label();
@@ -49,10 +40,9 @@
             this.txtModSentencia = new System.Windows.Forms.TextBox();
             this.txtModExpedienteJudicial = new System.Windows.Forms.TextBox();
             this.txtModMonto = new System.Windows.Forms.TextBox();
-            this.dtFechaSentencia = new System.Windows.Forms.DateTimePicker();
+            this.dtModFechaSentencia = new System.Windows.Forms.DateTimePicker();
             this.btnModificarResolucion = new System.Windows.Forms.Button();
             this.groupBoxInfoResoluciones = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lblNroProyecto = new System.Windows.Forms.Label();
             this.lblNroResolucion = new System.Windows.Forms.Label();
             this.lblTipo = new System.Windows.Forms.Label();
@@ -64,230 +54,130 @@
             this.txtModNroResolucion = new System.Windows.Forms.MaskedTextBox();
             this.cmbModTipo = new System.Windows.Forms.ComboBox();
             this.cmbModUGEL = new System.Windows.Forms.ComboBox();
-            this.cmbModConcepto = new System.Windows.Forms.ComboBox();
             this.cmbModSituacion = new System.Windows.Forms.ComboBox();
             this.cmbModIIEE = new System.Windows.Forms.ComboBox();
+            this.cmbModConcepto = new System.Windows.Forms.ComboBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panelModificarResoluciones.SuspendLayout();
-            this.groupBoxInfoDocente.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.groupBoxInfoSentencia.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.groupBoxInfoResoluciones.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelModificarResoluciones
             // 
-            this.panelModificarResoluciones.Controls.Add(this.groupBoxInfoDocente);
             this.panelModificarResoluciones.Controls.Add(this.groupBoxInfoSentencia);
             this.panelModificarResoluciones.Controls.Add(this.btnModificarResolucion);
             this.panelModificarResoluciones.Controls.Add(this.groupBoxInfoResoluciones);
             this.panelModificarResoluciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelModificarResoluciones.Location = new System.Drawing.Point(12, 73);
             this.panelModificarResoluciones.Name = "panelModificarResoluciones";
-            this.panelModificarResoluciones.Size = new System.Drawing.Size(866, 449);
+            this.panelModificarResoluciones.Size = new System.Drawing.Size(888, 362);
             this.panelModificarResoluciones.TabIndex = 0;
-            // 
-            // groupBoxInfoDocente
-            // 
-            this.groupBoxInfoDocente.Controls.Add(this.tableLayoutPanel3);
-            this.groupBoxInfoDocente.Location = new System.Drawing.Point(429, 221);
-            this.groupBoxInfoDocente.Name = "groupBoxInfoDocente";
-            this.groupBoxInfoDocente.Size = new System.Drawing.Size(437, 195);
-            this.groupBoxInfoDocente.TabIndex = 10;
-            this.groupBoxInfoDocente.TabStop = false;
-            this.groupBoxInfoDocente.Text = "Informacion de Docente";
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.64756F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.35243F));
-            this.tableLayoutPanel3.Controls.Add(this.lblDNI, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.lblApellidoPaterno, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.lblApellidoMaterno, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.lblNombres, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.txtModDNI, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.txtModApellidoPaterno, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.txtModApellidoMaterno, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.txtModNombres, 1, 3);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(19, 23);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 4;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(412, 166);
-            this.tableLayoutPanel3.TabIndex = 4;
-            // 
-            // lblDNI
-            // 
-            this.lblDNI.AutoSize = true;
-            this.lblDNI.Location = new System.Drawing.Point(3, 0);
-            this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(37, 18);
-            this.lblDNI.TabIndex = 0;
-            this.lblDNI.Text = "DNI:";
-            // 
-            // lblApellidoPaterno
-            // 
-            this.lblApellidoPaterno.AutoSize = true;
-            this.lblApellidoPaterno.Location = new System.Drawing.Point(3, 41);
-            this.lblApellidoPaterno.Name = "lblApellidoPaterno";
-            this.lblApellidoPaterno.Size = new System.Drawing.Size(64, 36);
-            this.lblApellidoPaterno.TabIndex = 1;
-            this.lblApellidoPaterno.Text = "Apellido Paterno:";
-            // 
-            // lblApellidoMaterno
-            // 
-            this.lblApellidoMaterno.AutoSize = true;
-            this.lblApellidoMaterno.Location = new System.Drawing.Point(3, 82);
-            this.lblApellidoMaterno.Name = "lblApellidoMaterno";
-            this.lblApellidoMaterno.Size = new System.Drawing.Size(67, 36);
-            this.lblApellidoMaterno.TabIndex = 2;
-            this.lblApellidoMaterno.Text = "Apellido Materno:";
-            // 
-            // lblNombres
-            // 
-            this.lblNombres.AutoSize = true;
-            this.lblNombres.Location = new System.Drawing.Point(3, 123);
-            this.lblNombres.Name = "lblNombres";
-            this.lblNombres.Size = new System.Drawing.Size(74, 18);
-            this.lblNombres.TabIndex = 3;
-            this.lblNombres.Text = "Nombres:";
-            // 
-            // txtModDNI
-            // 
-            this.txtModDNI.Location = new System.Drawing.Point(112, 3);
-            this.txtModDNI.Name = "txtModDNI";
-            this.txtModDNI.Size = new System.Drawing.Size(140, 24);
-            this.txtModDNI.TabIndex = 18;
-            // 
-            // txtModApellidoPaterno
-            // 
-            this.txtModApellidoPaterno.Location = new System.Drawing.Point(112, 44);
-            this.txtModApellidoPaterno.Name = "txtModApellidoPaterno";
-            this.txtModApellidoPaterno.Size = new System.Drawing.Size(201, 24);
-            this.txtModApellidoPaterno.TabIndex = 19;
-            // 
-            // txtModApellidoMaterno
-            // 
-            this.txtModApellidoMaterno.Location = new System.Drawing.Point(112, 85);
-            this.txtModApellidoMaterno.Name = "txtModApellidoMaterno";
-            this.txtModApellidoMaterno.Size = new System.Drawing.Size(201, 24);
-            this.txtModApellidoMaterno.TabIndex = 20;
-            // 
-            // txtModNombres
-            // 
-            this.txtModNombres.Location = new System.Drawing.Point(112, 126);
-            this.txtModNombres.Name = "txtModNombres";
-            this.txtModNombres.Size = new System.Drawing.Size(286, 24);
-            this.txtModNombres.TabIndex = 21;
             // 
             // groupBoxInfoSentencia
             // 
-            this.groupBoxInfoSentencia.Controls.Add(this.tableLayoutPanel2);
-            this.groupBoxInfoSentencia.Location = new System.Drawing.Point(422, 3);
+            this.groupBoxInfoSentencia.Controls.Add(this.lblDNIDocente);
+            this.groupBoxInfoSentencia.Controls.Add(this.txtModDNI);
+            this.groupBoxInfoSentencia.Controls.Add(this.lblFechaSentencia);
+            this.groupBoxInfoSentencia.Controls.Add(this.lblSentencia);
+            this.groupBoxInfoSentencia.Controls.Add(this.lblExpedienteJudicial);
+            this.groupBoxInfoSentencia.Controls.Add(this.lblMonto);
+            this.groupBoxInfoSentencia.Controls.Add(this.txtModSentencia);
+            this.groupBoxInfoSentencia.Controls.Add(this.txtModExpedienteJudicial);
+            this.groupBoxInfoSentencia.Controls.Add(this.txtModMonto);
+            this.groupBoxInfoSentencia.Controls.Add(this.dtModFechaSentencia);
+            this.groupBoxInfoSentencia.Location = new System.Drawing.Point(485, 8);
             this.groupBoxInfoSentencia.Name = "groupBoxInfoSentencia";
-            this.groupBoxInfoSentencia.Size = new System.Drawing.Size(437, 207);
-            this.groupBoxInfoSentencia.TabIndex = 9;
+            this.groupBoxInfoSentencia.Size = new System.Drawing.Size(390, 264);
+            this.groupBoxInfoSentencia.TabIndex = 10;
             this.groupBoxInfoSentencia.TabStop = false;
             this.groupBoxInfoSentencia.Text = "Informacion de Sentencia";
             // 
-            // tableLayoutPanel2
+            // lblDNIDocente
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.64756F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.35243F));
-            this.tableLayoutPanel2.Controls.Add(this.lblFechaSentencia, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lblSentencia, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.lblExpedienteJudicial, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.lblMonto, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.txtModSentencia, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.txtModExpedienteJudicial, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.txtModMonto, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.dtFechaSentencia, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(19, 23);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(412, 166);
-            this.tableLayoutPanel2.TabIndex = 1;
+            this.lblDNIDocente.AutoSize = true;
+            this.lblDNIDocente.Location = new System.Drawing.Point(23, 35);
+            this.lblDNIDocente.Name = "lblDNIDocente";
+            this.lblDNIDocente.Size = new System.Drawing.Size(97, 18);
+            this.lblDNIDocente.TabIndex = 26;
+            this.lblDNIDocente.Text = "DNI Docente:";
+            // 
+            // txtModDNI
+            // 
+            this.txtModDNI.Location = new System.Drawing.Point(132, 38);
+            this.txtModDNI.Name = "txtModDNI";
+            this.txtModDNI.Size = new System.Drawing.Size(200, 24);
+            this.txtModDNI.TabIndex = 27;
             // 
             // lblFechaSentencia
             // 
             this.lblFechaSentencia.AutoSize = true;
-            this.lblFechaSentencia.Location = new System.Drawing.Point(3, 0);
+            this.lblFechaSentencia.Location = new System.Drawing.Point(23, 75);
             this.lblFechaSentencia.Name = "lblFechaSentencia";
             this.lblFechaSentencia.Size = new System.Drawing.Size(77, 36);
-            this.lblFechaSentencia.TabIndex = 0;
-            this.lblFechaSentencia.Text = "Fecha de Sentencia:";
+            this.lblFechaSentencia.TabIndex = 18;
+            this.lblFechaSentencia.Text = "Fecha de \r\nSentencia:";
             // 
             // lblSentencia
             // 
             this.lblSentencia.AutoSize = true;
-            this.lblSentencia.Location = new System.Drawing.Point(3, 41);
+            this.lblSentencia.Location = new System.Drawing.Point(23, 116);
             this.lblSentencia.Name = "lblSentencia";
             this.lblSentencia.Size = new System.Drawing.Size(77, 18);
-            this.lblSentencia.TabIndex = 1;
+            this.lblSentencia.TabIndex = 19;
             this.lblSentencia.Text = "Sentencia:";
             // 
             // lblExpedienteJudicial
             // 
             this.lblExpedienteJudicial.AutoSize = true;
-            this.lblExpedienteJudicial.Location = new System.Drawing.Point(3, 82);
+            this.lblExpedienteJudicial.Location = new System.Drawing.Point(23, 157);
             this.lblExpedienteJudicial.Name = "lblExpedienteJudicial";
-            this.lblExpedienteJudicial.Size = new System.Drawing.Size(84, 36);
-            this.lblExpedienteJudicial.TabIndex = 2;
-            this.lblExpedienteJudicial.Text = "Expediente Judicial:";
+            this.lblExpedienteJudicial.Size = new System.Drawing.Size(80, 36);
+            this.lblExpedienteJudicial.TabIndex = 20;
+            this.lblExpedienteJudicial.Text = "Expediente\r\nJudicial:";
             // 
             // lblMonto
             // 
             this.lblMonto.AutoSize = true;
-            this.lblMonto.Location = new System.Drawing.Point(3, 123);
+            this.lblMonto.Location = new System.Drawing.Point(23, 198);
             this.lblMonto.Name = "lblMonto";
             this.lblMonto.Size = new System.Drawing.Size(55, 18);
-            this.lblMonto.TabIndex = 3;
+            this.lblMonto.TabIndex = 21;
             this.lblMonto.Text = "Monto:";
             // 
             // txtModSentencia
             // 
-            this.txtModSentencia.Location = new System.Drawing.Point(112, 44);
+            this.txtModSentencia.Location = new System.Drawing.Point(132, 119);
             this.txtModSentencia.Name = "txtModSentencia";
             this.txtModSentencia.Size = new System.Drawing.Size(200, 24);
-            this.txtModSentencia.TabIndex = 15;
+            this.txtModSentencia.TabIndex = 29;
             // 
             // txtModExpedienteJudicial
             // 
-            this.txtModExpedienteJudicial.Location = new System.Drawing.Point(112, 85);
+            this.txtModExpedienteJudicial.Location = new System.Drawing.Point(132, 160);
             this.txtModExpedienteJudicial.Name = "txtModExpedienteJudicial";
-            this.txtModExpedienteJudicial.Size = new System.Drawing.Size(286, 24);
-            this.txtModExpedienteJudicial.TabIndex = 16;
+            this.txtModExpedienteJudicial.Size = new System.Drawing.Size(249, 24);
+            this.txtModExpedienteJudicial.TabIndex = 30;
             // 
             // txtModMonto
             // 
-            this.txtModMonto.Location = new System.Drawing.Point(112, 126);
+            this.txtModMonto.Location = new System.Drawing.Point(132, 201);
             this.txtModMonto.Name = "txtModMonto";
             this.txtModMonto.Size = new System.Drawing.Size(106, 24);
-            this.txtModMonto.TabIndex = 17;
+            this.txtModMonto.TabIndex = 31;
             // 
-            // dtFechaSentencia
+            // dtModFechaSentencia
             // 
-            this.dtFechaSentencia.CustomFormat = "dd/MM/yyyy";
-            this.dtFechaSentencia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtFechaSentencia.Location = new System.Drawing.Point(112, 3);
-            this.dtFechaSentencia.Name = "dtFechaSentencia";
-            this.dtFechaSentencia.Size = new System.Drawing.Size(119, 24);
-            this.dtFechaSentencia.TabIndex = 14;
+            this.dtModFechaSentencia.CustomFormat = "dd/MM/yyyy";
+            this.dtModFechaSentencia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtModFechaSentencia.Location = new System.Drawing.Point(132, 78);
+            this.dtModFechaSentencia.Name = "dtModFechaSentencia";
+            this.dtModFechaSentencia.Size = new System.Drawing.Size(119, 24);
+            this.dtModFechaSentencia.TabIndex = 28;
             // 
             // btnModificarResolucion
             // 
-            this.btnModificarResolucion.Location = new System.Drawing.Point(123, 367);
+            this.btnModificarResolucion.Location = new System.Drawing.Point(590, 289);
             this.btnModificarResolucion.Name = "btnModificarResolucion";
             this.btnModificarResolucion.Size = new System.Drawing.Size(180, 49);
             this.btnModificarResolucion.TabIndex = 8;
@@ -297,162 +187,249 @@
             // 
             // groupBoxInfoResoluciones
             // 
-            this.groupBoxInfoResoluciones.Controls.Add(this.tableLayoutPanel1);
-            this.groupBoxInfoResoluciones.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxInfoResoluciones.Controls.Add(this.lblNroProyecto);
+            this.groupBoxInfoResoluciones.Controls.Add(this.lblNroResolucion);
+            this.groupBoxInfoResoluciones.Controls.Add(this.lblTipo);
+            this.groupBoxInfoResoluciones.Controls.Add(this.lblUGEL);
+            this.groupBoxInfoResoluciones.Controls.Add(this.lblIIEE);
+            this.groupBoxInfoResoluciones.Controls.Add(this.lblConcepto);
+            this.groupBoxInfoResoluciones.Controls.Add(this.lblSituacion);
+            this.groupBoxInfoResoluciones.Controls.Add(this.txtModNroProyecto);
+            this.groupBoxInfoResoluciones.Controls.Add(this.txtModNroResolucion);
+            this.groupBoxInfoResoluciones.Controls.Add(this.cmbModTipo);
+            this.groupBoxInfoResoluciones.Controls.Add(this.cmbModUGEL);
+            this.groupBoxInfoResoluciones.Controls.Add(this.cmbModSituacion);
+            this.groupBoxInfoResoluciones.Controls.Add(this.cmbModIIEE);
+            this.groupBoxInfoResoluciones.Controls.Add(this.cmbModConcepto);
+            this.groupBoxInfoResoluciones.Location = new System.Drawing.Point(15, 3);
             this.groupBoxInfoResoluciones.Name = "groupBoxInfoResoluciones";
-            this.groupBoxInfoResoluciones.Size = new System.Drawing.Size(398, 342);
-            this.groupBoxInfoResoluciones.TabIndex = 5;
+            this.groupBoxInfoResoluciones.Size = new System.Drawing.Size(452, 342);
+            this.groupBoxInfoResoluciones.TabIndex = 9;
             this.groupBoxInfoResoluciones.TabStop = false;
             this.groupBoxInfoResoluciones.Text = "Informacion de Resolucion";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.53763F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.46236F));
-            this.tableLayoutPanel1.Controls.Add(this.lblNroProyecto, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblNroResolucion, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblTipo, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblUGEL, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lblIIEE, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lblConcepto, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.lblSituacion, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.txtModNroProyecto, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtModNroResolucion, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cmbModTipo, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.cmbModUGEL, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.cmbModConcepto, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.cmbModSituacion, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.cmbModIIEE, 1, 4);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 22);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 7;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(372, 308);
-            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblNroProyecto
             // 
             this.lblNroProyecto.AutoSize = true;
-            this.lblNroProyecto.Location = new System.Drawing.Point(3, 0);
+            this.lblNroProyecto.Location = new System.Drawing.Point(23, 28);
             this.lblNroProyecto.Name = "lblNroProyecto";
             this.lblNroProyecto.Size = new System.Drawing.Size(72, 36);
-            this.lblNroProyecto.TabIndex = 0;
-            this.lblNroProyecto.Text = "Nro de Proyecto:";
+            this.lblNroProyecto.TabIndex = 16;
+            this.lblNroProyecto.Text = "Nro de \r\nProyecto:";
             // 
             // lblNroResolucion
             // 
             this.lblNroResolucion.AutoSize = true;
-            this.lblNroResolucion.Location = new System.Drawing.Point(3, 43);
+            this.lblNroResolucion.Location = new System.Drawing.Point(23, 71);
             this.lblNroResolucion.Name = "lblNroResolucion";
             this.lblNroResolucion.Size = new System.Drawing.Size(87, 36);
-            this.lblNroResolucion.TabIndex = 1;
-            this.lblNroResolucion.Text = "Nro De Resolucion:";
+            this.lblNroResolucion.TabIndex = 17;
+            this.lblNroResolucion.Text = "Nro De \r\nResolucion:";
             // 
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(3, 86);
+            this.lblTipo.Location = new System.Drawing.Point(23, 114);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(41, 18);
-            this.lblTipo.TabIndex = 2;
+            this.lblTipo.TabIndex = 18;
             this.lblTipo.Text = "Tipo:";
             // 
             // lblUGEL
             // 
             this.lblUGEL.AutoSize = true;
-            this.lblUGEL.Location = new System.Drawing.Point(3, 129);
+            this.lblUGEL.Location = new System.Drawing.Point(23, 157);
             this.lblUGEL.Name = "lblUGEL";
             this.lblUGEL.Size = new System.Drawing.Size(53, 18);
-            this.lblUGEL.TabIndex = 3;
+            this.lblUGEL.TabIndex = 19;
             this.lblUGEL.Text = "UGEL:";
             // 
             // lblIIEE
             // 
             this.lblIIEE.AutoSize = true;
-            this.lblIIEE.Location = new System.Drawing.Point(3, 172);
+            this.lblIIEE.Location = new System.Drawing.Point(23, 200);
             this.lblIIEE.Name = "lblIIEE";
-            this.lblIIEE.Size = new System.Drawing.Size(78, 36);
-            this.lblIIEE.TabIndex = 4;
-            this.lblIIEE.Text = "Institucion Educativa:";
+            this.lblIIEE.Size = new System.Drawing.Size(76, 36);
+            this.lblIIEE.TabIndex = 20;
+            this.lblIIEE.Text = "Institucion\r\nEducativa:";
             // 
             // lblConcepto
             // 
             this.lblConcepto.AutoSize = true;
-            this.lblConcepto.Location = new System.Drawing.Point(3, 215);
+            this.lblConcepto.Location = new System.Drawing.Point(23, 243);
             this.lblConcepto.Name = "lblConcepto";
             this.lblConcepto.Size = new System.Drawing.Size(77, 18);
-            this.lblConcepto.TabIndex = 5;
+            this.lblConcepto.TabIndex = 21;
             this.lblConcepto.Text = "Concepto:";
             // 
             // lblSituacion
             // 
             this.lblSituacion.AutoSize = true;
-            this.lblSituacion.Location = new System.Drawing.Point(3, 258);
+            this.lblSituacion.Location = new System.Drawing.Point(23, 286);
             this.lblSituacion.Name = "lblSituacion";
             this.lblSituacion.Size = new System.Drawing.Size(73, 18);
-            this.lblSituacion.TabIndex = 6;
+            this.lblSituacion.TabIndex = 22;
             this.lblSituacion.Text = "Situacion:";
             // 
             // txtModNroProyecto
             // 
-            this.txtModNroProyecto.Location = new System.Drawing.Point(97, 3);
+            this.txtModNroProyecto.Location = new System.Drawing.Point(119, 31);
             this.txtModNroProyecto.Name = "txtModNroProyecto";
             this.txtModNroProyecto.Size = new System.Drawing.Size(100, 24);
-            this.txtModNroProyecto.TabIndex = 7;
+            this.txtModNroProyecto.TabIndex = 20;
             // 
             // txtModNroResolucion
             // 
-            this.txtModNroResolucion.Location = new System.Drawing.Point(97, 46);
+            this.txtModNroResolucion.Enabled = false;
+            this.txtModNroResolucion.Location = new System.Drawing.Point(119, 74);
             this.txtModNroResolucion.Name = "txtModNroResolucion";
             this.txtModNroResolucion.Size = new System.Drawing.Size(100, 24);
-            this.txtModNroResolucion.TabIndex = 8;
+            this.txtModNroResolucion.TabIndex = 21;
             // 
             // cmbModTipo
             // 
+            this.cmbModTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbModTipo.FormattingEnabled = true;
-            this.cmbModTipo.Location = new System.Drawing.Point(97, 89);
+            this.cmbModTipo.Location = new System.Drawing.Point(119, 117);
             this.cmbModTipo.Name = "cmbModTipo";
-            this.cmbModTipo.Size = new System.Drawing.Size(221, 26);
-            this.cmbModTipo.TabIndex = 9;
+            this.cmbModTipo.Size = new System.Drawing.Size(121, 26);
+            this.cmbModTipo.TabIndex = 22;
             // 
             // cmbModUGEL
             // 
+            this.cmbModUGEL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbModUGEL.FormattingEnabled = true;
-            this.cmbModUGEL.Location = new System.Drawing.Point(97, 132);
+            this.cmbModUGEL.Location = new System.Drawing.Point(119, 160);
             this.cmbModUGEL.Name = "cmbModUGEL";
-            this.cmbModUGEL.Size = new System.Drawing.Size(209, 26);
-            this.cmbModUGEL.TabIndex = 10;
-            // 
-            // cmbModConcepto
-            // 
-            this.cmbModConcepto.FormattingEnabled = true;
-            this.cmbModConcepto.Location = new System.Drawing.Point(97, 218);
-            this.cmbModConcepto.Name = "cmbModConcepto";
-            this.cmbModConcepto.Size = new System.Drawing.Size(272, 26);
-            this.cmbModConcepto.TabIndex = 12;
+            this.cmbModUGEL.Size = new System.Drawing.Size(121, 26);
+            this.cmbModUGEL.TabIndex = 23;
             // 
             // cmbModSituacion
             // 
+            this.cmbModSituacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbModSituacion.FormattingEnabled = true;
-            this.cmbModSituacion.Location = new System.Drawing.Point(97, 261);
+            this.cmbModSituacion.Location = new System.Drawing.Point(119, 289);
             this.cmbModSituacion.Name = "cmbModSituacion";
             this.cmbModSituacion.Size = new System.Drawing.Size(121, 26);
-            this.cmbModSituacion.TabIndex = 13;
+            this.cmbModSituacion.TabIndex = 26;
             // 
             // cmbModIIEE
             // 
+            this.cmbModIIEE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbModIIEE.FormattingEnabled = true;
-            this.cmbModIIEE.Location = new System.Drawing.Point(97, 175);
+            this.cmbModIIEE.Items.AddRange(new object[] {
+            "12 de Octubre ",
+            "40001",
+            "40002 AL Aire Libre",
+            "40007 Gilberto Ochoa",
+            "40020",
+            "40025 Santa Dorotea",
+            "40035 Víctor Andrés Belaunde",
+            "40039 Santa María",
+            "40040 José Trinidad Morán",
+            "40040 José Trinidad Morán",
+            "40042 República de Francia",
+            "40045 Livia Bernal de Baltazar",
+            "40046 José Cornejo Acosta",
+            "40046 José Cornejo Acosta",
+            "40048 Antonio José de Sucre",
+            "40049 Francisco Bolognesi",
+            "40049 Francisco Bolognesi",
+            "40052 El Peruano del Milenio",
+            "40052 El Peruano del Milenio",
+            "40053 Manuel Tapia Fuentes",
+            "40055 Romeo Luna Victoria",
+            "40056 Horacio Zeballos Gamez",
+            "40056 Horacio Zeballos Gamez",
+            "40058 Ignacio Álvarez Thomas",
+            "40061 Estado de Suecia",
+            "40078 Sagrado Corazón",
+            "40081 Mazeyra Acosta",
+            "40092 José Domingo Zuzunaga",
+            "40099",
+            "40103 Libertadores de América",
+            "40106",
+            "40141 Virgen de Guadalupe",
+            "40173 Divino Niño Jesús",
+            "40202 Charlotte",
+            "40616",
+            "40616",
+            "40669 Deán Valdivia",
+            "40670 El Edén Fe y Alegría",
+            "40672 DoreanWillians",
+            "40677 San Miguel Febres Cordero",
+            "40694 Centro de Innovación Pedagógico ISPA",
+            "40705 Peruarbo",
+            "41003 Almirante Miguel Grau",
+            "41005 Héroes de Angamos ",
+            "41014 Fortunata Gutiérrez",
+            "41019 República de Venezuela",
+            "41024",
+            "41025 Doscientas Millas Peruanas",
+            "41026 María Murillo de Bernal",
+            "Arequipa",
+            "Casa de Caridad Artes y Oficios",
+            "Ciudad de Dios",
+            "Cristo Morado",
+            "Cristo Rey",
+            "Gran Pachacutec",
+            "Honorio Delgado Espinoza",
+            "Inicial Honorio Delgado Espinoza",
+            "Jose Canzina",
+            "José Caruana",
+            "La Recoleta",
+            "León XIII",
+            "León XIII – CIRCA",
+            "Mayta Capac",
+            "Micaela Bastidas",
+            "Newton (IEP) Gestion Privada",
+            "Nuestra Señora de la Asunción",
+            "Nuestra Señora de los Dolores",
+            "San Bernardo",
+            "San Juan Apóstol",
+            "San Juan Apóstol",
+            "San Pio X",
+            "Santo Tomás de Aquino",
+            "Santo Tomás de Aquino",
+            "Señor de los Milagros"});
+            this.cmbModIIEE.Location = new System.Drawing.Point(119, 203);
             this.cmbModIIEE.Name = "cmbModIIEE";
-            this.cmbModIIEE.Size = new System.Drawing.Size(272, 26);
-            this.cmbModIIEE.TabIndex = 11;
+            this.cmbModIIEE.Size = new System.Drawing.Size(258, 26);
+            this.cmbModIIEE.Sorted = true;
+            this.cmbModIIEE.TabIndex = 24;
+            // 
+            // cmbModConcepto
+            // 
+            this.cmbModConcepto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbModConcepto.FormattingEnabled = true;
+            this.cmbModConcepto.Items.AddRange(new object[] {
+            "Adeudo Bonificacion Familiar",
+            "Adeudo Bonificacion Preparacion de Clases",
+            "Adeudo DU 037",
+            "Adeudo Maestria",
+            "Ascenso",
+            "Asignación por Tiempo de Servicio",
+            "Bonificacion Familiar",
+            "Bonificacion Personal",
+            "Bono de Desepeño Escolar ECE",
+            "Bonos de Atracción",
+            "Cese",
+            "Compensatoria por Tiempo de Servicio",
+            "Contrato",
+            "Maestria",
+            "Nombramiento",
+            "Permuta",
+            "Reajuste de Bonificacion Personal",
+            "Reasignación",
+            "Reubicación",
+            "Rotación",
+            "Sepelio y Luto",
+            "Vacaciones Truncas"});
+            this.cmbModConcepto.Location = new System.Drawing.Point(119, 243);
+            this.cmbModConcepto.Name = "cmbModConcepto";
+            this.cmbModConcepto.Size = new System.Drawing.Size(313, 26);
+            this.cmbModConcepto.Sorted = true;
+            this.cmbModConcepto.TabIndex = 25;
             // 
             // lblTitulo
             // 
@@ -468,7 +445,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(890, 526);
+            this.ClientSize = new System.Drawing.Size(912, 456);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.panelModificarResoluciones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -478,15 +455,10 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModificarResolucion_FormClosing);
             this.Load += new System.EventHandler(this.ModificarResolucion_Load);
             this.panelModificarResoluciones.ResumeLayout(false);
-            this.groupBoxInfoDocente.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
             this.groupBoxInfoSentencia.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.groupBoxInfoSentencia.PerformLayout();
             this.groupBoxInfoResoluciones.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.groupBoxInfoResoluciones.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -496,8 +468,14 @@
 
         private System.Windows.Forms.Panel panelModificarResoluciones;
         private System.Windows.Forms.Button btnModificarResolucion;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.GroupBox groupBoxInfoSentencia;
+        private System.Windows.Forms.Label lblDNIDocente;
+        private System.Windows.Forms.Label lblFechaSentencia;
+        private System.Windows.Forms.Label lblSentencia;
+        private System.Windows.Forms.Label lblExpedienteJudicial;
+        private System.Windows.Forms.Label lblMonto;
         private System.Windows.Forms.GroupBox groupBoxInfoResoluciones;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblNroProyecto;
         private System.Windows.Forms.Label lblNroResolucion;
         private System.Windows.Forms.Label lblTipo;
@@ -505,33 +483,17 @@
         private System.Windows.Forms.Label lblIIEE;
         private System.Windows.Forms.Label lblConcepto;
         private System.Windows.Forms.Label lblSituacion;
-        private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.GroupBox groupBoxInfoSentencia;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label lblFechaSentencia;
-        private System.Windows.Forms.Label lblSentencia;
-        private System.Windows.Forms.Label lblExpedienteJudicial;
-        private System.Windows.Forms.Label lblMonto;
-        private System.Windows.Forms.GroupBox groupBoxInfoDocente;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label lblDNI;
-        private System.Windows.Forms.Label lblApellidoPaterno;
-        private System.Windows.Forms.Label lblApellidoMaterno;
-        private System.Windows.Forms.Label lblNombres;
+        public System.Windows.Forms.TextBox txtModDNI;
+        public System.Windows.Forms.TextBox txtModSentencia;
+        public System.Windows.Forms.TextBox txtModExpedienteJudicial;
+        public System.Windows.Forms.TextBox txtModMonto;
+        public System.Windows.Forms.DateTimePicker dtModFechaSentencia;
         public System.Windows.Forms.TextBox txtModNroProyecto;
         public System.Windows.Forms.MaskedTextBox txtModNroResolucion;
         public System.Windows.Forms.ComboBox cmbModTipo;
         public System.Windows.Forms.ComboBox cmbModUGEL;
-        public System.Windows.Forms.ComboBox cmbModConcepto;
         public System.Windows.Forms.ComboBox cmbModSituacion;
-        public System.Windows.Forms.TextBox txtModSentencia;
-        public System.Windows.Forms.TextBox txtModExpedienteJudicial;
-        public System.Windows.Forms.TextBox txtModMonto;
-        public System.Windows.Forms.DateTimePicker dtFechaSentencia;
-        public System.Windows.Forms.TextBox txtModDNI;
-        public System.Windows.Forms.TextBox txtModApellidoPaterno;
-        public System.Windows.Forms.TextBox txtModApellidoMaterno;
-        public System.Windows.Forms.TextBox txtModNombres;
         public System.Windows.Forms.ComboBox cmbModIIEE;
+        public System.Windows.Forms.ComboBox cmbModConcepto;
     }
 }

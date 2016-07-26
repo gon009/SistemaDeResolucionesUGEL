@@ -72,16 +72,8 @@ namespace UGELNorte.Resoluciones.Presentation
                         InstitucionEducativa = cmbIIEE.SelectedIndex + 1,
                         ConceptoResolucion = cmbConcepto.SelectedIndex + 1,
                         SituacionResolucion = (SituacionResolucion)cmbSituacion.SelectedValue,
-                        DNI = txtDNI.Text.Trim(),
-                        ExpedienteJudicial = txtExpedienteJudicial.Text.Trim()
-                    };
-
-                    DocenteModel docenteModel = new DocenteModel()
-                    {
-                        DNI = Convert.ToInt64(txtDNI.Text.ToString().Trim()),
-                        apellidoMaterno = txtApellidoMaterno.Text.Trim(),
-                        apellidoPaterno = txtApellidoPaterno.Text.Trim(),
-                        Nombres = txtNombres.Text.Trim(),
+                        DNI = txtDNIDocenteResolucion.Text.Trim(),
+                        //ExpedienteJudicial = txtExpedienteJudicial.Text.Trim()
                     };
 
                     SentenciaModel sentenciaModel = new SentenciaModel()
@@ -89,16 +81,14 @@ namespace UGELNorte.Resoluciones.Presentation
                         FechaSentencia = dtFechaSentencia.Value,
                         Sentencia = txtSentencia.Text.Trim(),
                         ExpedienteJudicial = txtExpedienteJudicial.Text.Trim(),
-                        Monto = float.Parse(txtMonto.Text.Trim())
-                   
+                        Monto = txtMonto.Text.Trim() == string.Empty ? 0 : Convert.ToDecimal(txtMonto.Text),
                     };
 
                     // Call the service method and assign the return status to variable
-                    var successResolucion = this.resolucionService.RegisterResolucion(resolucionModel);
-                    var successDocente = this.docenteService.RegisterDocente(docenteModel);
-                    var successSentencia = this.sentenciaService.RegisterSentencia(sentenciaModel);
+                    var successResolucion = this.resolucionService.RegisterResolucion(resolucionModel,sentenciaModel);
+              
                     // if status of success variable is true then display a information else display the error message
-                    if ((successResolucion)&&(successDocente)&&(successSentencia))
+                    if (successResolucion)
                     {
                         // display the message box
                         MessageBox.Show(
@@ -179,7 +169,7 @@ namespace UGELNorte.Resoluciones.Presentation
             }
 
 
-            if (txtDNI.Text.Trim() == string.Empty)
+            if (txtDNIDocenteResolucion.Text.Trim() == string.Empty)
             {
                 this.AddErrorMessage(Resources.Registration_DNI_Requerido);
             }
@@ -306,15 +296,16 @@ namespace UGELNorte.Resoluciones.Presentation
                     formModificarResolucion.cmbModConcepto.Text = dataRow["DA_Concepto"].ToString().Trim(); ;
                     formModificarResolucion.cmbModSituacion.SelectedItem = (SituacionResolucion)dataRow["IN_Situacion"];
 
-                    formModificarResolucion.dtFechaSentencia.Value = Convert.ToDateTime(dataRow["DA_FechaSentencia"]);
+                    formModificarResolucion.txtModDNI.Text = dataRow["IN_DNI"].ToString().Trim();
+                    formModificarResolucion.dtModFechaSentencia.Value = Convert.ToDateTime(dataRow["DA_FechaSentencia"]);
                     formModificarResolucion.txtModSentencia.Text = dataRow["DA_Sentencia"].ToString().Trim();
-                    formModificarResolucion.txtModExpedienteJudicial.Text = dataRow["IN_ExpedienteJudicial"].ToString().Trim();
+                    formModificarResolucion.txtModExpedienteJudicial.Text = dataRow["DA_ExpedienteJudicial"].ToString().Trim();
                     formModificarResolucion.txtModMonto.Text = dataRow["DA_Monto"].ToString() == "0.0000" ? string.Empty : dataRow["DA_Monto"].ToString();
 
-                    formModificarResolucion.txtModDNI.Text = dataRow["IN_DNI"].ToString().Trim();
-                    formModificarResolucion.txtModApellidoPaterno.Text = dataRow["DA_ApellidoPaterno"].ToString().Trim();
-                    formModificarResolucion.txtModApellidoMaterno.Text = dataRow["DA_ApellidoMaterno"].ToString().Trim();
-                    formModificarResolucion.txtModNombres.Text = dataRow["DA_Nombres"].ToString().Trim();
+                    //formModificarResolucion.txtModDNI.Text = dataRow["IN_DNI"].ToString().Trim();
+                    //formModificarResolucion.txtModApellidoPaterno.Text = dataRow["DA_ApellidoPaterno"].ToString().Trim();
+                    //formModificarResolucion.txtModApellidoMaterno.Text = dataRow["DA_ApellidoMaterno"].ToString().Trim();
+                    //formModificarResolucion.txtModNombres.Text = dataRow["DA_Nombres"].ToString().Trim();
 
                     /*
 
@@ -375,6 +366,73 @@ namespace UGELNorte.Resoluciones.Presentation
             {
                 this.ShowErrorMessage(ex);
             }
+        }
+
+        private void btnRegistrarDocente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                // Check if the validation passes
+                //if (this.ValidateRegistrationResolucion())
+                //{
+                    // Assign the values to the model
+                   
+                    DocenteModel docenteModel = new DocenteModel()
+                    {
+                        DNI = Convert.ToInt64(txtDNI.Text.ToString().Trim()),
+                        apellidoMaterno = txtApellidoMaterno.Text.Trim(),
+                        apellidoPaterno = txtApellidoPaterno.Text.Trim(),
+                        Nombres = txtNombres.Text.Trim(),
+                    };
+
+               
+                    // Call the service method and assign the return status to variable
+            
+                    var successDocente = this.docenteService.RegisterDocente(docenteModel);
+                
+                    // if status of success variable is true then display a information else display the error message
+                    if (successDocente)
+                    {
+                        // display the message box
+                        MessageBox.Show(
+                            Resources.Registration_Satisfactorio_Mensaje,
+                            Resources.Registration_Satisfactorio_Mensaje_Titulo,
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+
+                        // Reset the screen    
+                        ControlUtilities.ResetAllControls(groupBoxInfoDocente);
+                    }
+                    //else
+                    //{
+                    //    // display the error messge
+                    //    MessageBox.Show(
+                    //        Resources.Registration_Error_Mensaje,
+                    //        Resources.Registration_Error_Mensaje_Titulo,
+                    //        MessageBoxButtons.OK,
+                    //        MessageBoxIcon.Error);
+                    //}
+                //}
+                else
+                {
+                    // Display the validation failed message
+                    MessageBox.Show(
+                        this.errorMessage,
+                        Resources.Registration_Error_Mensaje_Titulo,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
+            }
+        }
+
+        private void btnRegistrarIIEE_Click(object sender, EventArgs e)
+        {
+
         }
     }
     

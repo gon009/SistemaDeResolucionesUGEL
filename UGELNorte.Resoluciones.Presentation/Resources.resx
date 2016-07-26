@@ -185,4 +185,12 @@
     <value>Oops! Error del sistema, por favor contacte al administrador</value>
     <comment>Error del sistema</comment>
   </data>
+  <data name="Update_Satisfactorio_Mensaje" xml:space="preserve">
+    <value>Modificacion de Resolucion guardada satisfactoriamente</value>
+    <comment>Mensaje de modificacion de resolucion</comment>
+  </data>
+  <data name="Update_Satisfactorio_Mensaje_Titulo" xml:space="preserve">
+    <value>Modificacion de Resolucion</value>
+    <comment>Titulo para el mensaje de modificacion de resolucion</comment>
+  </data>
 </root>

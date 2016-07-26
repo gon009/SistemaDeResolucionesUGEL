@@ -15,9 +15,9 @@ namespace UGELNorte.Resoluciones.BusinessLogic.Services
 
         DataTable SearchResolucion(object NroProyecto, object NroResolucion);
 
-        bool RegisterResolucion(ResolucionModel resolucion);
+        bool RegisterResolucion(ResolucionModel resolucion, SentenciaModel sentencia);
 
-        bool UpdateResolucion(ResolucionModel resolucion);
+        bool UpdateResolucion(ResolucionModel resolucion, SentenciaModel sentencia);
 
         bool DeleteResolucion(string resolucion);
 

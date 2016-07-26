@@ -11,10 +11,9 @@ namespace UGELNorte.Resoluciones.DataAccess.SQL
         public static readonly string sqlGetResolucionByNro = "Select" +
             " Resolucion.IN_NroProyecto, Resolucion.IN_NroResolucion, Resolucion.IN_Tipo_Resolucion, Resolucion.IN_UGEL," +
             " IIEE.DA_InstitucionEducativa, Concepto.DA_Concepto, Resolucion.IN_Situacion," +
-            " Sentencia.DA_FechaSentencia, Sentencia.DA_Sentencia, Sentencia.IN_ExpedienteJudicial, Sentencia.DA_Monto," +
+            " Resolucion.DA_FechaSentencia, Resolucion.DA_Sentencia, Resolucion.DA_ExpedienteJudicial, Resolucion.DA_Monto," +
             " Docente.IN_DNI, Docente.DA_ApellidoPaterno, Docente.DA_ApellidoMaterno, Docente.DA_Nombres" +
             " From TBL_Resolucion Resolucion" +
-            " INNER JOIN TBL_Sentencia Sentencia ON Resolucion.IN_ExpedienteJudicial = Sentencia.IN_ExpedienteJudicial" +
             " INNER JOIN TBL_Docente Docente ON Resolucion.IN_DNI = Docente.IN_DNI" +
             " INNER JOIN TBL_Institucion_Educativa IIEE ON Resolucion.IN_InstitucionEducativa = IIEE.IN_InstitucionEducativa" +
             " INNER JOIN TBL_Concepto Concepto ON Resolucion.IN_Concepto = Concepto.IN_Concepto" +
@@ -29,10 +28,9 @@ namespace UGELNorte.Resoluciones.DataAccess.SQL
         public static readonly string SqlGetAllResolucion = "Select" +
             " Resolucion.IN_NroProyecto, Resolucion.IN_NroResolucion, Resolucion.IN_Tipo_Resolucion, Resolucion.IN_UGEL," +
             " IIEE.DA_InstitucionEducativa, Concepto.DA_Concepto, Resolucion.IN_Situacion," +
-            " Sentencia.DA_FechaSentencia, Sentencia.DA_Sentencia, Sentencia.IN_ExpedienteJudicial, Sentencia.DA_Monto," +
+            " Resolucion.DA_FechaSentencia, Resolucion.DA_Sentencia, Resolucion.DA_ExpedienteJudicial, Sentencia.DA_Monto," +
             " Docente.IN_DNI, Docente.DA_ApellidoPaterno, Docente.DA_ApellidoMaterno, Docente.DA_Nombres" +
             " From TBL_Resolucion Resolucion" +
-            " INNER JOIN TBL_Sentencia Sentencia ON Resolucion.IN_ExpedienteJudicial = Sentencia.IN_ExpedienteJudicial" +
             " INNER JOIN TBL_Docente Docente ON Resolucion.IN_DNI = Docente.IN_DNI" +
             " INNER JOIN TBL_Institucion_Educativa IIEE ON Resolucion.IN_InstitucionEducativa = IIEE.IN_InstitucionEducativa" +
             " INNER JOIN TBL_Concepto Concepto ON Resolucion.IN_Concepto = Concepto.IN_Concepto";
@@ -43,9 +41,9 @@ namespace UGELNorte.Resoluciones.DataAccess.SQL
         // Consulta SQL para registrar una Resolucion
         public static readonly string SqlInsertResolucion = "Insert Into" +
             " TBL_Resolucion(IN_NroResolucion, IN_NroProyecto, IN_Tipo_Resolucion, IN_UGEL, IN_InstitucionEducativa, " +
-            " IN_DNI, IN_Situacion, IN_Concepto, IN_ExpedienteJudicial)" +
+            " IN_DNI, IN_Situacion, IN_Concepto, DA_ExpedienteJudicial, DA_Sentencia, DA_FechaSentencia, DA_Monto)" +
             " Values(@NroResolucion, @NroProyecto, @TipoResolucion, @UGEL, @InstitucionEducativa, "+
-            " @DNI, @Situacion, @Concepto , @ExpedienteJudicial )";
+            " @DNI, @Situacion, @Concepto , @ExpedienteJudicial , @Sentencia, @FechaSentencia, @Monto)";
 
         // Consulta SQL para registrar un expediente judicial
         public static readonly string SqlInsertExpedienteJudicial = "Insert Into" +
@@ -64,12 +62,11 @@ namespace UGELNorte.Resoluciones.DataAccess.SQL
 
         // Consulta para buscar una Resolucion
         public static readonly string SqlSearchResolucion = "Select" +
-            " Resolucion.IN_NroProyecto, Resolucion.IN_NroResolucion, Resolucion.IN_Tipo_Resolucion, Resolucion.IN_UGEL," +
+            " Resolucion.IN_NroProyecto, Resolucion.IN_NroResolucion, Resolucion.IN_UGEL, Resolucion.IN_Tipo_Resolucion," +
             " IIEE.DA_InstitucionEducativa, Concepto.DA_Concepto, Resolucion.IN_Situacion," +
-            " Sentencia.DA_FechaSentencia, Sentencia.DA_Sentencia, Sentencia.IN_ExpedienteJudicial, Sentencia.DA_Monto," +
+            " Resolucion.DA_FechaSentencia, Resolucion.DA_Sentencia, Resolucion.DA_ExpedienteJudicial, Resolucion.DA_Monto," +
             " Docente.IN_DNI, Docente.DA_ApellidoPaterno, Docente.DA_ApellidoMaterno, Docente.DA_Nombres" +
             " From TBL_Resolucion Resolucion" +
-            " INNER JOIN TBL_Sentencia Sentencia ON Resolucion.IN_ExpedienteJudicial = Sentencia.IN_ExpedienteJudicial" +
             " INNER JOIN TBL_Docente Docente ON Resolucion.IN_DNI = Docente.IN_DNI" +
             " INNER JOIN TBL_Institucion_Educativa IIEE ON Resolucion.IN_InstitucionEducativa = IIEE.IN_InstitucionEducativa" +
             " INNER JOIN TBL_Concepto Concepto ON Resolucion.IN_Concepto = Concepto.IN_Concepto" +
@@ -77,9 +74,10 @@ namespace UGELNorte.Resoluciones.DataAccess.SQL
             " (@NroProyecto Is NULL OR @NroProyecto = IN_NroProyecto)";
         
          // Consulta para actualizar o modificar una Resolucion
-        public static readonly string sqlUpdateResolucion = "Update Resolucion " +
+        public static readonly string sqlUpdateResolucion = "Update TBL_Resolucion " +
             " Set [IN_NroResolucion] = @NroResolucion, [IN_NroProyecto] = @NroProyecto, [IN_Tipo_Resolucion] = @TipoResolucion, [IN_UGEL] = @UGEL, " +
-            " [IN_InstitucionEducativa] = @InstitucionEducativa, [IN_DNI] = @DNI, [IN_Situacion] = @Situacion,  [IN_Concepto] = @Concepto, [IN_ExpedienteJudicial] = @ExpedienteJudicial" +
+            " [IN_InstitucionEducativa] = @InstitucionEducativa, [IN_DNI] = @DNI, [IN_Situacion] = @Situacion,  [IN_Concepto] = @Concepto, [DA_ExpedienteJudicial] = @ExpedienteJudicial," +
+            " [DA_Sentencia] = @Sentencia, [DA_FechaSentencia] = @FechaSentencia, [DA_Monto] = @Monto " +
             " Where ([IN_NroResolucion] = @NroResolucion)";
 
          // Consulta para eliminar una Resolucion

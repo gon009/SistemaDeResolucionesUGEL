@@ -34,16 +34,9 @@
             this.tabPageRegResoluciones = new System.Windows.Forms.TabPage();
             this.btnImportarPDF = new System.Windows.Forms.Button();
             this.btnRegistrarResolucion = new System.Windows.Forms.Button();
-            this.groupBoxInfoDocente = new System.Windows.Forms.GroupBox();
-            this.lblDNI = new System.Windows.Forms.Label();
-            this.lblApellidoPaterno = new System.Windows.Forms.Label();
-            this.lblApellidoMaterno = new System.Windows.Forms.Label();
-            this.lblNombres = new System.Windows.Forms.Label();
-            this.txtDNI = new System.Windows.Forms.TextBox();
-            this.txtApellidoPaterno = new System.Windows.Forms.TextBox();
-            this.txtApellidoMaterno = new System.Windows.Forms.TextBox();
-            this.txtNombres = new System.Windows.Forms.TextBox();
             this.groupBoxInfoSentencia = new System.Windows.Forms.GroupBox();
+            this.lblDNIDocente = new System.Windows.Forms.Label();
+            this.txtDNIDocenteResolucion = new System.Windows.Forms.TextBox();
             this.lblFechaSentencia = new System.Windows.Forms.Label();
             this.lblSentencia = new System.Windows.Forms.Label();
             this.lblExpedienteJudicial = new System.Windows.Forms.Label();
@@ -76,17 +69,37 @@
             this.txtBuscarNroResolucion = new System.Windows.Forms.MaskedTextBox();
             this.btnBuscarResolucion = new System.Windows.Forms.Button();
             this.lblBuscarNroProyecto = new System.Windows.Forms.Label();
+            this.tabPageDocentesEIIEE = new System.Windows.Forms.TabPage();
+            this.groupBoxInfoIIEE = new System.Windows.Forms.GroupBox();
+            this.btnRegistrarIIEE = new System.Windows.Forms.Button();
+            this.lblNombreInstitucionEducativa = new System.Windows.Forms.Label();
+            this.txtIIEEDireccion = new System.Windows.Forms.TextBox();
+            this.lblDireccion = new System.Windows.Forms.Label();
+            this.txtIIEE = new System.Windows.Forms.TextBox();
+            this.groupBoxInfoDocente = new System.Windows.Forms.GroupBox();
+            this.btnActualizarDocente = new System.Windows.Forms.Button();
+            this.lblDNI = new System.Windows.Forms.Label();
+            this.btnRegistrarDocente = new System.Windows.Forms.Button();
+            this.lblApellidoPaterno = new System.Windows.Forms.Label();
+            this.lblApellidoMaterno = new System.Windows.Forms.Label();
+            this.lblNombres = new System.Windows.Forms.Label();
+            this.txtDNI = new System.Windows.Forms.TextBox();
+            this.txtApellidoPaterno = new System.Windows.Forms.TextBox();
+            this.txtApellidoMaterno = new System.Windows.Forms.TextBox();
+            this.txtNombres = new System.Windows.Forms.TextBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelResoluciones.SuspendLayout();
             this.tabCtrlResoluciones.SuspendLayout();
             this.tabPageRegResoluciones.SuspendLayout();
-            this.groupBoxInfoDocente.SuspendLayout();
             this.groupBoxInfoSentencia.SuspendLayout();
             this.groupBoxInfoResoluciones.SuspendLayout();
             this.tabPageBuscarModificarResol.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResoluciones)).BeginInit();
             this.d.SuspendLayout();
+            this.tabPageDocentesEIIEE.SuspendLayout();
+            this.groupBoxInfoIIEE.SuspendLayout();
+            this.groupBoxInfoDocente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,6 +116,7 @@
             // 
             this.tabCtrlResoluciones.Controls.Add(this.tabPageRegResoluciones);
             this.tabCtrlResoluciones.Controls.Add(this.tabPageBuscarModificarResol);
+            this.tabCtrlResoluciones.Controls.Add(this.tabPageDocentesEIIEE);
             this.tabCtrlResoluciones.Location = new System.Drawing.Point(3, 6);
             this.tabCtrlResoluciones.Name = "tabCtrlResoluciones";
             this.tabCtrlResoluciones.SelectedIndex = 0;
@@ -113,7 +127,6 @@
             // 
             this.tabPageRegResoluciones.Controls.Add(this.btnImportarPDF);
             this.tabPageRegResoluciones.Controls.Add(this.btnRegistrarResolucion);
-            this.tabPageRegResoluciones.Controls.Add(this.groupBoxInfoDocente);
             this.tabPageRegResoluciones.Controls.Add(this.groupBoxInfoSentencia);
             this.tabPageRegResoluciones.Controls.Add(this.groupBoxInfoResoluciones);
             this.tabPageRegResoluciones.Location = new System.Drawing.Point(4, 27);
@@ -126,107 +139,28 @@
             // 
             // btnImportarPDF
             // 
-            this.btnImportarPDF.Location = new System.Drawing.Point(237, 374);
+            this.btnImportarPDF.Location = new System.Drawing.Point(674, 305);
             this.btnImportarPDF.Name = "btnImportarPDF";
             this.btnImportarPDF.Size = new System.Drawing.Size(180, 49);
-            this.btnImportarPDF.TabIndex = 5;
+            this.btnImportarPDF.TabIndex = 33;
             this.btnImportarPDF.Text = "Importar PDF";
             this.btnImportarPDF.UseVisualStyleBackColor = true;
             this.btnImportarPDF.Click += new System.EventHandler(this.btnImportarPDF_Click);
             // 
             // btnRegistrarResolucion
             // 
-            this.btnRegistrarResolucion.Location = new System.Drawing.Point(42, 374);
+            this.btnRegistrarResolucion.Location = new System.Drawing.Point(504, 305);
             this.btnRegistrarResolucion.Name = "btnRegistrarResolucion";
             this.btnRegistrarResolucion.Size = new System.Drawing.Size(164, 49);
-            this.btnRegistrarResolucion.TabIndex = 4;
+            this.btnRegistrarResolucion.TabIndex = 32;
             this.btnRegistrarResolucion.Text = "Registrar Resolucion";
             this.btnRegistrarResolucion.UseVisualStyleBackColor = true;
             this.btnRegistrarResolucion.Click += new System.EventHandler(this.btnRegistrarResolucion_Click);
             // 
-            // groupBoxInfoDocente
-            // 
-            this.groupBoxInfoDocente.Controls.Add(this.lblDNI);
-            this.groupBoxInfoDocente.Controls.Add(this.lblApellidoPaterno);
-            this.groupBoxInfoDocente.Controls.Add(this.lblApellidoMaterno);
-            this.groupBoxInfoDocente.Controls.Add(this.lblNombres);
-            this.groupBoxInfoDocente.Controls.Add(this.txtDNI);
-            this.groupBoxInfoDocente.Controls.Add(this.txtApellidoPaterno);
-            this.groupBoxInfoDocente.Controls.Add(this.txtApellidoMaterno);
-            this.groupBoxInfoDocente.Controls.Add(this.txtNombres);
-            this.groupBoxInfoDocente.Location = new System.Drawing.Point(438, 234);
-            this.groupBoxInfoDocente.Name = "groupBoxInfoDocente";
-            this.groupBoxInfoDocente.Size = new System.Drawing.Size(437, 195);
-            this.groupBoxInfoDocente.TabIndex = 3;
-            this.groupBoxInfoDocente.TabStop = false;
-            this.groupBoxInfoDocente.Text = "Informacion de Docente";
-            // 
-            // lblDNI
-            // 
-            this.lblDNI.AutoSize = true;
-            this.lblDNI.Location = new System.Drawing.Point(21, 22);
-            this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(37, 18);
-            this.lblDNI.TabIndex = 22;
-            this.lblDNI.Text = "DNI:";
-            // 
-            // lblApellidoPaterno
-            // 
-            this.lblApellidoPaterno.AutoSize = true;
-            this.lblApellidoPaterno.Location = new System.Drawing.Point(21, 63);
-            this.lblApellidoPaterno.Name = "lblApellidoPaterno";
-            this.lblApellidoPaterno.Size = new System.Drawing.Size(64, 36);
-            this.lblApellidoPaterno.TabIndex = 23;
-            this.lblApellidoPaterno.Text = "Apellido\r\nPaterno:";
-            // 
-            // lblApellidoMaterno
-            // 
-            this.lblApellidoMaterno.AutoSize = true;
-            this.lblApellidoMaterno.Location = new System.Drawing.Point(21, 104);
-            this.lblApellidoMaterno.Name = "lblApellidoMaterno";
-            this.lblApellidoMaterno.Size = new System.Drawing.Size(67, 36);
-            this.lblApellidoMaterno.TabIndex = 24;
-            this.lblApellidoMaterno.Text = "Apellido \r\nMaterno:";
-            // 
-            // lblNombres
-            // 
-            this.lblNombres.AutoSize = true;
-            this.lblNombres.Location = new System.Drawing.Point(21, 145);
-            this.lblNombres.Name = "lblNombres";
-            this.lblNombres.Size = new System.Drawing.Size(74, 18);
-            this.lblNombres.TabIndex = 25;
-            this.lblNombres.Text = "Nombres:";
-            // 
-            // txtDNI
-            // 
-            this.txtDNI.Location = new System.Drawing.Point(130, 25);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(140, 24);
-            this.txtDNI.TabIndex = 26;
-            // 
-            // txtApellidoPaterno
-            // 
-            this.txtApellidoPaterno.Location = new System.Drawing.Point(130, 66);
-            this.txtApellidoPaterno.Name = "txtApellidoPaterno";
-            this.txtApellidoPaterno.Size = new System.Drawing.Size(201, 24);
-            this.txtApellidoPaterno.TabIndex = 27;
-            // 
-            // txtApellidoMaterno
-            // 
-            this.txtApellidoMaterno.Location = new System.Drawing.Point(130, 107);
-            this.txtApellidoMaterno.Name = "txtApellidoMaterno";
-            this.txtApellidoMaterno.Size = new System.Drawing.Size(201, 24);
-            this.txtApellidoMaterno.TabIndex = 28;
-            // 
-            // txtNombres
-            // 
-            this.txtNombres.Location = new System.Drawing.Point(130, 148);
-            this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(286, 24);
-            this.txtNombres.TabIndex = 29;
-            // 
             // groupBoxInfoSentencia
             // 
+            this.groupBoxInfoSentencia.Controls.Add(this.lblDNIDocente);
+            this.groupBoxInfoSentencia.Controls.Add(this.txtDNIDocenteResolucion);
             this.groupBoxInfoSentencia.Controls.Add(this.lblFechaSentencia);
             this.groupBoxInfoSentencia.Controls.Add(this.lblSentencia);
             this.groupBoxInfoSentencia.Controls.Add(this.lblExpedienteJudicial);
@@ -235,17 +169,33 @@
             this.groupBoxInfoSentencia.Controls.Add(this.txtExpedienteJudicial);
             this.groupBoxInfoSentencia.Controls.Add(this.txtMonto);
             this.groupBoxInfoSentencia.Controls.Add(this.dtFechaSentencia);
-            this.groupBoxInfoSentencia.Location = new System.Drawing.Point(438, 21);
+            this.groupBoxInfoSentencia.Location = new System.Drawing.Point(491, 21);
             this.groupBoxInfoSentencia.Name = "groupBoxInfoSentencia";
-            this.groupBoxInfoSentencia.Size = new System.Drawing.Size(437, 207);
+            this.groupBoxInfoSentencia.Size = new System.Drawing.Size(402, 264);
             this.groupBoxInfoSentencia.TabIndex = 2;
             this.groupBoxInfoSentencia.TabStop = false;
             this.groupBoxInfoSentencia.Text = "Informacion de Sentencia";
             // 
+            // lblDNIDocente
+            // 
+            this.lblDNIDocente.AutoSize = true;
+            this.lblDNIDocente.Location = new System.Drawing.Point(23, 35);
+            this.lblDNIDocente.Name = "lblDNIDocente";
+            this.lblDNIDocente.Size = new System.Drawing.Size(97, 18);
+            this.lblDNIDocente.TabIndex = 26;
+            this.lblDNIDocente.Text = "DNI Docente:";
+            // 
+            // txtDNIDocenteResolucion
+            // 
+            this.txtDNIDocenteResolucion.Location = new System.Drawing.Point(132, 38);
+            this.txtDNIDocenteResolucion.Name = "txtDNIDocenteResolucion";
+            this.txtDNIDocenteResolucion.Size = new System.Drawing.Size(200, 24);
+            this.txtDNIDocenteResolucion.TabIndex = 27;
+            // 
             // lblFechaSentencia
             // 
             this.lblFechaSentencia.AutoSize = true;
-            this.lblFechaSentencia.Location = new System.Drawing.Point(21, 28);
+            this.lblFechaSentencia.Location = new System.Drawing.Point(23, 75);
             this.lblFechaSentencia.Name = "lblFechaSentencia";
             this.lblFechaSentencia.Size = new System.Drawing.Size(77, 36);
             this.lblFechaSentencia.TabIndex = 18;
@@ -254,7 +204,7 @@
             // lblSentencia
             // 
             this.lblSentencia.AutoSize = true;
-            this.lblSentencia.Location = new System.Drawing.Point(21, 69);
+            this.lblSentencia.Location = new System.Drawing.Point(23, 116);
             this.lblSentencia.Name = "lblSentencia";
             this.lblSentencia.Size = new System.Drawing.Size(77, 18);
             this.lblSentencia.TabIndex = 19;
@@ -263,7 +213,7 @@
             // lblExpedienteJudicial
             // 
             this.lblExpedienteJudicial.AutoSize = true;
-            this.lblExpedienteJudicial.Location = new System.Drawing.Point(21, 110);
+            this.lblExpedienteJudicial.Location = new System.Drawing.Point(23, 157);
             this.lblExpedienteJudicial.Name = "lblExpedienteJudicial";
             this.lblExpedienteJudicial.Size = new System.Drawing.Size(80, 36);
             this.lblExpedienteJudicial.TabIndex = 20;
@@ -272,7 +222,7 @@
             // lblMonto
             // 
             this.lblMonto.AutoSize = true;
-            this.lblMonto.Location = new System.Drawing.Point(21, 151);
+            this.lblMonto.Location = new System.Drawing.Point(23, 198);
             this.lblMonto.Name = "lblMonto";
             this.lblMonto.Size = new System.Drawing.Size(55, 18);
             this.lblMonto.TabIndex = 21;
@@ -280,33 +230,33 @@
             // 
             // txtSentencia
             // 
-            this.txtSentencia.Location = new System.Drawing.Point(130, 72);
+            this.txtSentencia.Location = new System.Drawing.Point(132, 119);
             this.txtSentencia.Name = "txtSentencia";
             this.txtSentencia.Size = new System.Drawing.Size(200, 24);
-            this.txtSentencia.TabIndex = 23;
+            this.txtSentencia.TabIndex = 29;
             // 
             // txtExpedienteJudicial
             // 
-            this.txtExpedienteJudicial.Location = new System.Drawing.Point(130, 113);
+            this.txtExpedienteJudicial.Location = new System.Drawing.Point(132, 160);
             this.txtExpedienteJudicial.Name = "txtExpedienteJudicial";
-            this.txtExpedienteJudicial.Size = new System.Drawing.Size(286, 24);
-            this.txtExpedienteJudicial.TabIndex = 24;
+            this.txtExpedienteJudicial.Size = new System.Drawing.Size(249, 24);
+            this.txtExpedienteJudicial.TabIndex = 30;
             // 
             // txtMonto
             // 
-            this.txtMonto.Location = new System.Drawing.Point(130, 154);
+            this.txtMonto.Location = new System.Drawing.Point(132, 201);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(106, 24);
-            this.txtMonto.TabIndex = 25;
+            this.txtMonto.TabIndex = 31;
             // 
             // dtFechaSentencia
             // 
             this.dtFechaSentencia.CustomFormat = "dd/MM/yyyy";
             this.dtFechaSentencia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtFechaSentencia.Location = new System.Drawing.Point(130, 31);
+            this.dtFechaSentencia.Location = new System.Drawing.Point(132, 78);
             this.dtFechaSentencia.Name = "dtFechaSentencia";
             this.dtFechaSentencia.Size = new System.Drawing.Size(119, 24);
-            this.dtFechaSentencia.TabIndex = 22;
+            this.dtFechaSentencia.TabIndex = 28;
             // 
             // groupBoxInfoResoluciones
             // 
@@ -326,7 +276,7 @@
             this.groupBoxInfoResoluciones.Controls.Add(this.cmbConcepto);
             this.groupBoxInfoResoluciones.Location = new System.Drawing.Point(19, 16);
             this.groupBoxInfoResoluciones.Name = "groupBoxInfoResoluciones";
-            this.groupBoxInfoResoluciones.Size = new System.Drawing.Size(398, 342);
+            this.groupBoxInfoResoluciones.Size = new System.Drawing.Size(452, 342);
             this.groupBoxInfoResoluciones.TabIndex = 1;
             this.groupBoxInfoResoluciones.TabStop = false;
             this.groupBoxInfoResoluciones.Text = "Informacion de Resolucion";
@@ -526,7 +476,7 @@
             this.cmbConcepto.FormattingEnabled = true;
             this.cmbConcepto.Items.AddRange(new object[] {
             "Adeudo Bonificacion Familiar",
-            "Adeudo Bonificacion Preparacion de Clases ",
+            "Adeudo Bonificacion Preparacion de Clases",
             "Adeudo DU 037",
             "Adeudo Maestria",
             "Ascenso",
@@ -549,7 +499,7 @@
             "Vacaciones Truncas"});
             this.cmbConcepto.Location = new System.Drawing.Point(119, 243);
             this.cmbConcepto.Name = "cmbConcepto";
-            this.cmbConcepto.Size = new System.Drawing.Size(258, 26);
+            this.cmbConcepto.Size = new System.Drawing.Size(313, 26);
             this.cmbConcepto.Sorted = true;
             this.cmbConcepto.TabIndex = 25;
             // 
@@ -649,6 +599,176 @@
             this.lblBuscarNroProyecto.TabIndex = 0;
             this.lblBuscarNroProyecto.Text = "Numero de\r\n Proyecto:";
             // 
+            // tabPageDocentesEIIEE
+            // 
+            this.tabPageDocentesEIIEE.Controls.Add(this.groupBoxInfoIIEE);
+            this.tabPageDocentesEIIEE.Controls.Add(this.groupBoxInfoDocente);
+            this.tabPageDocentesEIIEE.Location = new System.Drawing.Point(4, 27);
+            this.tabPageDocentesEIIEE.Name = "tabPageDocentesEIIEE";
+            this.tabPageDocentesEIIEE.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageDocentesEIIEE.Size = new System.Drawing.Size(910, 452);
+            this.tabPageDocentesEIIEE.TabIndex = 2;
+            this.tabPageDocentesEIIEE.Text = "Docentes e Instituciones";
+            this.tabPageDocentesEIIEE.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxInfoIIEE
+            // 
+            this.groupBoxInfoIIEE.Controls.Add(this.btnRegistrarIIEE);
+            this.groupBoxInfoIIEE.Controls.Add(this.lblNombreInstitucionEducativa);
+            this.groupBoxInfoIIEE.Controls.Add(this.txtIIEEDireccion);
+            this.groupBoxInfoIIEE.Controls.Add(this.lblDireccion);
+            this.groupBoxInfoIIEE.Controls.Add(this.txtIIEE);
+            this.groupBoxInfoIIEE.Location = new System.Drawing.Point(442, 35);
+            this.groupBoxInfoIIEE.Name = "groupBoxInfoIIEE";
+            this.groupBoxInfoIIEE.Size = new System.Drawing.Size(446, 182);
+            this.groupBoxInfoIIEE.TabIndex = 6;
+            this.groupBoxInfoIIEE.TabStop = false;
+            this.groupBoxInfoIIEE.Text = "Informacion de Institucion Educativa";
+            // 
+            // btnRegistrarIIEE
+            // 
+            this.btnRegistrarIIEE.Location = new System.Drawing.Point(156, 114);
+            this.btnRegistrarIIEE.Name = "btnRegistrarIIEE";
+            this.btnRegistrarIIEE.Size = new System.Drawing.Size(137, 41);
+            this.btnRegistrarIIEE.TabIndex = 30;
+            this.btnRegistrarIIEE.Text = "Registrar";
+            this.btnRegistrarIIEE.UseVisualStyleBackColor = true;
+            this.btnRegistrarIIEE.Click += new System.EventHandler(this.btnRegistrarIIEE_Click);
+            // 
+            // lblNombreInstitucionEducativa
+            // 
+            this.lblNombreInstitucionEducativa.AutoSize = true;
+            this.lblNombreInstitucionEducativa.Location = new System.Drawing.Point(21, 31);
+            this.lblNombreInstitucionEducativa.Name = "lblNombreInstitucionEducativa";
+            this.lblNombreInstitucionEducativa.Size = new System.Drawing.Size(78, 36);
+            this.lblNombreInstitucionEducativa.TabIndex = 30;
+            this.lblNombreInstitucionEducativa.Text = "Institucion \r\nEducativa:";
+            // 
+            // txtIIEEDireccion
+            // 
+            this.txtIIEEDireccion.Location = new System.Drawing.Point(130, 75);
+            this.txtIIEEDireccion.Name = "txtIIEEDireccion";
+            this.txtIIEEDireccion.Size = new System.Drawing.Size(269, 24);
+            this.txtIIEEDireccion.TabIndex = 33;
+            // 
+            // lblDireccion
+            // 
+            this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Location = new System.Drawing.Point(21, 72);
+            this.lblDireccion.Name = "lblDireccion";
+            this.lblDireccion.Size = new System.Drawing.Size(75, 18);
+            this.lblDireccion.TabIndex = 31;
+            this.lblDireccion.Text = "Direccion:";
+            // 
+            // txtIIEE
+            // 
+            this.txtIIEE.Location = new System.Drawing.Point(130, 34);
+            this.txtIIEE.Name = "txtIIEE";
+            this.txtIIEE.Size = new System.Drawing.Size(269, 24);
+            this.txtIIEE.TabIndex = 32;
+            // 
+            // groupBoxInfoDocente
+            // 
+            this.groupBoxInfoDocente.Controls.Add(this.btnActualizarDocente);
+            this.groupBoxInfoDocente.Controls.Add(this.lblDNI);
+            this.groupBoxInfoDocente.Controls.Add(this.btnRegistrarDocente);
+            this.groupBoxInfoDocente.Controls.Add(this.lblApellidoPaterno);
+            this.groupBoxInfoDocente.Controls.Add(this.lblApellidoMaterno);
+            this.groupBoxInfoDocente.Controls.Add(this.lblNombres);
+            this.groupBoxInfoDocente.Controls.Add(this.txtDNI);
+            this.groupBoxInfoDocente.Controls.Add(this.txtApellidoPaterno);
+            this.groupBoxInfoDocente.Controls.Add(this.txtApellidoMaterno);
+            this.groupBoxInfoDocente.Controls.Add(this.txtNombres);
+            this.groupBoxInfoDocente.Location = new System.Drawing.Point(27, 35);
+            this.groupBoxInfoDocente.Name = "groupBoxInfoDocente";
+            this.groupBoxInfoDocente.Size = new System.Drawing.Size(392, 266);
+            this.groupBoxInfoDocente.TabIndex = 4;
+            this.groupBoxInfoDocente.TabStop = false;
+            this.groupBoxInfoDocente.Text = "Informacion de Docente";
+            // 
+            // btnActualizarDocente
+            // 
+            this.btnActualizarDocente.Location = new System.Drawing.Point(211, 204);
+            this.btnActualizarDocente.Name = "btnActualizarDocente";
+            this.btnActualizarDocente.Size = new System.Drawing.Size(137, 41);
+            this.btnActualizarDocente.TabIndex = 30;
+            this.btnActualizarDocente.Text = "Actualizar";
+            this.btnActualizarDocente.UseVisualStyleBackColor = true;
+            // 
+            // lblDNI
+            // 
+            this.lblDNI.AutoSize = true;
+            this.lblDNI.Location = new System.Drawing.Point(21, 32);
+            this.lblDNI.Name = "lblDNI";
+            this.lblDNI.Size = new System.Drawing.Size(37, 18);
+            this.lblDNI.TabIndex = 22;
+            this.lblDNI.Text = "DNI:";
+            // 
+            // btnRegistrarDocente
+            // 
+            this.btnRegistrarDocente.Location = new System.Drawing.Point(24, 204);
+            this.btnRegistrarDocente.Name = "btnRegistrarDocente";
+            this.btnRegistrarDocente.Size = new System.Drawing.Size(137, 41);
+            this.btnRegistrarDocente.TabIndex = 5;
+            this.btnRegistrarDocente.Text = "Registrar";
+            this.btnRegistrarDocente.UseVisualStyleBackColor = true;
+            this.btnRegistrarDocente.Click += new System.EventHandler(this.btnRegistrarDocente_Click);
+            // 
+            // lblApellidoPaterno
+            // 
+            this.lblApellidoPaterno.AutoSize = true;
+            this.lblApellidoPaterno.Location = new System.Drawing.Point(21, 73);
+            this.lblApellidoPaterno.Name = "lblApellidoPaterno";
+            this.lblApellidoPaterno.Size = new System.Drawing.Size(64, 36);
+            this.lblApellidoPaterno.TabIndex = 23;
+            this.lblApellidoPaterno.Text = "Apellido\r\nPaterno:";
+            // 
+            // lblApellidoMaterno
+            // 
+            this.lblApellidoMaterno.AutoSize = true;
+            this.lblApellidoMaterno.Location = new System.Drawing.Point(21, 114);
+            this.lblApellidoMaterno.Name = "lblApellidoMaterno";
+            this.lblApellidoMaterno.Size = new System.Drawing.Size(67, 36);
+            this.lblApellidoMaterno.TabIndex = 24;
+            this.lblApellidoMaterno.Text = "Apellido \r\nMaterno:";
+            // 
+            // lblNombres
+            // 
+            this.lblNombres.AutoSize = true;
+            this.lblNombres.Location = new System.Drawing.Point(21, 155);
+            this.lblNombres.Name = "lblNombres";
+            this.lblNombres.Size = new System.Drawing.Size(74, 18);
+            this.lblNombres.TabIndex = 25;
+            this.lblNombres.Text = "Nombres:";
+            // 
+            // txtDNI
+            // 
+            this.txtDNI.Location = new System.Drawing.Point(130, 35);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(140, 24);
+            this.txtDNI.TabIndex = 26;
+            // 
+            // txtApellidoPaterno
+            // 
+            this.txtApellidoPaterno.Location = new System.Drawing.Point(130, 76);
+            this.txtApellidoPaterno.Name = "txtApellidoPaterno";
+            this.txtApellidoPaterno.Size = new System.Drawing.Size(201, 24);
+            this.txtApellidoPaterno.TabIndex = 27;
+            // 
+            // txtApellidoMaterno
+            // 
+            this.txtApellidoMaterno.Location = new System.Drawing.Point(130, 117);
+            this.txtApellidoMaterno.Name = "txtApellidoMaterno";
+            this.txtApellidoMaterno.Size = new System.Drawing.Size(201, 24);
+            this.txtApellidoMaterno.TabIndex = 28;
+            // 
+            // txtNombres
+            // 
+            this.txtNombres.Location = new System.Drawing.Point(130, 158);
+            this.txtNombres.Name = "txtNombres";
+            this.txtNombres.Size = new System.Drawing.Size(240, 24);
+            this.txtNombres.TabIndex = 29;
+            // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
@@ -685,8 +805,6 @@
             this.panelResoluciones.ResumeLayout(false);
             this.tabCtrlResoluciones.ResumeLayout(false);
             this.tabPageRegResoluciones.ResumeLayout(false);
-            this.groupBoxInfoDocente.ResumeLayout(false);
-            this.groupBoxInfoDocente.PerformLayout();
             this.groupBoxInfoSentencia.ResumeLayout(false);
             this.groupBoxInfoSentencia.PerformLayout();
             this.groupBoxInfoResoluciones.ResumeLayout(false);
@@ -695,6 +813,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResoluciones)).EndInit();
             this.d.ResumeLayout(false);
             this.d.PerformLayout();
+            this.tabPageDocentesEIIEE.ResumeLayout(false);
+            this.groupBoxInfoIIEE.ResumeLayout(false);
+            this.groupBoxInfoIIEE.PerformLayout();
+            this.groupBoxInfoDocente.ResumeLayout(false);
+            this.groupBoxInfoDocente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -708,7 +831,6 @@
         private System.Windows.Forms.TabPage tabPageRegResoluciones;
         private System.Windows.Forms.TabPage tabPageBuscarModificarResol;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.GroupBox groupBoxInfoDocente;
         private System.Windows.Forms.GroupBox groupBoxInfoSentencia;
         private System.Windows.Forms.GroupBox groupBoxInfoResoluciones;
         private System.Windows.Forms.Label lblTitulo;
@@ -717,14 +839,6 @@
         private System.Windows.Forms.Label lblBuscarNroProyecto;
         private System.Windows.Forms.Button btnBuscarResolucion;
         private System.Windows.Forms.Button btnImportarPDF;
-        private System.Windows.Forms.Label lblDNI;
-        private System.Windows.Forms.Label lblApellidoPaterno;
-        private System.Windows.Forms.Label lblApellidoMaterno;
-        private System.Windows.Forms.Label lblNombres;
-        private System.Windows.Forms.TextBox txtDNI;
-        private System.Windows.Forms.TextBox txtApellidoPaterno;
-        private System.Windows.Forms.TextBox txtApellidoMaterno;
-        private System.Windows.Forms.TextBox txtNombres;
         private System.Windows.Forms.Label lblFechaSentencia;
         private System.Windows.Forms.Label lblSentencia;
         private System.Windows.Forms.Label lblExpedienteJudicial;
@@ -752,6 +866,26 @@
         private System.Windows.Forms.Label lblBuscarNroResolucion;
         private System.Windows.Forms.Button btnEliminarResolucion;
         private System.Windows.Forms.DataGridView dataGridViewResoluciones;
+        private System.Windows.Forms.Label lblDNIDocente;
+        private System.Windows.Forms.TextBox txtDNIDocenteResolucion;
+        private System.Windows.Forms.TabPage tabPageDocentesEIIEE;
+        private System.Windows.Forms.GroupBox groupBoxInfoIIEE;
+        private System.Windows.Forms.Button btnRegistrarIIEE;
+        private System.Windows.Forms.Label lblNombreInstitucionEducativa;
+        private System.Windows.Forms.TextBox txtIIEEDireccion;
+        private System.Windows.Forms.Label lblDireccion;
+        private System.Windows.Forms.TextBox txtIIEE;
+        private System.Windows.Forms.GroupBox groupBoxInfoDocente;
+        private System.Windows.Forms.Button btnActualizarDocente;
+        private System.Windows.Forms.Label lblDNI;
+        private System.Windows.Forms.Button btnRegistrarDocente;
+        private System.Windows.Forms.Label lblApellidoPaterno;
+        private System.Windows.Forms.Label lblApellidoMaterno;
+        private System.Windows.Forms.Label lblNombres;
+        private System.Windows.Forms.TextBox txtDNI;
+        private System.Windows.Forms.TextBox txtApellidoPaterno;
+        private System.Windows.Forms.TextBox txtApellidoMaterno;
+        private System.Windows.Forms.TextBox txtNombres;
     }
 }
 

@@ -15,9 +15,9 @@ namespace UGELNorte.Resoluciones.DataAccess.Access
 
         DataTable SearchResolucion(object NroProyecto, object NroResolucion);
 
-        bool AddResolucion(ResolucionModel resolucion);
+        bool AddResolucion(ResolucionModel resolucion, SentenciaModel sentencia);
 
-        bool UpdateResolucion(ResolucionModel resolucion);
+        bool UpdateResolucion(ResolucionModel resolucion, SentenciaModel sentencia);
 
         bool DeleteResolucion(string resolucion);
     }

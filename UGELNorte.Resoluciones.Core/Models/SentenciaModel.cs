@@ -13,6 +13,6 @@ namespace UGELNorte.Resoluciones.Core.Models
 
         public string ExpedienteJudicial { get; set; }
 
-        public float Monto { get; set; }
+        public decimal Monto { get; set; }
     }
 }

@@ -32,14 +32,14 @@ namespace UGELNorte.Resoluciones.BusinessLogic.Services
             return this.resolucionAccess.SearchResolucion(NroProyecto, NroResolucion);
         }
 
-        public bool RegisterResolucion(ResolucionModel resolucion)
+        public bool RegisterResolucion(ResolucionModel resolucion, SentenciaModel sentencia)
         {
-            return this.resolucionAccess.AddResolucion(resolucion);
+            return this.resolucionAccess.AddResolucion(resolucion,sentencia);
         }
 
-        public bool UpdateResolucion(ResolucionModel resolucion)
+        public bool UpdateResolucion(ResolucionModel resolucion, SentenciaModel sentencia )
         {
-            return this.resolucionAccess.UpdateResolucion(resolucion);
+            return this.resolucionAccess.UpdateResolucion(resolucion, sentencia);
         }
 
         public bool DeleteResolucion(string resolucion)

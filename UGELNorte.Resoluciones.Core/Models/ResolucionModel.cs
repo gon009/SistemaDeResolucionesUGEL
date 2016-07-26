@@ -25,9 +25,6 @@ namespace UGELNorte.Resoluciones.Core.Models
 
         public string DNI { get; set; } 
 
-        public string ExpedienteJudicial { get; set; }
-
-
 
     }
 }

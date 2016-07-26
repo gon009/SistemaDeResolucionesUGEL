@@ -44,6 +44,12 @@ namespace UGELNorte.Resoluciones.Core.Utilities
                     ListBox listBox = (ListBox)control;
                     listBox.ClearSelected();
                 }
+
+                if (control is DateTimePicker)
+                {
+                    DateTimePicker dateTimePicker = (DateTimePicker)control;
+                    dateTimePicker.Value = DateTime.Today;
+                }
             }
         }
     }
