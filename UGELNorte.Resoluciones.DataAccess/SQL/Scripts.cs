@@ -19,6 +19,13 @@ namespace UGELNorte.Resoluciones.DataAccess.SQL
             " INNER JOIN TBL_Concepto Concepto ON Resolucion.IN_Concepto = Concepto.IN_Concepto" +
             " Where IN_NroResolucion = @NroResolucion";
 
+        // Consulta SQL para obtener un Docente por su numero
+
+        public static readonly string sqlGetDocenteByDNI = "Select " +
+            " IN_DNI, DA_Nombres, DA_ApellidoPaterno, DA_ApellidoMaterno " +
+            " from TBL_Docente " +
+            " Where IN_DNI = @DNI ";
+   
         // Consulta SQL para obtener todas las Resoluciones
         //public static readonly string SqlGetAllResolucion = "Select" +
         //    " IN_NroResolucion, IN_NroProyecto, IN_Tipo_Resolucion, IN_UGEL, IN_InstitucionEducativa, " +
@@ -35,8 +42,10 @@ namespace UGELNorte.Resoluciones.DataAccess.SQL
             " INNER JOIN TBL_Institucion_Educativa IIEE ON Resolucion.IN_InstitucionEducativa = IIEE.IN_InstitucionEducativa" +
             " INNER JOIN TBL_Concepto Concepto ON Resolucion.IN_Concepto = Concepto.IN_Concepto";
 
-
-
+        // Consulta SQL para obtener todos los docentes
+        public static readonly string SqlGetAllDocentes = "Select " +
+            " IN_DNI, DA_Nombres, DA_ApellidoPaterno, DA_ApellidoMaterno " +
+            " from TBL_Docente";
 
         // Consulta SQL para registrar una Resolucion
         public static readonly string SqlInsertResolucion = "Insert Into" +
@@ -80,7 +89,12 @@ namespace UGELNorte.Resoluciones.DataAccess.SQL
             " [DA_Sentencia] = @Sentencia, [DA_FechaSentencia] = @FechaSentencia, [DA_Monto] = @Monto " +
             " Where ([IN_NroResolucion] = @NroResolucion)";
 
-         // Consulta para eliminar una Resolucion
+        // Consulta para actualizar o modificar un Docente
+        public static readonly string sqlUpdateDocente = "Update TBL_Docente " +
+            " Set [IN_DNI] = @DNI , [DA_Nombres] = @Nombres, [DA_ApellidoPaterno] = @ApellidoPaterno , [DA_ApellidoMaterno] = @ApellidoMaterno " +
+            " Where ([IN_DNI] = @DNI)";
+
+        // Consulta para eliminar una Resolucion
         public static readonly string sqlDeleteResolucion = "Delete From TBL_Resolucion Where (IN_NroResolucion = @NroResolucion)";
     }
 }

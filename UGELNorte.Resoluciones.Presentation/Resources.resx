@@ -185,6 +185,22 @@
     <value>Oops! Error del sistema, por favor contacte al administrador</value>
     <comment>Error del sistema</comment>
   </data>
+  <data name="Update_ApellidoMaterno_Requerido" xml:space="preserve">
+    <value>El Apellido Materno del Docente es requerido</value>
+    <comment>Se necesita el Apellido materno del docente</comment>
+  </data>
+  <data name="Update_ApellidoPaterno_Requerido" xml:space="preserve">
+    <value>El Apellido Paterno del Docente es requerido</value>
+    <comment>Se necesita el Apellido paterno del docente</comment>
+  </data>
+  <data name="Update_DNIDocente_Requerido" xml:space="preserve">
+    <value>El DNI del Docente es requerido</value>
+    <comment>Se necesita el DNI del Docente</comment>
+  </data>
+  <data name="Update_Nombres_Requerido" xml:space="preserve">
+    <value>Los Nombres del Docente son requeridos</value>
+    <comment>Se necesita los Nombres del Docente</comment>
+  </data>
   <data name="Update_Satisfactorio_Mensaje" xml:space="preserve">
     <value>Modificacion de Resolucion guardada satisfactoriamente</value>
     <comment>Mensaje de modificacion de resolucion</comment>

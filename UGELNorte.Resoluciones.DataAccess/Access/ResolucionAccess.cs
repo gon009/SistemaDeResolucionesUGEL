@@ -41,6 +41,8 @@ namespace UGELNorte.Resoluciones.DataAccess
             }
         }
 
+
+
         public DataTable GetAllResoluciones()
         {
             

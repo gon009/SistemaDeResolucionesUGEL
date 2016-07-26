@@ -70,12 +70,7 @@
             this.btnBuscarResolucion = new System.Windows.Forms.Button();
             this.lblBuscarNroProyecto = new System.Windows.Forms.Label();
             this.tabPageDocentesEIIEE = new System.Windows.Forms.TabPage();
-            this.groupBoxInfoIIEE = new System.Windows.Forms.GroupBox();
-            this.btnRegistrarIIEE = new System.Windows.Forms.Button();
-            this.lblNombreInstitucionEducativa = new System.Windows.Forms.Label();
-            this.txtIIEEDireccion = new System.Windows.Forms.TextBox();
-            this.lblDireccion = new System.Windows.Forms.Label();
-            this.txtIIEE = new System.Windows.Forms.TextBox();
+            this.dataGridViewDocentes = new System.Windows.Forms.DataGridView();
             this.groupBoxInfoDocente = new System.Windows.Forms.GroupBox();
             this.btnActualizarDocente = new System.Windows.Forms.Button();
             this.lblDNI = new System.Windows.Forms.Label();
@@ -98,7 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResoluciones)).BeginInit();
             this.d.SuspendLayout();
             this.tabPageDocentesEIIEE.SuspendLayout();
-            this.groupBoxInfoIIEE.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDocentes)).BeginInit();
             this.groupBoxInfoDocente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -122,6 +117,7 @@
             this.tabCtrlResoluciones.SelectedIndex = 0;
             this.tabCtrlResoluciones.Size = new System.Drawing.Size(918, 483);
             this.tabCtrlResoluciones.TabIndex = 0;
+            this.tabCtrlResoluciones.SelectedIndexChanged += new System.EventHandler(this.tabCtrlResoluciones_SelectedIndexChanged);
             // 
             // tabPageRegResoluciones
             // 
@@ -601,7 +597,7 @@
             // 
             // tabPageDocentesEIIEE
             // 
-            this.tabPageDocentesEIIEE.Controls.Add(this.groupBoxInfoIIEE);
+            this.tabPageDocentesEIIEE.Controls.Add(this.dataGridViewDocentes);
             this.tabPageDocentesEIIEE.Controls.Add(this.groupBoxInfoDocente);
             this.tabPageDocentesEIIEE.Location = new System.Drawing.Point(4, 27);
             this.tabPageDocentesEIIEE.Name = "tabPageDocentesEIIEE";
@@ -611,61 +607,18 @@
             this.tabPageDocentesEIIEE.Text = "Docentes e Instituciones";
             this.tabPageDocentesEIIEE.UseVisualStyleBackColor = true;
             // 
-            // groupBoxInfoIIEE
+            // dataGridViewDocentes
             // 
-            this.groupBoxInfoIIEE.Controls.Add(this.btnRegistrarIIEE);
-            this.groupBoxInfoIIEE.Controls.Add(this.lblNombreInstitucionEducativa);
-            this.groupBoxInfoIIEE.Controls.Add(this.txtIIEEDireccion);
-            this.groupBoxInfoIIEE.Controls.Add(this.lblDireccion);
-            this.groupBoxInfoIIEE.Controls.Add(this.txtIIEE);
-            this.groupBoxInfoIIEE.Location = new System.Drawing.Point(442, 35);
-            this.groupBoxInfoIIEE.Name = "groupBoxInfoIIEE";
-            this.groupBoxInfoIIEE.Size = new System.Drawing.Size(446, 182);
-            this.groupBoxInfoIIEE.TabIndex = 6;
-            this.groupBoxInfoIIEE.TabStop = false;
-            this.groupBoxInfoIIEE.Text = "Informacion de Institucion Educativa";
-            // 
-            // btnRegistrarIIEE
-            // 
-            this.btnRegistrarIIEE.Location = new System.Drawing.Point(156, 114);
-            this.btnRegistrarIIEE.Name = "btnRegistrarIIEE";
-            this.btnRegistrarIIEE.Size = new System.Drawing.Size(137, 41);
-            this.btnRegistrarIIEE.TabIndex = 30;
-            this.btnRegistrarIIEE.Text = "Registrar";
-            this.btnRegistrarIIEE.UseVisualStyleBackColor = true;
-            this.btnRegistrarIIEE.Click += new System.EventHandler(this.btnRegistrarIIEE_Click);
-            // 
-            // lblNombreInstitucionEducativa
-            // 
-            this.lblNombreInstitucionEducativa.AutoSize = true;
-            this.lblNombreInstitucionEducativa.Location = new System.Drawing.Point(21, 31);
-            this.lblNombreInstitucionEducativa.Name = "lblNombreInstitucionEducativa";
-            this.lblNombreInstitucionEducativa.Size = new System.Drawing.Size(78, 36);
-            this.lblNombreInstitucionEducativa.TabIndex = 30;
-            this.lblNombreInstitucionEducativa.Text = "Institucion \r\nEducativa:";
-            // 
-            // txtIIEEDireccion
-            // 
-            this.txtIIEEDireccion.Location = new System.Drawing.Point(130, 75);
-            this.txtIIEEDireccion.Name = "txtIIEEDireccion";
-            this.txtIIEEDireccion.Size = new System.Drawing.Size(269, 24);
-            this.txtIIEEDireccion.TabIndex = 33;
-            // 
-            // lblDireccion
-            // 
-            this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(21, 72);
-            this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(75, 18);
-            this.lblDireccion.TabIndex = 31;
-            this.lblDireccion.Text = "Direccion:";
-            // 
-            // txtIIEE
-            // 
-            this.txtIIEE.Location = new System.Drawing.Point(130, 34);
-            this.txtIIEE.Name = "txtIIEE";
-            this.txtIIEE.Size = new System.Drawing.Size(269, 24);
-            this.txtIIEE.TabIndex = 32;
+            this.dataGridViewDocentes.AllowUserToAddRows = false;
+            this.dataGridViewDocentes.AllowUserToDeleteRows = false;
+            this.dataGridViewDocentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDocentes.Location = new System.Drawing.Point(339, 27);
+            this.dataGridViewDocentes.Name = "dataGridViewDocentes";
+            this.dataGridViewDocentes.ReadOnly = true;
+            this.dataGridViewDocentes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewDocentes.Size = new System.Drawing.Size(547, 403);
+            this.dataGridViewDocentes.TabIndex = 5;
+            this.dataGridViewDocentes.SelectionChanged += new System.EventHandler(this.dataGridViewDocentes_SelectionChanged);
             // 
             // groupBoxInfoDocente
             // 
@@ -679,21 +632,22 @@
             this.groupBoxInfoDocente.Controls.Add(this.txtApellidoPaterno);
             this.groupBoxInfoDocente.Controls.Add(this.txtApellidoMaterno);
             this.groupBoxInfoDocente.Controls.Add(this.txtNombres);
-            this.groupBoxInfoDocente.Location = new System.Drawing.Point(27, 35);
+            this.groupBoxInfoDocente.Location = new System.Drawing.Point(20, 27);
             this.groupBoxInfoDocente.Name = "groupBoxInfoDocente";
-            this.groupBoxInfoDocente.Size = new System.Drawing.Size(392, 266);
+            this.groupBoxInfoDocente.Size = new System.Drawing.Size(299, 266);
             this.groupBoxInfoDocente.TabIndex = 4;
             this.groupBoxInfoDocente.TabStop = false;
             this.groupBoxInfoDocente.Text = "Informacion de Docente";
             // 
             // btnActualizarDocente
             // 
-            this.btnActualizarDocente.Location = new System.Drawing.Point(211, 204);
+            this.btnActualizarDocente.Location = new System.Drawing.Point(164, 204);
             this.btnActualizarDocente.Name = "btnActualizarDocente";
-            this.btnActualizarDocente.Size = new System.Drawing.Size(137, 41);
+            this.btnActualizarDocente.Size = new System.Drawing.Size(119, 41);
             this.btnActualizarDocente.TabIndex = 30;
             this.btnActualizarDocente.Text = "Actualizar";
             this.btnActualizarDocente.UseVisualStyleBackColor = true;
+            this.btnActualizarDocente.Click += new System.EventHandler(this.btnActualizarDocente_Click);
             // 
             // lblDNI
             // 
@@ -708,7 +662,7 @@
             // 
             this.btnRegistrarDocente.Location = new System.Drawing.Point(24, 204);
             this.btnRegistrarDocente.Name = "btnRegistrarDocente";
-            this.btnRegistrarDocente.Size = new System.Drawing.Size(137, 41);
+            this.btnRegistrarDocente.Size = new System.Drawing.Size(117, 41);
             this.btnRegistrarDocente.TabIndex = 5;
             this.btnRegistrarDocente.Text = "Registrar";
             this.btnRegistrarDocente.UseVisualStyleBackColor = true;
@@ -745,28 +699,28 @@
             // 
             this.txtDNI.Location = new System.Drawing.Point(130, 35);
             this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(140, 24);
+            this.txtDNI.Size = new System.Drawing.Size(92, 24);
             this.txtDNI.TabIndex = 26;
             // 
             // txtApellidoPaterno
             // 
             this.txtApellidoPaterno.Location = new System.Drawing.Point(130, 76);
             this.txtApellidoPaterno.Name = "txtApellidoPaterno";
-            this.txtApellidoPaterno.Size = new System.Drawing.Size(201, 24);
+            this.txtApellidoPaterno.Size = new System.Drawing.Size(115, 24);
             this.txtApellidoPaterno.TabIndex = 27;
             // 
             // txtApellidoMaterno
             // 
             this.txtApellidoMaterno.Location = new System.Drawing.Point(130, 117);
             this.txtApellidoMaterno.Name = "txtApellidoMaterno";
-            this.txtApellidoMaterno.Size = new System.Drawing.Size(201, 24);
+            this.txtApellidoMaterno.Size = new System.Drawing.Size(115, 24);
             this.txtApellidoMaterno.TabIndex = 28;
             // 
             // txtNombres
             // 
             this.txtNombres.Location = new System.Drawing.Point(130, 158);
             this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(240, 24);
+            this.txtNombres.Size = new System.Drawing.Size(153, 24);
             this.txtNombres.TabIndex = 29;
             // 
             // lblTitulo
@@ -814,8 +768,7 @@
             this.d.ResumeLayout(false);
             this.d.PerformLayout();
             this.tabPageDocentesEIIEE.ResumeLayout(false);
-            this.groupBoxInfoIIEE.ResumeLayout(false);
-            this.groupBoxInfoIIEE.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDocentes)).EndInit();
             this.groupBoxInfoDocente.ResumeLayout(false);
             this.groupBoxInfoDocente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -869,12 +822,6 @@
         private System.Windows.Forms.Label lblDNIDocente;
         private System.Windows.Forms.TextBox txtDNIDocenteResolucion;
         private System.Windows.Forms.TabPage tabPageDocentesEIIEE;
-        private System.Windows.Forms.GroupBox groupBoxInfoIIEE;
-        private System.Windows.Forms.Button btnRegistrarIIEE;
-        private System.Windows.Forms.Label lblNombreInstitucionEducativa;
-        private System.Windows.Forms.TextBox txtIIEEDireccion;
-        private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.TextBox txtIIEE;
         private System.Windows.Forms.GroupBox groupBoxInfoDocente;
         private System.Windows.Forms.Button btnActualizarDocente;
         private System.Windows.Forms.Label lblDNI;
@@ -886,6 +833,7 @@
         private System.Windows.Forms.TextBox txtApellidoPaterno;
         private System.Windows.Forms.TextBox txtApellidoMaterno;
         private System.Windows.Forms.TextBox txtNombres;
+        private System.Windows.Forms.DataGridView dataGridViewDocentes;
     }
 }
 

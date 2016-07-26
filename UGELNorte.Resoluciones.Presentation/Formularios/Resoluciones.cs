@@ -32,14 +32,14 @@ namespace UGELNorte.Resoluciones.Presentation
 
         }
 
-      
+
 
         private void FormResoluciones_Load(object sender, EventArgs e)
         {
 
         }
 
-       
+
 
 
 
@@ -50,6 +50,7 @@ namespace UGELNorte.Resoluciones.Presentation
         ControlUtilities controlUtilities = new ControlUtilities();
         public string errorMessage;
         private string nroResolucionDelete;
+        private string nuevoDNI;
         ModificarResolucion formModificarResolucion;
 
      
@@ -236,6 +237,16 @@ namespace UGELNorte.Resoluciones.Presentation
             dataGridViewResoluciones.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
+
+        private void LoadDataGridViewDocentes(DataTable data)
+        {
+            dataGridViewDocentes.DataSource = data;
+            dataGridViewDocentes.DataMember = data.TableName;
+            dataGridViewDocentes.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+        }
+
+
         private void btnEliminarResolucion_Click(object sender, EventArgs e)
         {
       
@@ -374,8 +385,8 @@ namespace UGELNorte.Resoluciones.Presentation
             {
 
                 // Check if the validation passes
-                //if (this.ValidateRegistrationResolucion())
-                //{
+                if (this.ValidateUpdate())
+                {
                     // Assign the values to the model
                    
                     DocenteModel docenteModel = new DocenteModel()
@@ -404,16 +415,16 @@ namespace UGELNorte.Resoluciones.Presentation
                         // Reset the screen    
                         ControlUtilities.ResetAllControls(groupBoxInfoDocente);
                     }
-                    //else
-                    //{
-                    //    // display the error messge
-                    //    MessageBox.Show(
-                    //        Resources.Registration_Error_Mensaje,
-                    //        Resources.Registration_Error_Mensaje_Titulo,
-                    //        MessageBoxButtons.OK,
-                    //        MessageBoxIcon.Error);
-                    //}
-                //}
+                    else
+                    {
+                        // display the error messge
+                        MessageBox.Show(
+                            Resources.Registration_Error_Mensaje,
+                            Resources.Registration_Error_Mensaje_Titulo,
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+                }
                 else
                 {
                     // Display the validation failed message
@@ -433,6 +444,120 @@ namespace UGELNorte.Resoluciones.Presentation
         private void btnRegistrarIIEE_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnActualizarDocente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.ValidateUpdate())
+                {
+                    DocenteModel docenteModel = new DocenteModel()
+                    {
+                        DNI = Convert.ToInt64(txtDNI.Text.ToString().Trim()),
+                        apellidoMaterno = txtApellidoMaterno.Text.Trim(),
+                        apellidoPaterno = txtApellidoPaterno.Text.Trim(),
+                        Nombres = txtNombres.Text.Trim(),
+                    };
+
+                    var flag = this.docenteService.UpdateDocente(docenteModel);
+
+                    if (flag)
+                    {
+                        DataTable data = this.docenteService.GetAllDocentes();
+                        this.LoadDataGridViewDocentes(data);
+
+                        MessageBox.Show(
+                            Resources.Update_Satisfactorio_Mensaje,
+                            Resources.Update_Satisfactorio_Mensaje_Titulo,
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show(
+                        this.errorMessage,
+                        Resources.Registration_Error_Mensaje_Titulo,
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
+            }
+        }
+
+        private bool ValidateUpdate()
+        {
+            this.errorMessage = string.Empty;
+
+            if (txtDNI.Text.Trim() == string.Empty)
+            {
+                this.AddErrorMessage(Resources.Update_DNIDocente_Requerido);
+            }
+
+            if (txtApellidoPaterno.Text.Trim() == string.Empty)
+            {
+                this.AddErrorMessage(Resources.Update_ApellidoPaterno_Requerido);
+            }
+
+            if (txtApellidoMaterno.Text.Trim() == string.Empty)
+            {
+                this.AddErrorMessage(Resources.Update_ApellidoMaterno_Requerido);
+            }
+
+            if (txtNombres.Text.Trim() == string.Empty)
+            {
+                this.AddErrorMessage(Resources.Update_Nombres_Requerido);
+            }
+
+            return this.errorMessage != string.Empty ? false : true;
+        }
+
+        private void tabCtrlResoluciones_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tabCtrlResoluciones.SelectedIndex == 2)
+                {
+                    DataTable data = this.docenteService.GetAllDocentes();
+                    //this.InitializeUpdate();
+                    this.LoadDataGridViewDocentes(data);
+                }
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
+            }
+        }
+
+        private void dataGridViewDocentes_SelectionChanged(object sender, EventArgs e)
+        {
+
+            DataGridView dgv = (DataGridView)sender;
+
+            try
+            {
+                if (dgv.SelectedRows.Count > 0)
+                {
+                    string DNI = dgv.SelectedRows[0].Cells[0].Value.ToString();
+
+                    nuevoDNI = DNI;
+
+                    DataRow dataRow = this.docenteService.GetDocenteByDNI(nuevoDNI);
+
+                    txtDNI.Text = dataRow["IN_DNI"].ToString().Trim();
+                    txtApellidoPaterno.Text = dataRow["DA_ApellidoPaterno"].ToString().Trim();
+                    txtApellidoMaterno.Text = dataRow["DA_ApellidoMaterno"].ToString().Trim();
+                    txtNombres.Text = dataRow["DA_Nombres"].ToString().Trim();
+                }
+            }
+            catch (Exception ex)
+            {
+                this.ShowErrorMessage(ex);
+            }
         }
     }
     

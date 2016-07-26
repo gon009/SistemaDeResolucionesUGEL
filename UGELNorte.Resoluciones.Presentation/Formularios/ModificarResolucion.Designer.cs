@@ -58,6 +58,7 @@
             this.cmbModIIEE = new System.Windows.Forms.ComboBox();
             this.cmbModConcepto = new System.Windows.Forms.ComboBox();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnExportarPDF = new System.Windows.Forms.Button();
             this.panelModificarResoluciones.SuspendLayout();
             this.groupBoxInfoSentencia.SuspendLayout();
             this.groupBoxInfoResoluciones.SuspendLayout();
@@ -65,6 +66,7 @@
             // 
             // panelModificarResoluciones
             // 
+            this.panelModificarResoluciones.Controls.Add(this.btnExportarPDF);
             this.panelModificarResoluciones.Controls.Add(this.groupBoxInfoSentencia);
             this.panelModificarResoluciones.Controls.Add(this.btnModificarResolucion);
             this.panelModificarResoluciones.Controls.Add(this.groupBoxInfoResoluciones);
@@ -177,9 +179,9 @@
             // 
             // btnModificarResolucion
             // 
-            this.btnModificarResolucion.Location = new System.Drawing.Point(590, 289);
+            this.btnModificarResolucion.Location = new System.Drawing.Point(511, 289);
             this.btnModificarResolucion.Name = "btnModificarResolucion";
-            this.btnModificarResolucion.Size = new System.Drawing.Size(180, 49);
+            this.btnModificarResolucion.Size = new System.Drawing.Size(147, 56);
             this.btnModificarResolucion.TabIndex = 8;
             this.btnModificarResolucion.Text = "Modificar Resolucion";
             this.btnModificarResolucion.UseVisualStyleBackColor = true;
@@ -441,6 +443,15 @@
             this.lblTitulo.TabIndex = 3;
             this.lblTitulo.Text = "Modificar Resolucion - Sistema de Resoluciones - UGEL NORTE";
             // 
+            // btnExportarPDF
+            // 
+            this.btnExportarPDF.Location = new System.Drawing.Point(705, 289);
+            this.btnExportarPDF.Name = "btnExportarPDF";
+            this.btnExportarPDF.Size = new System.Drawing.Size(122, 56);
+            this.btnExportarPDF.TabIndex = 11;
+            this.btnExportarPDF.Text = "Exportar PDF";
+            this.btnExportarPDF.UseVisualStyleBackColor = true;
+            // 
             // ModificarResolucion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -495,5 +506,6 @@
         public System.Windows.Forms.ComboBox cmbModSituacion;
         public System.Windows.Forms.ComboBox cmbModIIEE;
         public System.Windows.Forms.ComboBox cmbModConcepto;
+        private System.Windows.Forms.Button btnExportarPDF;
     }
 }
