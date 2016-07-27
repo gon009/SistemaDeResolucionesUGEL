@@ -40,9 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Access\DocenteAccess.cs" />
-    <Compile Include="Access\Interfaces\IDocenteAccess.cs" />
-    <Compile Include="Access\Interfaces\IResolucionAccess.cs" />
-    <Compile Include="Access\Interfaces\ISentenciaAccess.cs" />
+    <Compile Include="Interfaces\IDocenteAccess.cs" />
+    <Compile Include="Interfaces\IResolucionAccess.cs" />
+    <Compile Include="Interfaces\ISentenciaAccess.cs" />
     <Compile Include="Access\ResolucionAccess.cs" />
     <Compile Include="Access\SentenciaAccess.cs" />
     <Compile Include="DBConnections\ConnectionAccess.cs" />

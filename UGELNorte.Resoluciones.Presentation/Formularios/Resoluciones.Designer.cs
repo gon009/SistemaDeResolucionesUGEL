@@ -104,7 +104,7 @@
             this.panelResoluciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelResoluciones.Location = new System.Drawing.Point(12, 134);
             this.panelResoluciones.Name = "panelResoluciones";
-            this.panelResoluciones.Size = new System.Drawing.Size(924, 491);
+            this.panelResoluciones.Size = new System.Drawing.Size(924, 428);
             this.panelResoluciones.TabIndex = 0;
             // 
             // tabCtrlResoluciones
@@ -115,7 +115,7 @@
             this.tabCtrlResoluciones.Location = new System.Drawing.Point(3, 6);
             this.tabCtrlResoluciones.Name = "tabCtrlResoluciones";
             this.tabCtrlResoluciones.SelectedIndex = 0;
-            this.tabCtrlResoluciones.Size = new System.Drawing.Size(918, 483);
+            this.tabCtrlResoluciones.Size = new System.Drawing.Size(918, 409);
             this.tabCtrlResoluciones.TabIndex = 0;
             this.tabCtrlResoluciones.SelectedIndexChanged += new System.EventHandler(this.tabCtrlResoluciones_SelectedIndexChanged);
             // 
@@ -128,14 +128,14 @@
             this.tabPageRegResoluciones.Location = new System.Drawing.Point(4, 27);
             this.tabPageRegResoluciones.Name = "tabPageRegResoluciones";
             this.tabPageRegResoluciones.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageRegResoluciones.Size = new System.Drawing.Size(910, 452);
+            this.tabPageRegResoluciones.Size = new System.Drawing.Size(910, 378);
             this.tabPageRegResoluciones.TabIndex = 0;
             this.tabPageRegResoluciones.Text = "Registro de Resoluciones";
             this.tabPageRegResoluciones.UseVisualStyleBackColor = true;
             // 
             // btnImportarPDF
             // 
-            this.btnImportarPDF.Location = new System.Drawing.Point(674, 305);
+            this.btnImportarPDF.Location = new System.Drawing.Point(692, 305);
             this.btnImportarPDF.Name = "btnImportarPDF";
             this.btnImportarPDF.Size = new System.Drawing.Size(180, 49);
             this.btnImportarPDF.TabIndex = 33;
@@ -386,7 +386,7 @@
             this.cmbIIEE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbIIEE.FormattingEnabled = true;
             this.cmbIIEE.Items.AddRange(new object[] {
-            "12 de Octubre ",
+            "12 de Octubre",
             "40001",
             "40002 AL Aire Libre",
             "40007 Gilberto Ochoa",
@@ -429,7 +429,7 @@
             "40694 Centro de Innovación Pedagógico ISPA",
             "40705 Peruarbo",
             "41003 Almirante Miguel Grau",
-            "41005 Héroes de Angamos ",
+            "41005 Héroes de Angamos",
             "41014 Fortunata Gutiérrez",
             "41019 República de Venezuela",
             "41024",
@@ -506,7 +506,7 @@
             this.tabPageBuscarModificarResol.Location = new System.Drawing.Point(4, 27);
             this.tabPageBuscarModificarResol.Name = "tabPageBuscarModificarResol";
             this.tabPageBuscarModificarResol.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageBuscarModificarResol.Size = new System.Drawing.Size(910, 452);
+            this.tabPageBuscarModificarResol.Size = new System.Drawing.Size(910, 378);
             this.tabPageBuscarModificarResol.TabIndex = 1;
             this.tabPageBuscarModificarResol.Text = "Gestion de Resoluciones";
             this.tabPageBuscarModificarResol.UseVisualStyleBackColor = true;
@@ -516,17 +516,15 @@
             this.dataGridViewResoluciones.AllowUserToAddRows = false;
             this.dataGridViewResoluciones.AllowUserToDeleteRows = false;
             this.dataGridViewResoluciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewResoluciones.Location = new System.Drawing.Point(16, 119);
+            this.dataGridViewResoluciones.Location = new System.Drawing.Point(16, 111);
             this.dataGridViewResoluciones.Name = "dataGridViewResoluciones";
             this.dataGridViewResoluciones.ReadOnly = true;
             this.dataGridViewResoluciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewResoluciones.Size = new System.Drawing.Size(875, 313);
+            this.dataGridViewResoluciones.Size = new System.Drawing.Size(875, 261);
             this.dataGridViewResoluciones.TabIndex = 1;
-            this.dataGridViewResoluciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewResoluciones_CellContentClick);
             this.dataGridViewResoluciones.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewResoluciones_CellFormatting);
             this.dataGridViewResoluciones.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewResoluciones_CellMouseClick);
             this.dataGridViewResoluciones.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewResoluciones_CellMouseDoubleClick);
-            this.dataGridViewResoluciones.SelectionChanged += new System.EventHandler(this.dataGridViewResoluciones_SelectionChanged);
             // 
             // d
             // 
@@ -602,9 +600,9 @@
             this.tabPageDocentesEIIEE.Location = new System.Drawing.Point(4, 27);
             this.tabPageDocentesEIIEE.Name = "tabPageDocentesEIIEE";
             this.tabPageDocentesEIIEE.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageDocentesEIIEE.Size = new System.Drawing.Size(910, 452);
+            this.tabPageDocentesEIIEE.Size = new System.Drawing.Size(910, 378);
             this.tabPageDocentesEIIEE.TabIndex = 2;
-            this.tabPageDocentesEIIEE.Text = "Docentes e Instituciones";
+            this.tabPageDocentesEIIEE.Text = "Docentes";
             this.tabPageDocentesEIIEE.UseVisualStyleBackColor = true;
             // 
             // dataGridViewDocentes
@@ -612,11 +610,11 @@
             this.dataGridViewDocentes.AllowUserToAddRows = false;
             this.dataGridViewDocentes.AllowUserToDeleteRows = false;
             this.dataGridViewDocentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDocentes.Location = new System.Drawing.Point(339, 27);
+            this.dataGridViewDocentes.Location = new System.Drawing.Point(342, 15);
             this.dataGridViewDocentes.Name = "dataGridViewDocentes";
             this.dataGridViewDocentes.ReadOnly = true;
             this.dataGridViewDocentes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewDocentes.Size = new System.Drawing.Size(547, 403);
+            this.dataGridViewDocentes.Size = new System.Drawing.Size(547, 348);
             this.dataGridViewDocentes.TabIndex = 5;
             this.dataGridViewDocentes.SelectionChanged += new System.EventHandler(this.dataGridViewDocentes_SelectionChanged);
             // 
@@ -632,7 +630,7 @@
             this.groupBoxInfoDocente.Controls.Add(this.txtApellidoPaterno);
             this.groupBoxInfoDocente.Controls.Add(this.txtApellidoMaterno);
             this.groupBoxInfoDocente.Controls.Add(this.txtNombres);
-            this.groupBoxInfoDocente.Location = new System.Drawing.Point(20, 27);
+            this.groupBoxInfoDocente.Location = new System.Drawing.Point(22, 46);
             this.groupBoxInfoDocente.Name = "groupBoxInfoDocente";
             this.groupBoxInfoDocente.Size = new System.Drawing.Size(299, 266);
             this.groupBoxInfoDocente.TabIndex = 4;
@@ -726,10 +724,10 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(208, 27);
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(130, 48);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(520, 31);
+            this.lblTitulo.Size = new System.Drawing.Size(751, 42);
             this.lblTitulo.TabIndex = 2;
             this.lblTitulo.Text = "Sistema de Resoluciones - UGEL NORTE";
             // 
@@ -746,7 +744,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 621);
+            this.ClientSize = new System.Drawing.Size(940, 571);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelResoluciones);

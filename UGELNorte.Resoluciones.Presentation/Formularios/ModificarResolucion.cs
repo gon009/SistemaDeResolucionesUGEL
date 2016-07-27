@@ -11,8 +11,7 @@ using UGELNorte.Resoluciones.Core.Models;
 using UGELNorte.Resoluciones.Core.Enums;
 using UGELNorte.Resoluciones.Core;
 using UGELNorte.Resoluciones.BusinessLogic.Services;
-
-
+using System.IO;
 
 namespace UGELNorte.Resoluciones.Presentation.Formularios
 {
@@ -29,7 +28,7 @@ namespace UGELNorte.Resoluciones.Presentation.Formularios
         }
         private void InitializeUpdate()
         {
-
+            // Cargar valores a los combobox
             cmbModTipo.DataSource = Enum.GetValues(typeof(TipoResolucion));
             cmbModUGEL.DataSource = Enum.GetValues(typeof(TipoUGEL));
             cmbModSituacion.DataSource = Enum.GetValues(typeof(SituacionResolucion));
@@ -42,17 +41,13 @@ namespace UGELNorte.Resoluciones.Presentation.Formularios
 
         private IResolucionService resolucionService;
 
-        private void ModificarResolucion_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //FormResoluciones formResoluciones = new FormResoluciones();
-            //formResoluciones.Enabled = true;
-        }
 
         
         private void btnModificarResolucion_Click(object sender, EventArgs e)
         {
             try
             {
+                // Validar resolucion y sentencia
                 if (this.ValidateUpdate())
                 {
                     ResolucionModel resolucionModel = new ResolucionModel()
@@ -76,6 +71,8 @@ namespace UGELNorte.Resoluciones.Presentation.Formularios
                         Monto = txtModMonto.Text.Trim() == string.Empty ? 0 : Convert.ToDecimal(txtModMonto.Text),
                     };
 
+                    // LLama al metodo de servicio y lo asigna a una variable de retorno
+
                     var flag = this.resolucionService.UpdateResolucion(resolucionModel, sentenciaModel);
 
                     if (flag)
@@ -83,6 +80,8 @@ namespace UGELNorte.Resoluciones.Presentation.Formularios
                         //DataTable data = this.resolucionService.GetAllResoluciones();
                         //this.LoadDataGridView(data);
 
+
+                        // Mensaje de modificacion satisfactorio
                         MessageBox.Show(
                             Resources.Update_Satisfactorio_Mensaje,
                             Resources.Update_Satisfactorio_Mensaje_Titulo,
@@ -92,6 +91,7 @@ namespace UGELNorte.Resoluciones.Presentation.Formularios
                 }
                 else
                 {
+                    // Mensaje de error al modificar
                     MessageBox.Show(
                         this.errorMessage,
                         Resources.Registration_Error_Mensaje_Titulo,
@@ -105,7 +105,7 @@ namespace UGELNorte.Resoluciones.Presentation.Formularios
             }
         }
 
-      
+        // Metodo para validar la modificacion de Resolucion ,sentencia
         private bool ValidateUpdate()
         {
             this.errorMessage = string.Empty;
@@ -159,6 +159,7 @@ namespace UGELNorte.Resoluciones.Presentation.Formularios
             return this.errorMessage != string.Empty ? false : true;
         }
 
+        // Metodo para crear el mensaje de error
         private void AddErrorMessage(string error)
         {
             if (this.errorMessage == string.Empty)
@@ -169,6 +170,7 @@ namespace UGELNorte.Resoluciones.Presentation.Formularios
             this.errorMessage += error + "\n";
         }
 
+        // Metodo para mostrar el mensaje de error
         private void ShowErrorMessage(Exception ex)
         {
             MessageBox.Show(
@@ -179,5 +181,12 @@ namespace UGELNorte.Resoluciones.Presentation.Formularios
                 MessageBoxIcon.Error);
         }
 
+        private void btnExportarPDF_Click(object sender, EventArgs e)
+        {
+            string resolucionesPath = "D:\\Resoluciones";
+            string resolucion = txtModNroResolucion.Text.Trim() + ".pdf";
+            string resolucionPath = Path.Combine(resolucionesPath, resolucion);
+            System.Diagnostics.Process.Start(resolucionPath);
+        }
     }
 }

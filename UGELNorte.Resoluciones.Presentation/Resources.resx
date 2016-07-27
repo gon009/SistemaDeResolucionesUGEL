@@ -129,6 +129,22 @@
     <value>Porfavor revisar lo siguiente</value>
     <comment>Cabecera del mensaje de error</comment>
   </data>
+  <data name="Importacion_PDF_Error" xml:space="preserve">
+    <value>Esta resolucion ya existe en D:\Resoluciones</value>
+    <comment>Mensaje de error al importar resolucion</comment>
+  </data>
+  <data name="Importacion_PDF_Error_Titulo" xml:space="preserve">
+    <value>Error en Importacion de Resolucion .PDF</value>
+    <comment>Titulo de error al importar resolucion</comment>
+  </data>
+  <data name="Importacion_PDF_Satisfactoria" xml:space="preserve">
+    <value>La importacion se realizo con exito, Esta se añadio en: D:\Resoluciones</value>
+    <comment>Mensaje de importacion de resolucion satisfactoria</comment>
+  </data>
+  <data name="Importacion_PDF_Satisfactoria_Titulo" xml:space="preserve">
+    <value>Importacion de Resolucion .PDF</value>
+    <comment>Titulo de importacion de PDF</comment>
+  </data>
   <data name="Registration_Concepto_Requerido" xml:space="preserve">
     <value>El Concepto es requerido</value>
     <comment>Se necesita el concepto de la resolucion</comment>
@@ -153,6 +169,10 @@
     <value>El Nombre de la Institucion Educativa es requerido</value>
     <comment>Se necesita el nombre de la Institucion educativa</comment>
   </data>
+  <data name="Registration_Monto_Requerido" xml:space="preserve">
+    <value>El Monto es requerido</value>
+    <comment>Se necesita el monto de la resolucion</comment>
+  </data>
   <data name="Registration_NroProyecto_Requerido" xml:space="preserve">
     <value>El Numero de Proyecto es requerido</value>
     <comment>Se necesita el numero de proyecto</comment>
@@ -168,6 +188,10 @@
   <data name="Registration_Satisfactorio_Mensaje_Titulo" xml:space="preserve">
     <value>Registro de Resolucion</value>
     <comment>Titulo para el mensaje de registro de resolucion</comment>
+  </data>
+  <data name="Registration_Sentencia_Requerido" xml:space="preserve">
+    <value>La Sentencia es requerida</value>
+    <comment>Se necesita la sentencia de la resolucion</comment>
   </data>
   <data name="Registration_Situacion_Requerido" xml:space="preserve">
     <value>La Situacion es requerida</value>

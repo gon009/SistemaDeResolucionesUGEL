@@ -40,9 +40,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DocenteService.cs" />
-    <Compile Include="Services\Interfaces\IDocenteService.cs" />
-    <Compile Include="Services\Interfaces\IResolucionService.cs" />
-    <Compile Include="Services\Interfaces\ISentenciaService.cs" />
+    <Compile Include="Interfaces\IDocenteService.cs" />
+    <Compile Include="Interfaces\IResolucionService.cs" />
+    <Compile Include="Interfaces\ISentenciaService.cs" />
     <Compile Include="Services\ResolucionService.cs" />
     <Compile Include="Services\SentenciaService.cs" />
   </ItemGroup>

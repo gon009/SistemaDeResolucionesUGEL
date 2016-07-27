@@ -12,6 +12,8 @@ using UGELNorte.Resoluciones.Core.Utilities;
 using UGELNorte.Resoluciones.BusinessLogic.Services;
 using UGELNorte.Resoluciones.Core;
 using UGELNorte.Resoluciones.Presentation.Formularios;
+using System.IO;
+
 
 namespace UGELNorte.Resoluciones.Presentation
 {
@@ -39,10 +41,6 @@ namespace UGELNorte.Resoluciones.Presentation
 
         }
 
-
-
-
-
         //ValidateRegistration validateRegistration = new ValidateRegistration();
         private IResolucionService resolucionService;
         private IDocenteService docenteService;
@@ -60,10 +58,10 @@ namespace UGELNorte.Resoluciones.Presentation
             try
             {
               
-                // Check if the validation passes
+                // Verifica si la validacion paso
                 if (this.ValidateRegistrationResolucion())
                 {
-                    // Assign the values to the model
+                    // Asignar controles a el modelo
                     ResolucionModel resolucionModel = new ResolucionModel()
                     {
                         NroProyecto = txtNroProyecto.Text.Trim(),
@@ -74,7 +72,7 @@ namespace UGELNorte.Resoluciones.Presentation
                         ConceptoResolucion = cmbConcepto.SelectedIndex + 1,
                         SituacionResolucion = (SituacionResolucion)cmbSituacion.SelectedValue,
                         DNI = txtDNIDocenteResolucion.Text.Trim(),
-                        //ExpedienteJudicial = txtExpedienteJudicial.Text.Trim()
+               
                     };
 
                     SentenciaModel sentenciaModel = new SentenciaModel()
@@ -85,27 +83,27 @@ namespace UGELNorte.Resoluciones.Presentation
                         Monto = txtMonto.Text.Trim() == string.Empty ? 0 : Convert.ToDecimal(txtMonto.Text),
                     };
 
-                    // Call the service method and assign the return status to variable
+                    // Llama para el registro de solucion por el metodo de servicio y asigna el valor retornado
                     var successResolucion = this.resolucionService.RegisterResolucion(resolucionModel,sentenciaModel);
               
-                    // if status of success variable is true then display a information else display the error message
+                    // Si es verdadero se hizo el registro y se muestra el mensaje
                     if (successResolucion)
                     {
-                        // display the message box
+                        // Muestra la cajita con el mensaje de registro satisfactorio
                         MessageBox.Show(
                             Resources.Registration_Satisfactorio_Mensaje,
                             Resources.Registration_Satisfactorio_Mensaje_Titulo,
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
 
-                        // Reset the screen
+                        // Limpia los controles
                         ControlUtilities.ResetAllControls(groupBoxInfoResoluciones);
                         ControlUtilities.ResetAllControls(groupBoxInfoSentencia);
-                        ControlUtilities.ResetAllControls(groupBoxInfoDocente);
+                
                     }
                     else
                     {
-                        // display the error messge
+                        // Muestral el mensaje de error
                         MessageBox.Show(
                             Resources.Registration_Error_Mensaje,
                             Resources.Registration_Error_Mensaje_Titulo,
@@ -115,7 +113,7 @@ namespace UGELNorte.Resoluciones.Presentation
                 }
                 else
                 {
-                    // Display the validation failed message
+                    // Muestra el mensaje de valifacion fallido
                     MessageBox.Show(
                         this.errorMessage,
                         Resources.Registration_Error_Mensaje_Titulo,
@@ -130,6 +128,7 @@ namespace UGELNorte.Resoluciones.Presentation
 
         }
 
+        // Metodo para validar el registro de resolucion
         public bool ValidateRegistrationResolucion()
         {
             this.errorMessage = string.Empty;
@@ -180,9 +179,25 @@ namespace UGELNorte.Resoluciones.Presentation
                 this.AddErrorMessage(Resources.Registration_ExpedienteJudicial_Requerido);
             }
 
+         
+
+            if (txtSentencia.Text.Trim() == string.Empty)
+            {
+                this.AddErrorMessage(Resources.Registration_Sentencia_Requerido);
+            }
+
+            if (txtMonto.Text.Trim() == string.Empty)
+            {
+                this.AddErrorMessage(Resources.Registration_Monto_Requerido);
+            }
+
+
+
             return this.errorMessage != string.Empty ? false : true;
         }
 
+
+        // Creacion del mensaje de error
         private void AddErrorMessage(string error)
         {
             if (this.errorMessage == string.Empty)
@@ -193,16 +208,18 @@ namespace UGELNorte.Resoluciones.Presentation
             this.errorMessage += error + "\n";
         }
 
+        // Mostrar mensaje de error
         private void ShowErrorMessage(Exception ex)
         {
             MessageBox.Show(
                 ex.Message,
-                //Resources.System_Error_Message, 
+             
                 Resources.Sistema_Error_Mensaje_Titulo,
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
         }
 
+        // Cargo valores a los combobox
         private void InitializeDropDownList()
         {
             cmbSituacion.DataSource = Enum.GetValues(typeof(SituacionResolucion));
@@ -212,9 +229,58 @@ namespace UGELNorte.Resoluciones.Presentation
 
         private void btnImportarPDF_Click(object sender, EventArgs e)
         {
-            
+            string resolucionesPath = "D:\\Resoluciones";
+            string resolucionImportada = string.Empty;
+            string destinoFinal = string.Empty;
+            string nombreResolucion = string.Empty;
+
+            using (OpenFileDialog OpenFileDialogImportPDF = new OpenFileDialog())
+            {
+                if (OpenFileDialogImportPDF.ShowDialog() == DialogResult.OK)
+                {
+                    // Filtro para aceptar extesiones .pdf
+                    OpenFileDialogImportPDF.Filter = "Pdf Files|*.pdf";
+
+                    // Obtengo la ubicacion de la resolucion importada , y SOLO el nombre de la misma
+                    resolucionImportada = Path.GetFullPath(OpenFileDialogImportPDF.FileName);
+                    nombreResolucion = Path.GetFileName(OpenFileDialogImportPDF.FileName);
+
+                    // Verifico si la carpeta Resoluciones ya esta creada, si no es asi la creo
+                    if (!Directory.Exists(resolucionesPath))
+                    {
+                        Directory.CreateDirectory(resolucionesPath);
+                    }
+                    // Combino el directorio de Resoluciones con el nombre de la resolucion importada
+                    destinoFinal = Path.Combine("D:\\Resoluciones", nombreResolucion);
+
+                    //Verifico que la resolucion no se encuentre en D:\\Resoluciones
+                    if (File.Exists(destinoFinal))
+                    {
+                        MessageBox.Show(
+                         Resources.Importacion_PDF_Error,
+                         Resources.Importacion_PDF_Error_Titulo,
+                         MessageBoxButtons.OK,
+                         MessageBoxIcon.Error);
+                        
+                    }
+                    // Si no existe  copio la resolucion a D:\\Resoluciones
+                    else
+                    { 
+
+                    File.Copy(resolucionImportada, destinoFinal);
+
+                    MessageBox.Show(
+                          Resources.Importacion_PDF_Satisfactoria,
+                          Resources.Importacion_PDF_Satisfactoria_Titulo,
+                          MessageBoxButtons.OK,
+                          MessageBoxIcon.Information);
+                    }
+                }
+            }
+
         }
 
+        // Metodo para buscar la resulolucion
         private void btnBuscarResolucion_Click(object sender, EventArgs e)
         {
             try
@@ -229,15 +295,16 @@ namespace UGELNorte.Resoluciones.Presentation
 
         }
 
+        // Metodo Cargar datagridview  con resoluciones
         private void LoadDataGridView(DataTable data)
         {
-            // Data grid view column setting            
+                    
             dataGridViewResoluciones.DataSource = data;
             dataGridViewResoluciones.DataMember = data.TableName;
             dataGridViewResoluciones.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
-
+        // Metodo cargar datagridview con docentes
         private void LoadDataGridViewDocentes(DataTable data)
         {
             dataGridViewDocentes.DataSource = data;
@@ -247,6 +314,7 @@ namespace UGELNorte.Resoluciones.Presentation
         }
 
 
+        // Metodo para Eliminar resolucion
         private void btnEliminarResolucion_Click(object sender, EventArgs e)
         {
       
@@ -273,28 +341,18 @@ namespace UGELNorte.Resoluciones.Presentation
             }
         }
 
-        private void dataGridViewResoluciones_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-          
-        }
-
-        private void dataGridViewResoluciones_SelectionChanged(object sender, EventArgs e)
-        {
-
-
-          
-        }
 
         private void dataGridViewResoluciones_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int currentRow = dataGridViewResoluciones.SelectedCells[0].RowIndex;
-            //MessageBox.Show("cell content click");
+
             DataGridView dgv = (DataGridView)sender;
 
             try
             {
                 if (dgv.SelectedRows.Count > 0)
                 {
+                    // Mostrar valores despues de hacer doble click en alguna fila del datagridview de resoluciones
                     string nroResolucion = dgv.SelectedRows[0].Cells[1].Value.ToString();
                    
                     nroResolucionDelete = nroResolucion;
@@ -313,20 +371,7 @@ namespace UGELNorte.Resoluciones.Presentation
                     formModificarResolucion.txtModExpedienteJudicial.Text = dataRow["DA_ExpedienteJudicial"].ToString().Trim();
                     formModificarResolucion.txtModMonto.Text = dataRow["DA_Monto"].ToString() == "0.0000" ? string.Empty : dataRow["DA_Monto"].ToString();
 
-                    //formModificarResolucion.txtModDNI.Text = dataRow["IN_DNI"].ToString().Trim();
-                    //formModificarResolucion.txtModApellidoPaterno.Text = dataRow["DA_ApellidoPaterno"].ToString().Trim();
-                    //formModificarResolucion.txtModApellidoMaterno.Text = dataRow["DA_ApellidoMaterno"].ToString().Trim();
-                    //formModificarResolucion.txtModNombres.Text = dataRow["DA_Nombres"].ToString().Trim();
-
-                    /*
-
-                    dt2DateOfBirth.Value = Convert.ToDateTime(dataRow["DateOfBirth"]);
-                    cmb2Occupation.SelectedItem = (Occupation)dataRow["Occupation"];
-                    txt2Name.Text = dataRow["Name"].ToString();
-                    cmb2MaritalStatus.SelectedItem = (MaritalStatus)dataRow["MaritalStatus"];
-                    cmb2HealthStatus.SelectedItem = (HealthStatus)dataRow["HealthStatus"];
-                    txt2Salary.Text = dataRow["Salary"].ToString() == "0.0000" ? string.Empty : dataRow["Salary"].ToString();
-                    txt2NoOfChildren.Text = dataRow["NumberOfChildren"].ToString(); */
+            
                 }
             }
             catch (Exception ex)
@@ -339,7 +384,7 @@ namespace UGELNorte.Resoluciones.Presentation
 
         private void dataGridViewResoluciones_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-     
+            // Mostrar formulario de modificacion
             formModificarResolucion.ShowDialog();
         }
 
@@ -350,6 +395,7 @@ namespace UGELNorte.Resoluciones.Presentation
 
         private void dataGridViewResoluciones_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            // Cambiar el formato cuando existe algun '_'
             try
             {
                     
@@ -384,10 +430,10 @@ namespace UGELNorte.Resoluciones.Presentation
             try
             {
 
-                // Check if the validation passes
+                // Verifica si la validacion pasa
                 if (this.ValidateUpdate())
                 {
-                    // Assign the values to the model
+                    // Asignar valores al modelo
                    
                     DocenteModel docenteModel = new DocenteModel()
                     {
@@ -398,26 +444,26 @@ namespace UGELNorte.Resoluciones.Presentation
                     };
 
                
-                    // Call the service method and assign the return status to variable
+                    // LLama al metodo de servicio y lo asigna a una variable de retorno
             
                     var successDocente = this.docenteService.RegisterDocente(docenteModel);
                 
-                    // if status of success variable is true then display a information else display the error message
+                    // Si es verdadero , muestra el mensaje de registro satisfactorio, sino uno de error
                     if (successDocente)
                     {
-                        // display the message box
+                        // Muestra el mensaje de registro satisfactoriodisplay the message box
                         MessageBox.Show(
                             Resources.Registration_Satisfactorio_Mensaje,
                             Resources.Registration_Satisfactorio_Mensaje_Titulo,
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
 
-                        // Reset the screen    
+                        // Resetea los controles de docentes  
                         ControlUtilities.ResetAllControls(groupBoxInfoDocente);
                     }
                     else
                     {
-                        // display the error messge
+                        // Muestra mensaje de error
                         MessageBox.Show(
                             Resources.Registration_Error_Mensaje,
                             Resources.Registration_Error_Mensaje_Titulo,
@@ -427,7 +473,7 @@ namespace UGELNorte.Resoluciones.Presentation
                 }
                 else
                 {
-                    // Display the validation failed message
+                    // Muestra mensaje de validacion fallida
                     MessageBox.Show(
                         this.errorMessage,
                         Resources.Registration_Error_Mensaje_Titulo,
@@ -441,17 +487,14 @@ namespace UGELNorte.Resoluciones.Presentation
             }
         }
 
-        private void btnRegistrarIIEE_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnActualizarDocente_Click(object sender, EventArgs e)
         {
             try
             {
+                // Valida para que se actualicen los datos
                 if (this.ValidateUpdate())
                 {
+                    // Asigna los valores a el modelo Docente
                     DocenteModel docenteModel = new DocenteModel()
                     {
                         DNI = Convert.ToInt64(txtDNI.Text.ToString().Trim()),
@@ -460,13 +503,16 @@ namespace UGELNorte.Resoluciones.Presentation
                         Nombres = txtNombres.Text.Trim(),
                     };
 
+                    // LLama al metodo de servicio y lo asigna a una variable de retorno
                     var flag = this.docenteService.UpdateDocente(docenteModel);
 
                     if (flag)
                     {
+                        // Carga otra vez todo el datagridview despues de  eliminar
                         DataTable data = this.docenteService.GetAllDocentes();
                         this.LoadDataGridViewDocentes(data);
 
+                        // Muestra mensaje de modificacion correcta
                         MessageBox.Show(
                             Resources.Update_Satisfactorio_Mensaje,
                             Resources.Update_Satisfactorio_Mensaje_Titulo,
@@ -476,6 +522,7 @@ namespace UGELNorte.Resoluciones.Presentation
                 }
                 else
                 {
+                    // Muestra mensaje de error de registro
                     MessageBox.Show(
                         this.errorMessage,
                         Resources.Registration_Error_Mensaje_Titulo,
@@ -491,6 +538,7 @@ namespace UGELNorte.Resoluciones.Presentation
 
         private bool ValidateUpdate()
         {
+            // Metodo para validacion al actualizar Docente
             this.errorMessage = string.Empty;
 
             if (txtDNI.Text.Trim() == string.Empty)
@@ -518,6 +566,7 @@ namespace UGELNorte.Resoluciones.Presentation
 
         private void tabCtrlResoluciones_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Evento para que muestre todos los Docentes en el gridview
             try
             {
                 if (tabCtrlResoluciones.SelectedIndex == 2)
@@ -535,7 +584,7 @@ namespace UGELNorte.Resoluciones.Presentation
 
         private void dataGridViewDocentes_SelectionChanged(object sender, EventArgs e)
         {
-
+            // Evento cada ves que seleccione otra fila se muestre en los controles
             DataGridView dgv = (DataGridView)sender;
 
             try
@@ -548,6 +597,7 @@ namespace UGELNorte.Resoluciones.Presentation
 
                     DataRow dataRow = this.docenteService.GetDocenteByDNI(nuevoDNI);
 
+                    // Asignacion de la fila del gridview a los controles
                     txtDNI.Text = dataRow["IN_DNI"].ToString().Trim();
                     txtApellidoPaterno.Text = dataRow["DA_ApellidoPaterno"].ToString().Trim();
                     txtApellidoMaterno.Text = dataRow["DA_ApellidoMaterno"].ToString().Trim();

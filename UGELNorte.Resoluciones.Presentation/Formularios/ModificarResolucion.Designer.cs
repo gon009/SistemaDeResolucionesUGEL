@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarResolucion));
             this.panelModificarResoluciones = new System.Windows.Forms.Panel();
+            this.btnExportarPDF = new System.Windows.Forms.Button();
             this.groupBoxInfoSentencia = new System.Windows.Forms.GroupBox();
             this.lblDNIDocente = new System.Windows.Forms.Label();
             this.txtModDNI = new System.Windows.Forms.TextBox();
@@ -58,7 +59,6 @@
             this.cmbModIIEE = new System.Windows.Forms.ComboBox();
             this.cmbModConcepto = new System.Windows.Forms.ComboBox();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnExportarPDF = new System.Windows.Forms.Button();
             this.panelModificarResoluciones.SuspendLayout();
             this.groupBoxInfoSentencia.SuspendLayout();
             this.groupBoxInfoResoluciones.SuspendLayout();
@@ -75,6 +75,16 @@
             this.panelModificarResoluciones.Name = "panelModificarResoluciones";
             this.panelModificarResoluciones.Size = new System.Drawing.Size(888, 362);
             this.panelModificarResoluciones.TabIndex = 0;
+            // 
+            // btnExportarPDF
+            // 
+            this.btnExportarPDF.Location = new System.Drawing.Point(705, 289);
+            this.btnExportarPDF.Name = "btnExportarPDF";
+            this.btnExportarPDF.Size = new System.Drawing.Size(122, 56);
+            this.btnExportarPDF.TabIndex = 11;
+            this.btnExportarPDF.Text = "Exportar PDF";
+            this.btnExportarPDF.UseVisualStyleBackColor = true;
+            this.btnExportarPDF.Click += new System.EventHandler(this.btnExportarPDF_Click);
             // 
             // groupBoxInfoSentencia
             // 
@@ -436,21 +446,12 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(21, 22);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(795, 31);
+            this.lblTitulo.Size = new System.Drawing.Size(854, 31);
             this.lblTitulo.TabIndex = 3;
             this.lblTitulo.Text = "Modificar Resolucion - Sistema de Resoluciones - UGEL NORTE";
-            // 
-            // btnExportarPDF
-            // 
-            this.btnExportarPDF.Location = new System.Drawing.Point(705, 289);
-            this.btnExportarPDF.Name = "btnExportarPDF";
-            this.btnExportarPDF.Size = new System.Drawing.Size(122, 56);
-            this.btnExportarPDF.TabIndex = 11;
-            this.btnExportarPDF.Text = "Exportar PDF";
-            this.btnExportarPDF.UseVisualStyleBackColor = true;
             // 
             // ModificarResolucion
             // 
@@ -462,8 +463,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModificarResolucion";
-            this.Text = "ModificarResolucion";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ModificarResolucion_FormClosing);
+            this.Text = "Modificar Resolucion";
             this.Load += new System.EventHandler(this.ModificarResolucion_Load);
             this.panelModificarResoluciones.ResumeLayout(false);
             this.groupBoxInfoSentencia.ResumeLayout(false);
