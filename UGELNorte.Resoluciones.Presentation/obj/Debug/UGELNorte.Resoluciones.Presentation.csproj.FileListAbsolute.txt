@@ -44,3 +44,7 @@ D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\SistemaDeResolucionesUGEL\UGEL
 D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.Resources.resources
 D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\bin\Debug\app.config
 D:\GONZALO\Proyecto UGEL NORTE\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\bin\Debug\app.config
+D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\bin\Debug\UGELNorte.Resoluciones.Presentation.exe.manifest
+D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\bin\Debug\UGELNorte.Resoluciones.Presentation.application
+D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.exe.manifest
+D:\Proyectos\UGEL NORTE - Sistema de Resoluciones\SistemaDeResolucionesUGEL\UGELNorte.Resoluciones.Presentation\obj\Debug\UGELNorte.Resoluciones.Presentation.application

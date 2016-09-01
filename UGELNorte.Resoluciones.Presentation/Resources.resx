@@ -125,6 +125,10 @@
     <value>Eliminacion de Resolucion</value>
     <comment>Titulo para la eliminacion de resolucion</comment>
   </data>
+  <data name="Error_DNIDocent_NotExist" xml:space="preserve">
+    <value>Posible Error: El DNI del Docente no existe, por favor registrelo    </value>
+    <comment>Mensaje de error cuando no existe el docente</comment>
+  </data>
   <data name="Error_Mensaje_Cabecera" xml:space="preserve">
     <value>Porfavor revisar lo siguiente</value>
     <comment>Cabecera del mensaje de error</comment>

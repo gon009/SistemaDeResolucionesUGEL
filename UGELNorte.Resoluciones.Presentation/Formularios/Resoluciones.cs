@@ -123,7 +123,7 @@ namespace UGELNorte.Resoluciones.Presentation
             }
             catch (Exception ex)
             {
-                this.ShowErrorMessage(ex);
+                this.ShowErrorMessage(new Exception(Resources.Error_DNIDocent_NotExist + ex ));
             }
 
         }

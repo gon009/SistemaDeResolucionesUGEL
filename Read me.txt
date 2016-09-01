@@ -1,0 +1,5 @@
+Ir a: UGELNorte.Resoluciones.Setup\UGELNorte.Resoluciones.Setup\Express\DVD-5\DiskImages\DISK1
+Y ejecutar cualquiera de los dos setup.
+No funcionara hasta que tengas la Base de Datos en la maquina
+Con SQL Server 2014 o 2012
+Te dejo el .bak para restaurarla

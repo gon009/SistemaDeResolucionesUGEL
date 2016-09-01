@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<!-- Select a Product Configuration -->
+		<InstallShieldProductConfiguration>Express</InstallShieldProductConfiguration>
+		<!-- Select a Visual Studio Configuration / InstallShield Release -->
+		<Configuration>Debug</Configuration>
+		<InstallShieldRelease>$(Configuration)</InstallShieldRelease>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- The InstallShieldProject item selects the project to build -->
+		<InstallShieldProject Include="$(MSBuildProjectDirectory)\$(MSBuildProjectName).isl"/>
+		<!-- The InstallShieldReleaseFlags sets Release Flags -->
+		<!--<InstallShieldReleaseFlags Include=""/>-->
+		<!-- The InstallShieldMergeModulePath specifies what directories are
+		searched for Merge Modules -->
+		<!--<InstallShieldMergeModulePath Include=""/>-->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The ProjectReference items refer to any Visual Studio solutions you want to automatically probe for Project Output Groups.  -->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The TaggedOutputs items allow you to explicitly add extra files to output groups. Each item must include both Name and OutputGroup, as well as TargetPath metadata values. -->
+		<!--<TaggedOutputs Include="C:\My Test Exe.exe">
+			<Name>My Test Project</Name>
+			<OutputGroup>Primary output</OutputGroup>
+			<TargetPath>My Test Exe.exe</TargetPath>
+		</TaggedOutputs> -->
+	</ItemGroup>
+	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2015Limited\InstallShield.targets"/>
+	<ItemGroup>
+		<ProjectReference Include="..\UGELNorte.Resoluciones.BusinessLogic\UGELNorte.Resoluciones.BusinessLogic.csproj">
+			<Name>UGELNorte.Resoluciones.BusinessLogic</Name>
+			<Project>{095B77FF-C6BF-4DA7-8D16-1AED2C53FBDD}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\UGELNorte.Resoluciones.Core\UGELNorte.Resoluciones.Core.csproj">
+			<Name>UGELNorte.Resoluciones.Core</Name>
+			<Project>{53596D93-C3C1-4F17-809E-7330FBD8E01C}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\UGELNorte.Resoluciones.DataAccess\UGELNorte.Resoluciones.DataAccess.csproj">
+			<Name>UGELNorte.Resoluciones.DataAccess</Name>
+			<Project>{8255F3B3-54A5-44FD-84C5-22DA91495054}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\UGELNorte.Resoluciones.Presentation\UGELNorte.Resoluciones.Presentation.csproj">
+			<Name>UGELNorte.Resoluciones.Presentation</Name>
+			<Project>{B29BB8A9-8D6D-4792-8DDD-368967A1E119}</Project>
+		</ProjectReference>
+	</ItemGroup>
+</Project>

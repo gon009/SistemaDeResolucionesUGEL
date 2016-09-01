@@ -79,6 +79,15 @@ namespace UGELNorte.Resoluciones.Presentation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Posible Error: El DNI del Docente no existe, por favor registrelo    .
+        /// </summary>
+        internal static string Error_DNIDocent_NotExist {
+            get {
+                return ResourceManager.GetString("Error_DNIDocent_NotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Porfavor revisar lo siguiente.
         /// </summary>
         internal static string Error_Mensaje_Cabecera {
